@@ -10,6 +10,7 @@ results/*/cache/
 results/reproduce*/
 results/smoke*/
 results/clean*/
+results/pilot/
 results/*/*.jsonl
 !results/*/errors.jsonl
 *.tmp
