@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BriefGuard — Frame evidence lab</title>
+<style>
+:root{color-scheme:dark;--bg:#0a111b;--panel:#111c2a;--panel2:#152234;--line:#26364a;--text:#e6eef7;--muted:#9bacc0;--cyan:#7ce6e1;--amber:#f6c56f;--red:#ff8999;--green:#8cddba;--mono:ui-monospace,SFMono-Regular,Consolas,monospace}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,select,input{font:inherit}button,select{color:var(--text);background:var(--panel2);border:1px solid var(--line);border-radius:8px}button{cursor:pointer}button:hover,select:hover{border-color:var(--cyan)}button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}button:disabled{opacity:.5;cursor:default}a{color:var(--cyan)}.shell{max-width:1390px;margin:auto;padding:28px 36px 42px}.top{display:flex;justify-content:space-between;align-items:center;gap:24px;padding-bottom:24px;border-bottom:1px solid var(--line)}.brand{font-weight:750;letter-spacing:-.6px;font-size:24px}.brand small{font:11px var(--mono);color:var(--muted);letter-spacing:1.8px;margin-left:16px}.seal{font:11px var(--mono);color:var(--cyan);border:1px solid #345454;padding:8px 12px;border-radius:99px}.eyebrow{font:11px var(--mono);text-transform:uppercase;letter-spacing:1.8px;color:var(--cyan)}h1{font-weight:650;letter-spacing:-1.3px;font-size:clamp(27px,3vw,39px);line-height:1.15;margin:9px 0 13px}h2{font-size:17px;font-weight:600;letter-spacing:-.25px;margin:0}p{margin:0}.intro{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin:28px 0 23px}.intro p{color:var(--muted);max-width:700px;font-size:14px}.badge{display:inline-flex;align-items:center;gap:7px;font:11px var(--mono);padding:5px 8px;border-radius:4px;background:#293025;color:var(--amber)}.status-strip{display:flex;gap:9px;flex-wrap:wrap;margin:17px 0 0}.status-strip .badge{background:var(--panel2);color:var(--muted)}.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0}.metric-card{border:1px solid var(--line);background:linear-gradient(120deg,var(--panel),#101a26);padding:17px 20px;border-radius:11px}.metric-head{display:flex;justify-content:space-between;font:11px var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:1px}.metric-value{font-size:30px;letter-spacing:-1px;font-weight:600;margin-top:5px}.metric-value span{font-size:12px;color:var(--muted);font-weight:400;letter-spacing:0;margin-left:10px}.metric-foot{font:11px var(--mono);color:var(--muted);display:flex;justify-content:space-between;margin-top:8px;gap:8px}.workspace{display:grid;grid-template-columns:minmax(0,1fr) 335px;gap:18px;align-items:start}.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}.panel-pad{padding:20px}.panel-head{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:17px}.small{font:11px var(--mono);color:var(--muted)}.case-bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:17px 20px;border-bottom:1px solid var(--line)}.case-bar label{font:11px var(--mono);color:var(--muted);letter-spacing:1px}.case-bar select{flex:1;min-width:190px;padding:8px 10px;max-width:100%}.visual-stage{background:#070d15;padding:20px 28px 18px;position:relative}.canvas-wrap{max-width:660px;margin:auto;position:relative}.canvas-wrap canvas{display:block;width:100%;aspect-ratio:16/9;background:#101924;border-radius:7px;image-rendering:pixelated;box-shadow:0 18px 40px #0005}.frame-stamp{position:absolute;top:11px;left:12px;font:11px var(--mono);color:#e9f2fa;padding:5px 7px;border-radius:4px;background:#07111dd9}.truth-stamp{position:absolute;bottom:12px;right:12px;display:none}.transport{display:flex;align-items:center;gap:13px;margin:18px auto 0;max-width:660px}.transport button{width:36px;height:32px;font-size:13px;color:var(--cyan)}.transport input{flex:1;min-width:40px;accent-color:var(--cyan)}.transport output{font:11px var(--mono);white-space:nowrap;color:var(--muted)}.legend{display:flex;flex-wrap:wrap;gap:17px;font:10px var(--mono);color:var(--muted)}.dot{width:7px;height:7px;border-radius:50%;display:inline-block;margin-right:6px;vertical-align:middle}.dot.cyan{background:var(--cyan)}.dot.red{background:var(--red)}.dot.amber{background:var(--amber);border-radius:1px}.timeline-controls{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted)}.timeline-controls input{accent-color:var(--amber)}.timeline-group{margin-top:18px}.timeline-method{display:flex;align-items:center;justify-content:space-between;gap:10px;font:11px var(--mono);margin:13px 0 6px}.timeline-method button{border:0;background:transparent;padding:0;color:var(--muted);font:inherit}.timeline-method button.active{color:var(--cyan)}.timeline{height:31px;position:relative;background:#0a1421;border:1px solid var(--line);border-radius:4px;overflow:hidden;cursor:pointer}.timeline .event{position:absolute;top:0;bottom:0;background:#f6c56f33;border-left:1px solid #f6c56f88;border-right:1px solid #f6c56f88}.timeline .point{position:absolute;top:9px;width:4px;height:12px;border-radius:2px;background:var(--cyan);transform:translateX(-50%)}.timeline .point.hit{background:var(--red);height:19px;top:5px}.timeline .cursor{position:absolute;top:0;bottom:0;width:1px;background:#fff8}.axis{display:flex;justify-content:space-between;color:#71849c;font:10px var(--mono);margin-top:7px}.annotation{font-size:12px;color:var(--muted);padding:10px 0 0}.requirements{list-style:none;margin:0;padding:0}.requirements li{padding:12px 0;border-bottom:1px solid var(--line);font-size:13px;display:flex;gap:10px}.requirements li:last-child{border:0}.req-number{font:10px var(--mono);color:var(--cyan);padding-top:3px}.detail-list{margin:15px 0 0;padding:0}.detail-list div{display:flex;justify-content:space-between;gap:12px;padding:6px 0;font-size:12px}.detail-list dt{color:var(--muted)}.detail-list dd{margin:0;text-align:right;font-family:var(--mono);font-size:11px;max-width:63%;overflow-wrap:anywhere}.divider{border:0;border-top:1px solid var(--line);margin:20px 0}.notice{border-left:2px solid var(--amber);background:#f6c56f09;padding:12px 13px;margin-top:20px;font-size:12px;color:var(--muted)}.notice strong{display:block;color:var(--amber);font-weight:500;margin-bottom:5px}.compare{margin-top:18px}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;white-space:nowrap}th{text-align:left;font:10px var(--mono);text-transform:uppercase;letter-spacing:.5px;color:var(--muted);padding:11px 14px;border-bottom:1px solid var(--line)}td{padding:13px 14px;font-size:12px;border-bottom:1px solid #24324680}tbody tr:last-child td{border:0}td:first-child,th:first-child{padding-left:20px}.pill{font:10px var(--mono);border-radius:4px;padding:4px 6px;display:inline-block}.pill.pass{background:#8cddba15;color:var(--green)}.pill.fail{background:#ff899915;color:var(--red)}.pill.unknown{background:#f6c56f15;color:var(--amber)}.bad{color:var(--red)}.good{color:var(--green)}.evidence{margin-top:18px}.filmstrip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.frame-card{border-radius:6px;padding:0;overflow:hidden;text-align:left;background:#0b1421;border:1px solid var(--line)}.frame-card.flagged{border-color:#965763}.frame-card img{width:100%;display:block;image-rendering:pixelated;aspect-ratio:16/9}.frame-card .caption{padding:7px 8px;display:flex;justify-content:space-between;gap:5px;font:10px var(--mono);color:var(--muted)}.frame-card .caption b{font-weight:400;color:var(--cyan)}.frame-card.flagged .caption b{color:var(--red)}.evidence-note{margin-top:13px;font-size:12px;color:var(--muted)}.footer{margin-top:27px;display:flex;justify-content:space-between;gap:25px;border-top:1px solid var(--line);padding-top:18px;font:10px/1.6 var(--mono);color:#7b8da3}.footer p{max-width:800px}.loading{padding:50px;text-align:center;color:var(--muted)}.error{border:1px solid #784a55;background:#261721;padding:24px;border-radius:10px;margin-top:25px;white-space:pre-wrap;color:#ffc5ce}.hidden{display:none!important}
+@media(max-width:1000px){.workspace{grid-template-columns:1fr 290px}.shell{padding:22px}.filmstrip{grid-template-columns:repeat(3,minmax(0,1fr))}.metric-card{padding:15px}.metric-foot{font-size:10px}}
+@media(max-width:780px){.workspace{grid-template-columns:1fr}.intro{display:block}.intro>.badge{margin-top:15px}.summary{grid-template-columns:1fr}.metric-card{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}.metric-head{grid-column:1/-1}.metric-foot{display:block;align-self:center}.metric-foot span{display:block;margin:4px 0}.shell{padding:18px 14px}.brand small{display:block;margin:1px 0 0;font-size:9px}.seal{font-size:9px;padding:7px 8px}.top{padding-bottom:18px}.visual-stage{padding:15px}.panel-pad{padding:17px}.filmstrip{grid-template-columns:repeat(3,minmax(0,1fr))}.footer{display:block}.footer p+p{margin-top:12px}}
+</style>
+</head>
+<body>
+<main class="shell">
+ <header class="top"><div class="brand">BriefGuard<small>FRAME EVIDENCE LAB</small></div><span class="seal">REPRODUCIBLE / CPU</span></header>
+ <section class="intro"><div><div class="eyebrow">A controlled sampling study</div><h1>What survives the frame budget?</h1><p>Inspect the exact frames behind each decision. Compare uniform, change-based and adaptive sampling on brief synthetic visual violations.</p><div class="status-strip"><span class="badge">SYNTHETIC BENCHMARK</span><span class="badge">REPLAY MODE</span><span class="badge">NO LIVE AI INFERENCE</span></div></div><span class="badge">HUMAN AUDIT PENDING</span></section>
+ <div id="loading" class="loading">Loading completed run artifacts…</div><div id="error" class="error hidden" role="alert"></div>
+ <div id="app" class="hidden">
+  <section id="summary" class="summary" aria-label="Complete run summary"></section>
+  <div class="workspace">
+   <div>
+    <section class="panel">
+     <div class="case-bar"><label for="caseSelect">INSPECT CASE</label><select id="caseSelect"></select></div>
+     <div class="visual-stage"><div class="canvas-wrap"><canvas id="video" width="128" height="72" aria-label="Exact synthetic video frames"></canvas><span id="frameStamp" class="frame-stamp"></span><span id="truthStamp" class="truth-stamp badge">ANNOTATED VIOLATION</span></div><div class="transport"><button id="play" type="button" aria-label="Play clip">▶</button><input id="scrub" type="range" min="0" max="95" value="0" step="1" aria-label="Current frame"><output id="timecode"></output></div></div>
+     <div class="panel-pad"><div class="panel-head"><h2>Evidence timeline</h2><label class="timeline-controls"><input id="showTruth" type="checkbox" checked> Ground truth</label></div><div class="legend"><span><i class="dot cyan"></i>Selected frame</span><span><i class="dot red"></i>Checker finding</span><span><i class="dot amber"></i>Annotated interval</span></div><div id="timelines" class="timeline-group"></div><div id="axis" class="axis"></div><p id="intervalNote" class="annotation"></p></div>
+    </section>
+    <section class="panel compare"><div class="panel-pad" style="padding-bottom:0"><div class="panel-head"><h2>Same clip. Same frame budget.</h2><span id="budgetLabel" class="small"></span></div></div><div class="table-wrap"><table><thead><tr><th>Sampler</th><th>Decision</th><th>Event sampled</th><th>False approval</th><th>CPU pipeline</th></tr></thead><tbody id="comparison"></tbody></table></div></section>
+    <section class="panel evidence"><div class="panel-pad"><div class="panel-head"><h2 id="evidenceTitle">Selected evidence</h2><span class="small">CLICK TO INSPECT</span></div><div id="filmstrip" class="filmstrip"></div><p id="evidenceNote" class="evidence-note"></p></div></section>
+   </div>
+   <aside class="panel panel-pad"><div class="panel-head"><h2>The brief</h2><span class="small">FIXED TEMPLATE</span></div><ul id="requirements" class="requirements"></ul><hr class="divider"><div class="eyebrow">Case record</div><dl id="details" class="detail-list"></dl><div class="notice"><strong>Read the boundaries</strong>This is a generated fixed-template workload with a deterministic pixel checker. It does not establish accuracy on natural advertising videos or a general-purpose vision model.</div><div class="notice"><strong>Illustrative case selection</strong><span id="selectionNote"></span></div><hr class="divider"><div class="small" id="sourceNote"></div></aside>
+  </div>
+  <footer class="footer"><p>Amber regions show generated ground truth, not a model prediction. A green “pass” can still be a false approval. Cost includes the pixel prepass, selection and checker; generation is reported separately in run artifacts.</p><p id="runNote"></p></footer>
+ </div>
+</main>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const names={uniform:'Uniform',change:'Frame change',adaptive:'Adaptive'};
+const order=['uniform','change','adaptive'];
+const state={data:null,clip:null,method:'adaptive',frame:0,playing:false,lastTick:0,sprite:null,loadId:0};
+const percent=value=>value==null?'—':`${(100*value).toFixed(1)}%`;
+const text=(tag,value,className)=>{const el=document.createElement(tag);el.textContent=value;if(className)el.className=className;return el;};
+const methodOrder=methods=>Object.keys(methods).sort((a,b)=>(order.indexOf(a)<0?99:order.indexOf(a))-(order.indexOf(b)<0?99:order.indexOf(b)));
+function safeAsset(url){if(typeof url!=='string'||!/^assets\/[a-zA-Z0-9_.-]+$/.test(url))throw new Error('Invalid local asset path');return url;}
+function evidenceIndices(row){return new Set((row.prediction?.evidence||[]).filter(e=>e.frame_index!=null).map(e=>Number(e.frame_index)));}
+function status(row){return row.prediction?.violated===true?'fail':row.prediction?.violated===false?'pass':'unknown';}
+function totalMs(row){const t=row.timing||{};return 1000*['prepass_s','selection_s','verification_s'].reduce((s,k)=>s+Number(t[k]||0),0);}
+function renderSummary(){
+ const wrap=$('summary');wrap.replaceChildren();
+ for(const item of [...state.data.summary].sort((a,b)=>order.indexOf(a.method)-order.indexOf(b.method))){
+  const card=text('article','', 'metric-card'),head=text('div','', 'metric-head');head.append(text('span',names[item.method]||item.method),text('span',`${item.n_clips} CLIPS`));
+  const value=text('div',percent(item.recall),'metric-value');value.append(text('span','violation recall'));
+  const foot=text('div','', 'metric-foot');foot.append(text('span',`${percent(item.false_approval_rate)} missed violations`),text('span',`${Number(item.mean_pipeline_ms||0).toFixed(2)} ms / clip`));card.append(head,value,foot);wrap.append(card);
+ }
+}
+async function selectClip(index){
+ state.playing=false;$('play').textContent='▶';state.clip=state.data.clips[index];state.frame=0;state.sprite=null;
+ if(!state.clip.methods[state.method])state.method=methodOrder(state.clip.methods)[0];
+ $('scrub').max=state.clip.n_frames-1;$('video').width=state.clip.width;$('video').height=state.clip.height;
+ const loadId=++state.loadId;const sprite=new Image();
+ sprite.onload=()=>{if(state.loadId===loadId){state.sprite=sprite;drawFrame();}};
+ sprite.onerror=()=>showError('A replay asset could not be loaded. Re-export this demo from the matching run configuration.');
+ sprite.src=safeAsset(state.clip.sprite_url);
+ renderBrief();renderTimelines();renderComparison();renderEvidence();drawFrame();
+}
+function renderBrief(){
+ const clip=state.clip,brief=clip.brief,a=clip.annotation;
+ const list=$('requirements');list.replaceChildren();
+ let requirements=brief.requirements;
+ if(!Array.isArray(requirements))requirements=['The required product remains visible.','Packaging retains its required color.','The label matches the reference bitmap.','The prohibited patch remains absent.'];
+ requirements.forEach((requirement,i)=>{const li=text('li','');let label=typeof requirement==='string'?requirement:requirement.description||requirement.text||requirement.requirement||requirement.name||JSON.stringify(requirement);li.append(text('span',`${String(i+1).padStart(2,'0')}`,'req-number'),text('span',label));list.append(li);});
+ const details=$('details');details.replaceChildren();
+ const values=[['Case',clip.clip_id],['Source',String(clip.source_id)],['Condition',a.violation_type||'compliant'],['Background',a.motion||'—'],['Duration',`${(clip.n_frames/clip.fps).toFixed(2)} s · ${clip.fps} fps`],['Violation',a.violated?`${a.duration_frames} frames (${(a.duration_frames/clip.fps).toFixed(3)} s)`:'none'],['Checker',Object.values(clip.methods)[0].prediction?.model_version||'pixel verifier'],['Human audit',a.human_audit||'pending']];
+ for(const [key,value] of values){const row=text('div','');row.append(text('dt',key),text('dd',value));details.append(row);}
+ $('selectionNote').textContent=`${clip.reason}. ${state.data.selection_note}`;
+ $('sourceNote').textContent=`Artifact: ${state.data.result_directory}/${state.data.source_predictions}`;
+ $('budgetLabel').textContent=`${state.data.budget} FRAMES / METHOD`;
+ $('runNote').textContent=`${state.data.result_directory}\nOffline replay · no paid calls`;
+}
+function renderTimelines(){
+ const wrap=$('timelines');wrap.replaceChildren();const clip=state.clip;
+ for(const method of methodOrder(clip.methods)){
+  const row=clip.methods[method],findings=evidenceIndices(row),header=text('div','', 'timeline-method'),label=text('button',names[method]||method,method===state.method?'active':'');label.type='button';label.onclick=()=>{state.method=method;renderTimelines();renderEvidence();};
+  header.append(label,text('span',`${row.selected_indices.length} frames`, 'small'));const line=text('div','', 'timeline');line.setAttribute('aria-label',`${names[method]||method} frame timeline`);
+  if($('showTruth').checked&&clip.annotation.violated){const event=text('span','', 'event');event.style.left=`${clip.annotation.start_frame/clip.n_frames*100}%`;event.style.width=`${(clip.annotation.end_frame-clip.annotation.start_frame)/clip.n_frames*100}%`;line.append(event);}
+  for(const index of row.selected_indices){const point=text('span','', `point${findings.has(index)?' hit':''}`);point.style.left=`${(index+.5)/clip.n_frames*100}%`;point.title=`Frame ${index}${findings.has(index)?' · checker finding':''}`;line.append(point);}
+  const cursor=text('span','', 'cursor');cursor.style.left=`${(state.frame+.5)/clip.n_frames*100}%`;line.append(cursor);
+  line.onclick=event=>{state.playing=false;$('play').textContent='▶';const box=line.getBoundingClientRect();state.frame=Math.min(clip.n_frames-1,Math.max(0,Math.floor((event.clientX-box.left)/box.width*clip.n_frames)));drawFrame();};wrap.append(header,line);
+ }
+ const axis=$('axis');axis.replaceChildren();[0,.25,.5,.75,1].forEach(r=>axis.append(text('span',`${(r*clip.n_frames/clip.fps).toFixed(1)}s`)));
+ $('intervalNote').textContent=$('showTruth').checked?(clip.annotation.violated?`Ground truth: frames [${clip.annotation.start_frame}, ${clip.annotation.end_frame}) — the end frame is excluded.`:'Compliant control: no generated violation.'):'Ground truth hidden. Timelines still show the actual selected frames and checker findings.';
+}
+function renderComparison(){
+ const body=$('comparison');body.replaceChildren();const clip=state.clip;
+ for(const method of methodOrder(clip.methods)){
+  const row=clip.methods[method],decision=status(row),falseApproval=clip.annotation.violated&&row.prediction?.violated===false;
+  const tr=text('tr','');tr.append(text('td',names[method]||method));const decisionCell=text('td','');decisionCell.append(text('span',decision==='unknown'?'INDETERMINATE':decision.toUpperCase(),`pill ${decision}`));tr.append(decisionCell,text('td',clip.annotation.violated?(row.sampling_hit?'Yes':'No'):'N/A — clean'),text('td',falseApproval?'Yes':row.prediction?.violated==null?'Unresolved':'No',falseApproval?'bad':''),text('td',`${totalMs(row).toFixed(2)} ms`));body.append(tr);
+ }
+}
+function renderEvidence(){
+ const clip=state.clip,row=clip.methods[state.method],findings=evidenceIndices(row),strip=$('filmstrip');strip.replaceChildren();$('evidenceTitle').textContent=`${names[state.method]||state.method} · selected evidence`;
+ for(const index of row.selected_indices){const button=text('button','',`frame-card${findings.has(index)?' flagged':''}`);button.type='button';const img=new Image();img.src=safeAsset(clip.frame_urls[String(index)]);img.alt=`Selected frame ${index}`;const caption=text('div','', 'caption');caption.append(text('span',`f${String(index).padStart(3,'0')}`),text('b',findings.has(index)?'FINDING':`${(index/clip.fps).toFixed(2)}s`));button.append(img,caption);button.onclick=()=>{state.playing=false;$('play').textContent='▶';state.frame=index;drawFrame();};strip.append(button);}
+ const evidence=row.prediction?.evidence||[];
+ const labels=[...new Set(evidence.map(e=>e.requirement||e.requirement_id||e.kind||'visual mismatch'))];
+ $('evidenceNote').textContent=labels.length?`Checker evidence: ${labels.join('; ')}. Click a frame to inspect its pixels.`:row.prediction?.violated==null?'The checker returned an indeterminate result. This is not an approval.':'No violation was reported on the selected frames. This does not prove that the whole clip complies.';
+}
+function drawFrame(){
+ const clip=state.clip;if(!clip)return;const canvas=$('video'),context=canvas.getContext('2d');
+ if(state.sprite){context.imageSmoothingEnabled=false;context.drawImage(state.sprite,(state.frame%clip.sprite_columns)*clip.width,Math.floor(state.frame/clip.sprite_columns)*clip.height,clip.width,clip.height,0,0,clip.width,clip.height);}else{context.clearRect(0,0,canvas.width,canvas.height);}
+ $('scrub').value=state.frame;$('frameStamp').textContent=`FRAME ${String(state.frame).padStart(3,'0')} / ${clip.n_frames-1}`;$('timecode').textContent=`${(state.frame/clip.fps).toFixed(2)} / ${(clip.n_frames/clip.fps).toFixed(2)} s`;
+ const a=clip.annotation;const active=$('showTruth').checked&&a.violated&&state.frame>=a.start_frame&&state.frame<a.end_frame;$('truthStamp').style.display=active?'inline-flex':'none';
+ document.querySelectorAll('.timeline .cursor').forEach(el=>el.style.left=`${(state.frame+.5)/clip.n_frames*100}%`);
+}
+function tick(now){if(state.playing&&state.clip){if(!state.lastTick)state.lastTick=now;const elapsed=now-state.lastTick,steps=Math.floor(elapsed/(1000/state.clip.fps));if(steps){state.frame=(state.frame+steps)%state.clip.n_frames;state.lastTick+=steps*1000/state.clip.fps;drawFrame();}}else state.lastTick=0;requestAnimationFrame(tick);}
+function showError(message){$('loading').classList.add('hidden');$('error').classList.remove('hidden');$('error').textContent=message;}
+$('caseSelect').addEventListener('change',event=>selectClip(Number(event.target.value)).catch(error=>showError(error.message)));
+$('play').addEventListener('click',()=>{state.playing=!state.playing;state.lastTick=0;$('play').textContent=state.playing?'Ⅱ':'▶';$('play').setAttribute('aria-label',state.playing?'Pause clip':'Play clip');});
+$('scrub').addEventListener('input',event=>{state.playing=false;$('play').textContent='▶';state.frame=Number(event.target.value);drawFrame();});
+$('showTruth').addEventListener('change',()=>{renderTimelines();drawFrame();});
+fetch('data.json').then(response=>{if(!response.ok)throw new Error(`data.json returned HTTP ${response.status}`);return response.json();}).then(async data=>{
+ if(data.mode!=='replay'||!data.synthetic||!Array.isArray(data.clips)||!data.clips.length)throw new Error('This viewer requires an exported synthetic replay dataset.');
+ state.data=data;renderSummary();data.clips.forEach((clip,i)=>{const option=text('option',`${String(i+1).padStart(2,'0')} · ${clip.reason}`);option.value=i;$('caseSelect').append(option);});
+ $('loading').classList.add('hidden');$('app').classList.remove('hidden');await selectClip(0);requestAnimationFrame(tick);
+}).catch(error=>showError(`Replay not available: ${error.message}\n\nExport a completed run, then serve this folder with:\npython3 -m http.server --bind 127.0.0.1 8765 --directory demo\n\nOpen http://127.0.0.1:8765/ — direct file:// loading is not supported.`));
+</script>
+</body>
+</html>

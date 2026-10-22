@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.DS_Store
+.env
+.env.*
+!*.example
+results/*/cache/
+results/reproduce*/
+results/smoke*/
+results/clean*/
+results/*/*.jsonl
+!results/*/errors.jsonl
+*.tmp

@@ -1,0 +1,7 @@
+.git
+__pycache__
+.venv
+results/*/cache
+results/*/*.jsonl
+results/reproduce*
+.env*
