@@ -7,6 +7,8 @@ selected after the run, and must not be treated as a second test set.
 
 from __future__ import annotations
 
+import csv
+import gzip
 import json
 import math
 import shutil
@@ -19,10 +21,11 @@ from PIL import Image
 
 
 def _read_rows(result_dir: Path) -> tuple[list[dict[str, Any]], Path]:
-    for name in ("predictions.jsonl", "results.jsonl", "records.jsonl"):
+    for name in ("predictions.jsonl", "predictions.jsonl.gz", "results.jsonl", "results.jsonl.gz", "records.jsonl"):
         path = result_dir / name
         if path.is_file():
-            rows = [json.loads(line) for line in path.read_text().splitlines() if line.strip()]
+            content = gzip.decompress(path.read_bytes()).decode("utf-8") if path.suffix == ".gz" else path.read_text()
+            rows = [json.loads(line) for line in content.splitlines() if line.strip()]
             if not rows:
                 raise ValueError(f"No completed predictions in {path}")
             return rows, path
@@ -150,7 +153,8 @@ def export_demo(result_dir: Path, output_dir: Path, config: dict[str, Any]) -> d
             frames = np.asarray(clip.frames, dtype=np.uint8)
             rows_by_method = groups[clip_id]
             digest = hashlib.sha256(frames.tobytes()).hexdigest()
-            expected_hash = next(iter(rows_by_method.values())).get("frames_sha256")
+            first_record = next(iter(rows_by_method.values()))
+            expected_hash = first_record.get("pixels_sha256", first_record.get("frames_sha256"))
             if expected_hash is not None and digest != expected_hash:
                 raise ValueError(f"Regenerated frames differ from run for {clip_id}")
             # Filenames derive from a digest, never from unchecked identifiers.
@@ -185,13 +189,44 @@ def export_demo(result_dir: Path, output_dir: Path, config: dict[str, Any]) -> d
     if found != set(reasons):
         raise ValueError(f"Generation config could not reproduce selected clips: {set(reasons) - found}")
     clips_out.sort(key=lambda clip: [key for key, _ in selected].index(clip["clip_id"]))
+    summary_path = result_dir / "summary.json"
+    run_summary = json.loads(summary_path.read_text()) if summary_path.is_file() else None
+    summary = _summarize(rows)
+    if run_summary is not None and str(budget) in run_summary.get("budgets", {}):
+        budget_summary = run_summary["budgets"][str(budget)]
+        intervals = budget_summary.get("uncertainty", {}).get("method_intervals", {})
+        summary = []
+        for method, item in budget_summary["methods"].items():
+            summary.append({"method": method, "n_clips": item["n"],
+                            "recall": item["recall"], "false_approval_rate": item["false_approval_rate"],
+                            "false_positive_rate": item["false_alarm_rate"],
+                            "median_pipeline_ms": item["latency_median_ms"],
+                            "recall_ci95": intervals.get(method, {}).get("recall")})
     payload = {"schema_version": 1, "mode": "replay", "synthetic": True,
                "human_audit": "pending", "budget": budget,
                "source_predictions": source_path.name,
                "result_directory": result_dir.name,
                "selection_note": "Post-run illustrative cases; aggregate metrics use all completed rows, not this gallery.",
                "cost_note": "CPU pipeline = prepass + selection + verification; excludes generation. See run artifacts for full accounting.",
-               "summary": _summarize(rows), "clips": clips_out}
-    (output_dir / "data.json").write_text(json.dumps(payload, indent=2, allow_nan=False) + "\n")
+               "summary_source": "summary.json" if run_summary is not None else source_path.name,
+               "hypothesis_supported": run_summary.get("hypothesis_supported") if run_summary else None,
+               "summary": summary, "clips": clips_out}
+    serialized = json.dumps(payload, indent=2, allow_nan=False)
+    (output_dir / "data.json").write_text(serialized + "\n")
+    # External local script permits file:// replay without a local web server.
+    (output_dir / "data.js").write_text("window.BRIEFGUARD_DATA = " + serialized + ";\n")
+    with (output_dir / "human_review.csv").open("w", newline="") as handle:
+        fields = ["clip_id", "generator_type", "expected_truth", "generated_start_frame",
+                  "generated_end_frame", "human_decision", "human_start_frame",
+                  "human_end_frame", "reviewer", "notes"]
+        writer = csv.DictWriter(handle, fieldnames=fields)
+        writer.writeheader()
+        for clip in clips_out:
+            annotation = clip["annotation"]
+            writer.writerow({"clip_id": clip["clip_id"],
+                             "generator_type": annotation.get("violation_type") or "compliant",
+                             "expected_truth": annotation.get("violated"),
+                             "generated_start_frame": annotation.get("start_frame"),
+                             "generated_end_frame": annotation.get("end_frame")})
     return {"output_dir": str(output_dir), "clips": len(clips_out), "budget": budget,
             "source_predictions": str(source_path)}

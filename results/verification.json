@@ -1,0 +1,40 @@
+{
+  "frozen_core_unchanged": true,
+  "disjoint_sources": {
+    "pilot": 12,
+    "dev": 16,
+    "test": 32
+  },
+  "unique_checked_units": 7488,
+  "exact_budgets": true,
+  "reproduction": {
+    "checkout_commit": "975a23a",
+    "matching_rows": 7488,
+    "compared": [
+      "pixel_hash",
+      "labels",
+      "brief",
+      "selected_indices",
+      "predictions",
+      "resource_counts"
+    ],
+    "timing_compared": false
+  },
+  "environment_note": "Fresh source checkout, preinstalled pinned NumPy/Pillow. Clean network install and Docker build were not run; package download network is restricted.",
+  "automated_tests": {
+    "count": 49,
+    "passed": 49,
+    "command": "python -m unittest discover -s tests -v"
+  },
+  "demo": {
+    "cases": 6,
+    "verified_image_assets": 153,
+    "javascript_syntax": "passed",
+    "browser_visual_qa": "not_performed_environment_restrictions",
+    "human_labels": "pending"
+  },
+  "optional_vlm": {
+    "fake_transport_tests": 15,
+    "live_requests": 0
+  }
+}

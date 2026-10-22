@@ -57,8 +57,8 @@ python3 -m http.server --bind 127.0.0.1 8765 --directory demo
 ```
 
 The replay labels synthetic inputs, exact selected frame indices, per-method findings,
-ground-truth intervals and actual misses. GIF playback rounds timestamps; the integer
-frame timeline and lossless PNG frames are authoritative. `demo/human_review.csv` leaves
+ground-truth intervals and actual misses. The integer frame timeline and lossless
+PNG frames are authoritative. `demo/human_review.csv` leaves
 reviewer decisions blank. Human validation is **pending**.
 
 ## Reproduce
@@ -130,6 +130,7 @@ flowchart TD
 | [Error analysis](docs/error_analysis.md) | Concrete misses and duration/type/severity slices |
 | [Interview guide, Russian](docs/interview_ru.md) | Explain and defend the work without overstating it |
 | [VLM follow-up](docs/vlm_pilot.md) | Explicit budget/model requirements for future real inference |
+| [Verification record](docs/verification.md) | Independent artifact review, exact reproduction and remaining checks |
 
 The clean controls are easy and few; an observed zero false-alarm count is not a population
 guarantee. Source siblings are dependent and are resampled together. This dataset's high

@@ -1,5 +1,7 @@
 """Tests for faithful, safe replay export without production-model calls."""
 
+import csv
+import gzip
 import json
 import tempfile
 import unittest
@@ -61,12 +63,19 @@ class DemoTests(unittest.TestCase):
             self.assertNotIn("..", asset)
             self.assertTrue((base / "viewer" / asset).is_file())
             self.assertEqual(payload["clips"][0]["methods"]["uniform"], record)
+            script = (base / "viewer" / "data.js").read_text()
+            self.assertTrue(script.startswith("window.BRIEFGUARD_DATA = "))
+            self.assertEqual(json.loads(script.split(" = ", 1)[1].rstrip(";\n")), payload)
+            with (base / "viewer" / "human_review.csv").open() as handle:
+                audit = list(csv.DictReader(handle))
+            self.assertEqual(audit[0]["human_decision"], "")
+            self.assertEqual(audit[0]["reviewer"], "")
 
     def test_export_rejects_reconstruction_hash_mismatch(self):
         with tempfile.TemporaryDirectory() as temporary:
             base = Path(temporary)
             record = row("clip", "uniform", False, False)
-            record["frames_sha256"] = "not-a-matching-hash"
+            record["pixels_sha256"] = "not-a-matching-hash"
             (base / "predictions.jsonl").write_text(json.dumps(record) + "\n")
             clip = SimpleNamespace(clip_id="clip", source_id=1,
                                    frames=np.zeros((4, 4, 6, 3), dtype=np.uint8), brief={},
@@ -74,6 +83,16 @@ class DemoTests(unittest.TestCase):
             with patch("briefguard.data.iter_clips", return_value=iter([clip])):
                 with self.assertRaisesRegex(ValueError, "differ from run"):
                     export_demo(base, base / "viewer", {})
+
+    def test_gzip_predictions_are_read(self):
+        from briefguard.demo_export import _read_rows
+        with tempfile.TemporaryDirectory() as temporary:
+            path = Path(temporary)
+            record = row("clip", "uniform", False, False)
+            (path / "predictions.jsonl.gz").write_bytes(gzip.compress((json.dumps(record) + "\n").encode()))
+            rows, source = _read_rows(path)
+            self.assertEqual(rows, [record])
+            self.assertEqual(source.name, "predictions.jsonl.gz")
 
 
 if __name__ == "__main__":

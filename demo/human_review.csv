@@ -1,0 +1,7 @@
+clip_id,generator_type,expected_truth,generated_start_frame,generated_end_frame,human_decision,human_start_frame,human_end_frame,reviewer,notes
+s010000-distractor-clean-0,compliant,False,,,,,,,
+s010000-distractor-forbidden_patch-12,forbidden_patch,True,10,22,,,,,
+s010000-distractor-forbidden_patch-2,forbidden_patch,True,66,68,,,,,
+s010000-distractor-forbidden_patch-6,forbidden_patch,True,8,14,,,,,
+s010000-distractor-label_corruption-12,label_corruption,True,51,63,,,,,
+s010000-distractor-wrong_color-12,wrong_color,True,30,42,,,,,

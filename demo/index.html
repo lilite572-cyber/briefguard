@@ -16,6 +16,7 @@
  <section class="intro"><div><div class="eyebrow">A controlled sampling study</div><h1>What survives the frame budget?</h1><p>Inspect the exact frames behind each decision. Compare uniform, change-based and adaptive sampling on brief synthetic visual violations.</p><div class="status-strip"><span class="badge">SYNTHETIC BENCHMARK</span><span class="badge">REPLAY MODE</span><span class="badge">NO LIVE AI INFERENCE</span></div></div><span class="badge">HUMAN AUDIT PENDING</span></section>
  <div id="loading" class="loading">Loading completed run artifacts…</div><div id="error" class="error hidden" role="alert"></div>
  <div id="app" class="hidden">
+  <div id="researchResult" class="notice hidden"></div>
   <section id="summary" class="summary" aria-label="Complete run summary"></section>
   <div class="workspace">
    <div>
@@ -32,6 +33,7 @@
   <footer class="footer"><p>Amber regions show generated ground truth, not a model prediction. A green “pass” can still be a false approval. Cost includes the pixel prepass, selection and checker; generation is reported separately in run artifacts.</p><p id="runNote"></p></footer>
  </div>
 </main>
+<script src="data.js"></script>
 <script>
 'use strict';
 const $=id=>document.getElementById(id);
@@ -50,7 +52,9 @@ function renderSummary(){
  for(const item of [...state.data.summary].sort((a,b)=>order.indexOf(a.method)-order.indexOf(b.method))){
   const card=text('article','', 'metric-card'),head=text('div','', 'metric-head');head.append(text('span',names[item.method]||item.method),text('span',`${item.n_clips} CLIPS`));
   const value=text('div',percent(item.recall),'metric-value');value.append(text('span','violation recall'));
-  const foot=text('div','', 'metric-foot');foot.append(text('span',`${percent(item.false_approval_rate)} missed violations`),text('span',`${Number(item.mean_pipeline_ms||0).toFixed(2)} ms / clip`));card.append(head,value,foot);wrap.append(card);
+  const foot=text('div','', 'metric-foot');foot.append(text('span',`${percent(item.false_approval_rate)} false approvals`),text('span',`${Number(item.median_pipeline_ms??item.mean_pipeline_ms??0).toFixed(2)} ms ${item.median_pipeline_ms!=null?'median':'mean'}`));card.append(head,value,foot);
+  if(item.recall_ci95)card.append(text('div',`95% source-cluster CI: ${percent(item.recall_ci95[0])}–${percent(item.recall_ci95[1])}`, 'small'));
+  wrap.append(card);
  }
 }
 async function selectClip(index){
@@ -117,11 +121,14 @@ $('caseSelect').addEventListener('change',event=>selectClip(Number(event.target.
 $('play').addEventListener('click',()=>{state.playing=!state.playing;state.lastTick=0;$('play').textContent=state.playing?'Ⅱ':'▶';$('play').setAttribute('aria-label',state.playing?'Pause clip':'Play clip');});
 $('scrub').addEventListener('input',event=>{state.playing=false;$('play').textContent='▶';state.frame=Number(event.target.value);drawFrame();});
 $('showTruth').addEventListener('change',()=>{renderTimelines();drawFrame();});
-fetch('data.json').then(response=>{if(!response.ok)throw new Error(`data.json returned HTTP ${response.status}`);return response.json();}).then(async data=>{
+const replayData = window.BRIEFGUARD_DATA ? Promise.resolve(window.BRIEFGUARD_DATA) : fetch('data.json').then(response=>{if(!response.ok)throw new Error(`data.json returned HTTP ${response.status}`);return response.json();});
+replayData.then(async data=>{
  if(data.mode!=='replay'||!data.synthetic||!Array.isArray(data.clips)||!data.clips.length)throw new Error('This viewer requires an exported synthetic replay dataset.');
- state.data=data;renderSummary();data.clips.forEach((clip,i)=>{const option=text('option',`${String(i+1).padStart(2,'0')} · ${clip.reason}`);option.value=i;$('caseSelect').append(option);});
+ state.data=data;renderSummary();
+ if(data.hypothesis_supported===false){$('researchResult').classList.remove('hidden');$('researchResult').append(text('strong','Primary hypothesis not supported'),text('span','The adaptive method did not establish a recall gain over both baselines. Inspect the comparison and failure cases below; the complete run, including uncertainty, is retained in summary.json.'));}
+ data.clips.forEach((clip,i)=>{const option=text('option',`${String(i+1).padStart(2,'0')} · ${clip.reason}`);option.value=i;$('caseSelect').append(option);});
  $('loading').classList.add('hidden');$('app').classList.remove('hidden');await selectClip(0);requestAnimationFrame(tick);
-}).catch(error=>showError(`Replay not available: ${error.message}\n\nExport a completed run, then serve this folder with:\npython3 -m http.server --bind 127.0.0.1 8765 --directory demo\n\nOpen http://127.0.0.1:8765/ — direct file:// loading is not supported.`));
+}).catch(error=>showError(`Replay not available: ${error.message}\n\nExport a completed run, then open this index.html file alongside data.js and assets/.\n\nOptional server:\npython3 -m http.server --bind 127.0.0.1 8765 --directory demo`));
 </script>
 </body>
 </html>
