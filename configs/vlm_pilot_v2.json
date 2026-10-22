@@ -1,0 +1,53 @@
+{
+  "study_id": "briefguard-vlm-exploratory-v2",
+  "status": "prepared_human_review_pending_not_executed",
+  "methods": [
+    "uniform",
+    "change",
+    "adaptive"
+  ],
+  "frame_budget": 8,
+  "model": "gpt-4.1-mini-2025-04-14",
+  "provider": "OpenAI Responses API",
+  "max_output_tokens": 800,
+  "max_requests": 36,
+  "max_spend_usd": 0.5,
+  "reservation_usd": 0.01,
+  "retries": 1,
+  "input_usd_per_million": 0.4,
+  "output_usd_per_million": 1.6,
+  "planned_input_tokens_per_attempt": 10000,
+  "planned_logical_checks": 18,
+  "model_repetitions": 1,
+  "synthetic_clip_ids": [
+    "s002000-quiet-clean-0",
+    "s002001-quiet-missing_product-6",
+    "s002002-quiet-forbidden_patch-6"
+  ],
+  "natural_source": {
+    "source_id": "nasa-epic-20190417",
+    "title": "As the World Turns",
+    "page": "https://science.nasa.gov/resource/as-the-world-turns/",
+    "download_choice": "Downloads / Animation / GIF (2.07 MB)",
+    "credit": "NOAA/NASA EPIC Team",
+    "recording_date": "2019-04-17",
+    "rights": "NASA media guidelines: educational/informational use; no endorsement implied",
+    "rights_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+    "normalized_size": [
+      128,
+      128
+    ],
+    "variants": [
+      "clean",
+      "blackout",
+      "magenta_patch"
+    ],
+    "minimum_frames": 12,
+    "expected_frames": 12,
+    "expected_sha256": "4858503ffe82d78e5a95a13771f31b598c2ebdaebeea353a3d41f14b8b74d229"
+  },
+  "human_review_required": true,
+  "external_api_calls_to_date": 0,
+  "amends": "briefguard-vlm-exploratory-v1",
+  "amendment_reason": "The downloaded official NASA GIF contains 12 display frames; v1 assumed at least 16. Amendment made before any model inference."
+}

@@ -178,8 +178,13 @@ command-line success cannot establish.
 The separate [VLM pilot protocol](docs/vlm_pilot.md) and
 [natural-video protocol](docs/natural_video_pilot.md) are exploratory follow-ups.
 They do not change the original hypothesis, frozen hashes or held-out results.
-Live paid inference still requires Amir's explicit provider/model/budget approval;
-human labels and personal code review require actual human participation.
+The [v2 source-length amendment](docs/natural_video_pilot_v2.md) records the actual
+12-frame NASA GIF and preserves the original pilot. Its six-case, eighteen-check
+packet is prepared locally; no live model calls have run. The current combined
+authorization is $8 across this project and Creative Experiments, with $0.50
+allocated here for OpenAI `gpt-4.1-mini-2025-04-14`. Human labels, source confirmation
+and a privately configured API key remain necessary; personal code review requires
+actual human participation.
 
 ## Separate host
 

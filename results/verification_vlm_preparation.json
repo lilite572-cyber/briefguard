@@ -1,0 +1,28 @@
+{
+  "scope": "Pre-inference source-length amendment and offline preparation",
+  "tests": {
+    "command": ".venv-pilot/bin/python -m unittest discover -s tests -q",
+    "passed": 95,
+    "seconds": 17.048
+  },
+  "cases": 6,
+  "logical_checks": 18,
+  "external_api_calls": 0,
+  "api_cost_usd": 0,
+  "human_labels": "pending",
+  "source_confirmation": "pending",
+  "input_freeze_sha256": "1950efeb42c34c563fa95c1bf1d7b4f548d5d6d89565fe4d0d733d354fca32bb",
+  "v1_preserved": {
+    "briefguard/pilot.py": true,
+    "configs/vlm_pilot_v1.json": true,
+    "docs/natural_video_pilot.md": true
+  },
+  "cpu_frozen_hashes_match": {
+    "briefguard/data.py": true,
+    "briefguard/verifier.py": true,
+    "briefguard/sampling.py": true,
+    "briefguard/runner.py": true,
+    "briefguard/metrics.py": true,
+    "docs/protocol.md": true
+  }
+}

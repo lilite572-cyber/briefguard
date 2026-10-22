@@ -25,8 +25,36 @@ def main():
             p.add_argument("--run", type=Path, default=Path("results/test"))
             if name == "demo":
                 p.add_argument("--out", type=Path, default=Path("demo"))
+    pilot_parser = sub.add_parser("pilot", help="Run a separately versioned exploratory VLM pilot")
+    pilot_commands = pilot_parser.add_subparsers(dest="pilot_command", required=True)
+    for name in ("prepare", "run", "check"):
+        p = pilot_commands.add_parser(name)
+        p.add_argument("--protocol", choices=("v1", "v2"), default="v1")
+        if name == "prepare":
+            p.add_argument("--out", type=Path, required=True)
+            p.add_argument("--natural-input", type=Path)
+        else:
+            p.add_argument("--directory", type=Path, required=True)
+            if name == "run":
+                p.add_argument("--approve-openai-gpt41mini-usd050", action="store_true")
     args = parser.parse_args()
     try:
+        if args.command == "pilot":
+            if args.protocol == "v2":
+                from . import pilot_v2 as selected_pilot
+            else:
+                from . import pilot as selected_pilot
+            if args.pilot_command == "prepare":
+                plan = selected_pilot.prepare(args.out, args.natural_input)
+                result = {"protocol": args.protocol, "cases": len(plan["cases"]),
+                          "logical_checks": len(plan["jobs"]), "complete_data": plan["complete_data"], "live_requests": 0}
+            elif args.pilot_command == "check":
+                plan = selected_pilot.validate_preparation(args.directory)
+                result = {"protocol": args.protocol, "valid": True, "logical_checks": len(plan["jobs"]), "complete_data": plan["complete_data"]}
+            else:
+                result = selected_pilot.run(args.directory, args.approve_openai_gpt41mini_usd050)
+            print(json.dumps(result, indent=2))
+            return
         config = json.loads(args.config.read_text())
         if args.command == "run":
             print(json.dumps(run(config, args.split, args.out, args.frozen), indent=2))

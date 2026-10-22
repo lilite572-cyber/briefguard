@@ -19,3 +19,5 @@ results/*/*.jsonl
 results/private*/
 results/acceptance*/
 .venv-acceptance/
+
+.venv-pilot/
