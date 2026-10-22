@@ -1,0 +1,673 @@
+[
+  {
+    "case_id": "case-01",
+    "method": "adaptive",
+    "selected_indices": [
+      0,
+      7,
+      12,
+      21,
+      36,
+      60,
+      84,
+      95
+    ],
+    "verification_wall_seconds": 1.6699026669957675,
+    "result": {
+      "status": "fail",
+      "evidence": [
+        {
+          "frame_index": 60,
+          "reason": "Pixels of the forbidden red element appear in its specified inspection region, violating rule_3.",
+          "requirement": "rule_3"
+        }
+      ],
+      "model_version": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "input_tokens": 1010,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 43,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 1053
+      },
+      "estimated_api_cost_usd": 0.0004728
+    }
+  },
+  {
+    "case_id": "case-01",
+    "method": "change",
+    "selected_indices": [
+      4,
+      11,
+      32,
+      39,
+      53,
+      70,
+      88,
+      95
+    ],
+    "verification_wall_seconds": 2.0893652500235476,
+    "result": {
+      "status": "fail",
+      "evidence": [
+        {
+          "frame_index": 32,
+          "reason": "Forbidden red element pixels appear in the forbidden region, violating rule_3.",
+          "requirement": "rule_3"
+        }
+      ],
+      "model_version": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "input_tokens": 1010,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 40,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 1050
+      },
+      "estimated_api_cost_usd": 0.000468
+    }
+  },
+  {
+    "case_id": "case-01",
+    "method": "uniform",
+    "selected_indices": [
+      6,
+      18,
+      30,
+      42,
+      54,
+      66,
+      78,
+      90
+    ],
+    "verification_wall_seconds": 2.7858160409959964,
+    "result": {
+      "status": "pass",
+      "evidence": [],
+      "model_version": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "input_tokens": 1010,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 10,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 1020
+      },
+      "estimated_api_cost_usd": 0.00042
+    }
+  },
+  {
+    "case_id": "case-02",
+    "method": "adaptive",
+    "selected_indices": [
+      0,
+      12,
+      21,
+      33,
+      36,
+      60,
+      84,
+      95
+    ],
+    "verification_wall_seconds": 1.1779239170136862,
+    "result": {
+      "status": "pass",
+      "evidence": [],
+      "model_version": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "input_tokens": 1011,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 10,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 1021
+      },
+      "estimated_api_cost_usd": 0.0004204
+    }
+  },
+  {
+    "case_id": "case-02",
+    "method": "change",
+    "selected_indices": [
+      4,
+      14,
+      33,
+      39,
+      46,
+      56,
+      77,
+      88
+    ],
+    "verification_wall_seconds": 1.6167452919762582,
+    "result": {
+      "status": "indeterminate",
+      "evidence": [],
+      "model_version": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "input_tokens": 1011,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 11,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 1022
+      },
+      "estimated_api_cost_usd": 0.000422
+    }
+  },
+  {
+    "case_id": "case-02",
+    "method": "uniform",
+    "selected_indices": [
+      6,
+      18,
+      30,
+      42,
+      54,
+      66,
+      78,
+      90
+    ],
+    "verification_wall_seconds": 1.600783790985588,
+    "result": {
+      "status": "pass",
+      "evidence": [],
+      "model_version": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "input_tokens": 1011,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 10,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 1021
+      },
+      "estimated_api_cost_usd": 0.0004204
+    }
+  },
+  {
+    "case_id": "case-03",
+    "method": "adaptive",
+    "selected_indices": [
+      1,
+      2,
+      4,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "verification_wall_seconds": 1.48529870796483,
+    "result": {
+      "status": "pass",
+      "evidence": [],
+      "model_version": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "input_tokens": 514,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 10,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 524
+      },
+      "estimated_api_cost_usd": 0.0002216
+    }
+  },
+  {
+    "case_id": "case-03",
+    "method": "change",
+    "selected_indices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      8,
+      9,
+      10
+    ],
+    "verification_wall_seconds": 1.358917624980677,
+    "result": {
+      "status": "pass",
+      "evidence": [],
+      "model_version": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "input_tokens": 514,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 10,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 524
+      },
+      "estimated_api_cost_usd": 0.0002216
+    }
+  },
+  {
+    "case_id": "case-03",
+    "method": "uniform",
+    "selected_indices": [
+      0,
+      2,
+      3,
+      5,
+      6,
+      8,
+      9,
+      11
+    ],
+    "verification_wall_seconds": 1.357273833011277,
+    "result": {
+      "status": "pass",
+      "evidence": [],
+      "model_version": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "input_tokens": 514,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 10,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 524
+      },
+      "estimated_api_cost_usd": 0.0002216
+    }
+  },
+  {
+    "case_id": "case-04",
+    "method": "adaptive",
+    "selected_indices": [
+      0,
+      7,
+      12,
+      21,
+      36,
+      60,
+      84,
+      95
+    ],
+    "verification_wall_seconds": 1.0986241250066087,
+    "result": {
+      "status": "pass",
+      "evidence": [],
+      "model_version": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "input_tokens": 1010,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 10,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 1020
+      },
+      "estimated_api_cost_usd": 0.00042
+    }
+  },
+  {
+    "case_id": "case-04",
+    "method": "change",
+    "selected_indices": [
+      11,
+      18,
+      32,
+      53,
+      60,
+      77,
+      88,
+      95
+    ],
+    "verification_wall_seconds": 1.006241041002795,
+    "result": {
+      "status": "pass",
+      "evidence": [],
+      "model_version": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "input_tokens": 1010,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 10,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 1020
+      },
+      "estimated_api_cost_usd": 0.00042
+    }
+  },
+  {
+    "case_id": "case-04",
+    "method": "uniform",
+    "selected_indices": [
+      6,
+      18,
+      30,
+      42,
+      54,
+      66,
+      78,
+      90
+    ],
+    "verification_wall_seconds": 1.3354677500319667,
+    "result": {
+      "status": "pass",
+      "evidence": [],
+      "model_version": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "input_tokens": 1010,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 10,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 1020
+      },
+      "estimated_api_cost_usd": 0.00042
+    }
+  },
+  {
+    "case_id": "case-05",
+    "method": "adaptive",
+    "selected_indices": [
+      1,
+      2,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "verification_wall_seconds": 2.1245134999626316,
+    "result": {
+      "status": "fail",
+      "evidence": [
+        {
+          "frame_index": 6,
+          "reason": "A bright magenta rectangle overlays part of the Earth, obscuring the scene.",
+          "requirement": "no_magenta_overlay"
+        },
+        {
+          "frame_index": 7,
+          "reason": "A bright magenta rectangle overlays part of the Earth, obscuring the scene.",
+          "requirement": "no_magenta_overlay"
+        },
+        {
+          "frame_index": 8,
+          "reason": "A bright magenta rectangle overlays part of the Earth, obscuring the scene.",
+          "requirement": "no_magenta_overlay"
+        },
+        {
+          "frame_index": 9,
+          "reason": "A bright magenta rectangle overlays part of the Earth, obscuring the scene.",
+          "requirement": "no_magenta_overlay"
+        },
+        {
+          "frame_index": 10,
+          "reason": "A bright magenta rectangle overlays part of the Earth, obscuring the scene.",
+          "requirement": "no_magenta_overlay"
+        }
+      ],
+      "model_version": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "input_tokens": 514,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 166,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 680
+      },
+      "estimated_api_cost_usd": 0.0004712
+    }
+  },
+  {
+    "case_id": "case-05",
+    "method": "change",
+    "selected_indices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      9,
+      10
+    ],
+    "verification_wall_seconds": 1.7764951250283048,
+    "result": {
+      "status": "fail",
+      "evidence": [
+        {
+          "frame_index": 6,
+          "reason": "Opaque bright magenta rectangle overlays the bottom right of the Earth in this frame, obscuring part of the scene.",
+          "requirement": "no_magenta_overlay"
+        }
+      ],
+      "model_version": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "input_tokens": 514,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 49,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 563
+      },
+      "estimated_api_cost_usd": 0.000284
+    }
+  },
+  {
+    "case_id": "case-05",
+    "method": "uniform",
+    "selected_indices": [
+      0,
+      2,
+      3,
+      5,
+      6,
+      8,
+      9,
+      11
+    ],
+    "verification_wall_seconds": 2.379326249996666,
+    "result": {
+      "status": "fail",
+      "evidence": [
+        {
+          "frame_index": 6,
+          "reason": "An opaque bright magenta rectangle overlays part of the Earth, violating the requirement forbidding such overlays.",
+          "requirement": "no_magenta_overlay"
+        },
+        {
+          "frame_index": 8,
+          "reason": "A large opaque bright magenta rectangle overlays part of the Earth, violating the requirement forbidding such overlays.",
+          "requirement": "no_magenta_overlay"
+        }
+      ],
+      "model_version": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "input_tokens": 514,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 82,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 596
+      },
+      "estimated_api_cost_usd": 0.0003368
+    }
+  },
+  {
+    "case_id": "case-06",
+    "method": "adaptive",
+    "selected_indices": [
+      1,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "verification_wall_seconds": 1.5599219999858178,
+    "result": {
+      "status": "fail",
+      "evidence": [
+        {
+          "frame_index": 4,
+          "reason": "Frame is fully black; Earth is not visible.",
+          "requirement": "earth_visible"
+        },
+        {
+          "frame_index": 5,
+          "reason": "Frame is fully black; Earth is not visible.",
+          "requirement": "earth_visible"
+        },
+        {
+          "frame_index": 6,
+          "reason": "Frame is fully black; Earth is not visible.",
+          "requirement": "earth_visible"
+        }
+      ],
+      "model_version": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "input_tokens": 514,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 80,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 594
+      },
+      "estimated_api_cost_usd": 0.0003336
+    }
+  },
+  {
+    "case_id": "case-06",
+    "method": "change",
+    "selected_indices": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      8,
+      9,
+      10
+    ],
+    "verification_wall_seconds": 1.4596132499864325,
+    "result": {
+      "status": "pass",
+      "evidence": [],
+      "model_version": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "input_tokens": 514,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 10,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 524
+      },
+      "estimated_api_cost_usd": 0.0002216
+    }
+  },
+  {
+    "case_id": "case-06",
+    "method": "uniform",
+    "selected_indices": [
+      0,
+      2,
+      3,
+      5,
+      6,
+      8,
+      9,
+      11
+    ],
+    "verification_wall_seconds": 1.685207917005755,
+    "result": {
+      "status": "fail",
+      "evidence": [
+        {
+          "frame_index": 5,
+          "reason": "Earth is not visible; the frame is completely black, violating the requirement that Earth must remain visible in every supplied frame.",
+          "requirement": "earth_visible"
+        }
+      ],
+      "model_version": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "input_tokens": 514,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 48,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 562
+      },
+      "estimated_api_cost_usd": 0.0002824
+    }
+  }
+]

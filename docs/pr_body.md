@@ -29,15 +29,15 @@ results, not natural-video or VLM accuracy measurements.
 - Test malformed evidence, response references, interrupted imports, input limits
   and command generation. Reports limit judgments to selected frames.
 - Preserve actual owner-host installation, reproduction and Docker evidence.
-- Add an explicitly versioned NASA pilot v2 after the downloaded official GIF proved to contain 12 frames rather than v1's assumed minimum of 16. Pin its exact source hash, preserve all v1 files, and prepare six cases / eighteen checks without live inference.
-- Record a $0.50 OpenAI pilot allocation within the user's combined $8 authorization for BriefGuard and Creative Experiments. Human labels and private key setup remain pending.
+- Add an explicitly versioned NASA pilot v2 after the downloaded official GIF proved to contain 12 frames rather than v1's assumed minimum of 16. Pin its exact source hash, preserve all v1 files, and prepare six cases / eighteen checks before live inference.
+- Record a $0.50 OpenAI pilot allocation within the user's combined $8 authorization for BriefGuard and Creative Experiments. Amir subsequently supplied six human labels and source confirmation; all 18 live requests completed. Usage-based cost estimate: $0.006478.
 
 Supported workbench media: GIF, numeric NPZ and numbered PNG sequences. No MP4
 support is claimed. The browser page prepares files/commands; decoding and model
 execution run through the CLI. Imported JSON is operator-supplied and does not
 prove provider origin. Paid execution is gated. The current pilot authorization is
 OpenAI `gpt-4.1-mini-2025-04-14`, up to $0.50; it is not an additional allocation
-for running the workbench in parallel. No paid request was made during implementation.
+for running the workbench in parallel. The executed six-case exploratory pilot is documented in `docs/live_pilot_results.md`; no additional workbench spending was performed.
 
 ## Verification
 
@@ -58,15 +58,18 @@ CPU reproduction or Docker run, or establish live-model quality.
 The separate execution guard subsequently passed the complete 102-test local suite.
 It checks real human inputs and halts subsequent HTTP attempts when earlier usage
 or outcomes are unknown, without modifying the frozen v1/v2 runtime. The guarded
-runner has not executed live inference; human annotations remain pending.
+runner subsequently completed 18/18 live requests. Offline export verification
+recomputes the status metrics and token costs and records two citations outside
+human event intervals. Status agreement is not evidence-grounding accuracy.
 
 ## Remaining acceptance
 
 Replay browser checks passed for 18 case/method selections at 639 px;
 390/1280 px, missing-resource injection and workbench browser QA remain pending.
-Real human labels and live VLM/natural-video accuracy also remain pending. The small NASA pilot is separately frozen; one source and its artificial
-corruptions cannot validate advertising-video compliance. Neither that protocol
-nor fake-transport tests count as an executed model evaluation.
+The separate 16-case CPU human audit and personal code walkthrough remain pending.
+The six-case live VLM pilot now has actual owner labels and saved model responses;
+one natural source and its artificial corruptions cannot validate advertising-video
+compliance or establish sampler superiority. Frozen CPU results remain unchanged.
 
 The formal security workflow remains incomplete; bounded source/regression review
 must not be presented as a full audit. Implementation decisions and corrections

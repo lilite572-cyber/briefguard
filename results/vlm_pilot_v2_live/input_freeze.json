@@ -1,0 +1,85 @@
+{
+  "study_id": "briefguard-vlm-exploratory-v2",
+  "code_hashes": {
+    "configs/vlm_pilot_v2.json": "e1eaa3fff8f6599545b70847ee030d771ba80749a2dc4989fcc9b74899e11bb0",
+    "docs/natural_video_pilot_v2.md": "76b10b0ae51d4e1fd44e186fb318e7073340519378d65a12dc5ddaffc0713e22",
+    "briefguard/pilot_v2.py": "408074c04d4d67c28813652a10e71b6d06efb58f05627798d56e4415b165b250",
+    "briefguard/pilot.py": "a657fa0f83de21345d6f17df4c0600779ce08ab2146a77083670cba32f11b08c",
+    "configs/vlm_pilot_v1.json": "4263bfbccca8b6c6f09935fe295e808393e2ba6e1d6ae4a7fbf88aef718c13f9",
+    "docs/natural_video_pilot.md": "08bafd38c691148ec14daa51ac864daebf9f9f628235567e49bcccbc4c2177da",
+    "briefguard/vlm.py": "98dbc7d91cc3c6dfd20bd79ba646ec36e43c0cf05c3fc87f7ff5ac5dc07d49c5",
+    "briefguard/video.py": "9d1f5d315b573ffac9140bb688a7f583750a1640a87f7498ce6b406019a1c882",
+    "briefguard/sampling.py": "d8dc76c2416d5eea794fdf0c0a98c792ee15334b07bd1b9e768bec3bf625c5cf",
+    "briefguard/data.py": "ffe2ef72e17d0284eb393287b23cade2af0ce89c770665ab5c09e7f93318d9fb",
+    "configs/study.json": "984ed6bdc62c06a70feb3668aef6e0af2bd3f0751963ac4ffa6dc206f209e691"
+  },
+  "natural_source_sha256": "4858503ffe82d78e5a95a13771f31b598c2ebdaebeea353a3d41f14b8b74d229",
+  "cases": [
+    {
+      "case_id": "case-01",
+      "pixels_sha256": "1b3b4e47b11e95a646f78fed3bb72bd749d79bb6fa70b44b7fc5b0f0b48f0279",
+      "npy_sha256": "69cbf5e0110e3288dba16a3f08b0562510e61420881298a96ce593886745836c",
+      "shape": [
+        96,
+        72,
+        128,
+        3
+      ]
+    },
+    {
+      "case_id": "case-02",
+      "pixels_sha256": "8afa70bec762caf9b2ae26cbcc64a205a3bd0dc8ee62c53c679bfc554ebd631a",
+      "npy_sha256": "e7a73794806c030d866704352797ebcf3a778283a6ea39a7516a1e0fc2918d4f",
+      "shape": [
+        96,
+        72,
+        128,
+        3
+      ]
+    },
+    {
+      "case_id": "case-03",
+      "pixels_sha256": "1a771072ec9b81f102cf5537eb3676a5614d47728a1ae8a6466c7a2f678b1821",
+      "npy_sha256": "e6b4111818f687297f54ce1c8e0943d6cb97a2507a4e760a8d0ae46be9696f3c",
+      "shape": [
+        12,
+        128,
+        128,
+        3
+      ]
+    },
+    {
+      "case_id": "case-04",
+      "pixels_sha256": "c5619847c0a4df0fae181261d075dfc18361eca0586c12f855eb9748c9224876",
+      "npy_sha256": "82a9a7a6e01797260740b0f21bfe6110bbdc5cae1a2c021a3624e053962c3a89",
+      "shape": [
+        96,
+        72,
+        128,
+        3
+      ]
+    },
+    {
+      "case_id": "case-05",
+      "pixels_sha256": "c04130f06c45f864cacf4f6e9a9bb54017814b4c1d97ea3179a57f2f0c6e6bd9",
+      "npy_sha256": "50e20268dc508d929ee9943661f2fd81ba95b531e659cefe88c0eef9c2a87671",
+      "shape": [
+        12,
+        128,
+        128,
+        3
+      ]
+    },
+    {
+      "case_id": "case-06",
+      "pixels_sha256": "46a7a126272463568ee909da708a8c1d1db111b3d13ecce50b03a4bc0e38f232",
+      "npy_sha256": "704a3bb796be46b057eac9b7e32fd406ef43f0a0c1d98a587e97b01e0e0d0576",
+      "shape": [
+        12,
+        128,
+        128,
+        3
+      ]
+    }
+  ]
+}

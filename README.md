@@ -9,6 +9,11 @@ At eight frames per clip, the simple change sampler has the highest observed rec
 The adaptive heuristic did not demonstrate an improvement over it. This is a small
 CPU reference study; testing on natural generated videos is still pending.
 
+A separate [live VLM pilot](docs/live_pilot_results.md) completed 18 OpenAI checks
+on six human-reviewed cases. It exposes missed violations and inaccurate evidence
+timestamps; one natural source with artificial corruptions cannot establish
+real-world accuracy or sampler superiority. Usage-based cost estimate: $0.006478.
+
 Personal project of **Amir Asan**. Decisions, fixes and remaining
 personal checks are recorded in the [development notes](docs/development_notes.md).
 
@@ -78,7 +83,8 @@ ground-truth intervals and actual misses. The integer frame timeline and lossles
 PNG frames are authoritative. The gallery is explanatory and reveals the generator's
 answers. For an actual blinded label audit, use the separate
 [human-review package](docs/human_review.md); do not use the gallery as a blind test.
-Human validation is **pending** until a person submits labels.
+The 16-clip CPU audit remains pending. The separate six-case VLM pilot received
+Amir's observations before inference; these do not complete that larger audit.
 
 ## Reproduce
 
@@ -180,11 +186,11 @@ The separate [VLM pilot protocol](docs/vlm_pilot.md) and
 They do not change the original hypothesis, frozen hashes or held-out results.
 The [v2 source-length amendment](docs/natural_video_pilot_v2.md) records the actual
 12-frame NASA GIF and preserves the original pilot. Its six-case, eighteen-check
-packet is prepared locally; no live model calls have run. The current combined
-authorization is $8 across this project and Creative Experiments, with $0.50
-allocated here for OpenAI `gpt-4.1-mini-2025-04-14`. Human labels, source confirmation
-and a privately configured API key remain necessary; personal code review requires
-actual human participation.
+packet completed all 18 live checks after human labels and source confirmation.
+The [results and offline verification](docs/live_pilot_results.md) are separate
+from the frozen CPU study. The combined authorization is $8 across this project
+and Creative Experiments, with $0.50 allocated here for OpenAI
+`gpt-4.1-mini-2025-04-14`. Personal code review still requires actual participation.
 
 Use `python scripts/run_pilot_guarded.py --check-only` to check the prepared v2
 packet without reading a key or sending requests. The separate guarded runner

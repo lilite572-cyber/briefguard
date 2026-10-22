@@ -1,5 +1,21 @@
 # Verification record
 
+## 23 October 2026: live pilot completed
+
+The separate six-case v2 pilot executed 18/18 OpenAI requests on the owner's host
+using execution commit `1ba4029ae16b34a0a5cb23d4e4fe15aadbde4bd5`. Amir supplied
+all six labels and recognized the source before inference. One uncertain label is
+retained and excluded. Usage-based cost estimate: $0.006478; no unknown-usage
+attempts or operational failures. The [report](live_pilot_results.md) and
+[saved evidence](../results/vlm_pilot_v2_live/) supersede earlier pending status
+only for this pilot. The 16-case audit, personal code review and formal security
+workflow remain incomplete. Archived protocol statements describe preparation
+time and are preserved to keep their frozen hashes valid.
+
+Offline rechecking matches all status metrics and token costs and identifies two
+cited frames outside human event intervals. This is not a repeat of the CPU study,
+Docker acceptance, live inference or independent human evaluation.
+
 Checked on 2026-10-22. This record distinguishes automated source/artifact review
 from human annotation validation, which remains **pending**.
 
