@@ -8,10 +8,13 @@ The earlier formal scan remains incomplete as recorded in
 ## Revision and scope
 
 The starting immutable revision was
-`991edc8268bc8b57b7c33092af9f67ab3ece0b0b`. The follow-up examined the local
-single-user loader, VLM adapter, CLI, replay exporter/viewer, comparison script,
-packaging, and new evidence-validation changes. The final reviewed code commit
-is recorded below after integration; later commits are not automatically covered.
+`991edc8268bc8b57b7c33092af9f67ab3ece0b0b`. The integrated reviewed implementation
+is commit **`a28a651e801c1fc0f6bbeef0c0ee9cc8a0441c53`**. The follow-up examined
+the local single-user loader, VLM adapter and pilot workflow, CLI, replay
+exporter/viewer, comparison script, packaging, and new evidence-validation
+changes. This exact commit anchors the bounded static review, not a formal scan.
+A subsequent evidence/documentation-only commit does not change that reviewed
+implementation; later executable changes are not automatically covered.
 
 The assigned reviewer also implemented the evidence-validation fixes below.
 Those changes therefore have AI regression verification, not an independent
@@ -75,6 +78,11 @@ Recomputing the saved held-out summary from those validated rows matched exactly
 These are source/artifact checks; browser visual QA, human labels and paid model
 inference are separate evidence categories. The final integrated test count and
 exact revision belong to the current verification record.
+
+After integration, the coordinating agent reported **73 passing tests** at
+`a28a651e801c1fc0f6bbeef0c0ee9cc8a0441c53` and unchanged frozen analytical
+paths. This integration result is separate from the reviewer's intermediate
+66-test run above and does not mark the formal security workflow complete.
 
 ## Separate pilot review addendum
 
