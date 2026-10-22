@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "checked_commit": "26d2118d6b65f92e65d02f57a63615cb7f9604f7",
+  "evidence_origin": "Existing owner-host acceptance artifacts, inspected after execution; this continuation did not execute the Docker or network-install commands.",
+  "source_run_directory": "clean-acceptance-20261022T190943Z-y6bNmM",
+  "archive_integrity": {
+    "tracked_blobs_checked": 259,
+    "all_match_git_commit": true,
+    "mismatches": []
+  },
+  "fresh_install": "downloaded and installed numpy==2.3.5 and Pillow==12.3.0 in a fresh venv; pip check passed",
+  "host_tests": {
+    "passed": 73,
+    "seconds": 16.32
+  },
+  "docker_tests": {
+    "passed": 73,
+    "seconds": 11.172,
+    "network": "none as specified by acceptance.sh"
+  },
+  "docker_build": {
+    "status": "passed",
+    "image_tag": "briefguard-acceptance:26d2118d6b65",
+    "manifest_list": "sha256:68e2a251ad8a0e777a3f72e10bde5ed3918edfce70dbe704b51b6ba12a8c5553"
+  },
+  "deterministic_reproduction": {
+    "matching_rows": 7488,
+    "exact_evidence_match": true,
+    "timing_compared": false
+  },
+  "static_demo": {
+    "status": "passed",
+    "kind": "static_evidence_and_pixel_check",
+    "cases": 6,
+    "method_cases": 18,
+    "image_assets": 153,
+    "sprite_frames": 576,
+    "browser_visual_qa": "not_performed_by_this_script"
+  },
+  "not_established": [
+    "Browser interaction and console checks",
+    "Human annotation",
+    "Live VLM accuracy",
+    "Acceptance of later implementation changes"
+  ],
+  "current_continuation_environment": {
+    "docker": "daemon socket access denied by sandbox; no workaround attempted",
+    "git_network": "github.com DNS resolution failed",
+    "browser_socket": "prior explicit denial respected; no alternate route attempted"
+  },
+  "original_log_sha256": {
+    "dependencies.log": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09",
+    "docker-build.log": "2f715874e114118183ea3865928943ca5045d2b4701f0ed2e95e3397e3043be5",
+    "environment.log": "07a0c38b083d637ece508952e84b9d732343dc2d76204a9afa805eb4b734c4ed",
+    "compare.log": "6389772ac9f255c3f7cef4639ddde50456561c5b00d79dc30820e69a03b75077",
+    "reproduce.log": "037b2da56716bc4a6149d9c91036016f4679206ed14d74b6595906e3fa063026",
+    "docker-tests.log": "9792694b001732310c24e494d4989283c8df523d94a6515527fe47350605985d",
+    "demo.log": "3a5c23ef37313fa39a355b1cb45911480602205c04c8327e0fcdf6cf000c5fd0",
+    "tests.log": "1ee730aeedb49fa67c1c807b8183e5be77ddfddbfdb51fb22d45ab523a83831a",
+    "venv.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "install.log": "895d23bfcc1d3b34f44597adeee03b263f008826c39cab499b67be8c082cb492",
+    "docker-info.log": "44aa036f525345d00247760ef7e21d220614762d9c7295c30e254ad94f951ae8"
+  },
+  "note": "Historical verification_followup/status.json is retained unchanged; publication and owner-host installation/Docker status have advanced since that record."
+}

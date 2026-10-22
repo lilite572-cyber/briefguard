@@ -3,6 +3,23 @@
 Checked on 2026-10-22. This record distinguishes automated source/artifact review
 from human annotation validation, which remains **pending**.
 
+## Current acceptance update
+
+The owner-host acceptance for commit `26d2118d6b65f92e65d02f57a63615cb7f9604f7`
+completed successfully after the earlier restricted-environment attempts below.
+Its archive matches all 259 tracked blobs of that revision. Fresh dependency
+installation, 73 tests, all 7,488 deterministic reproduction rows, static demo
+checks, Docker build and 73 Docker tests passed. Preserved evidence and log
+hashes are in [verification_host](../results/verification_host/review.json).
+These observed host logs are not a claim that the restricted environment ran
+Docker, and they do not cover later code changes.
+
+The same commit is now published in the working branch and draft PR. Earlier
+publication/install/Docker blockers below describe historical attempts, not the
+latest owner-host outcome. Browser interaction, human labels and live VLM results
+remain separate outstanding checks. New workbench verification is recorded in
+[verification_workflow](../results/verification_workflow/status.json).
+
 ## Second AI review of source and saved results
 
 A separately tasked AI agent inspected `data.py`, `sampling.py`, `verifier.py`,

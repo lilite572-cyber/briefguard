@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "base_commit": "26d2118d6b65f92e65d02f57a63615cb7f9604f7",
+  "scope": "Current Python implementation including offline preparation, imported response validation and explicitly gated API execution; execution tests use fake transport only. Browser interaction and live provider compatibility not tested.",
+  "tests": {
+    "command": "python -m unittest discover -s tests -v",
+    "passed": 90,
+    "failed": 0,
+    "seconds": 9.756
+  },
+  "python": "3.12.14",
+  "dependencies": "preinstalled pinned runtime",
+  "independent_cli_smoke": {
+    "variable_duration_gif_timestamps_and_duration": "passed",
+    "budget_above_frame_count": "returns all four unique frames",
+    "duplicate_output": "exit 2; existing evidence preserved",
+    "unsupported_mp4": "exit 2; explicit conversion message; no output directory"
+  },
+  "import_interruption": "Staged write with completion marker last; injected report-write failure regression verifies identical-response-only recovery",
+  "paid_api_calls": 0,
+  "fixture_responses": "Synthetic fixtures and fake API transport; not research/model evidence or live provider compatibility",
+  "browser_visual_qa": "not executed",
+  "tested_file_sha256": {
+    "briefguard/workflow.py": "8b1953d470fc7724ffa5b63bf61075b3bcc9596ec27093cfaa5e40c8a48b2da4",
+    "tests/test_workflow.py": "e4be16abd639d07181fdbc233e30a8abb27384380d6cb4c9d0fe8f4cfdee7b7b"
+  },
+  "test_log_sha256": "b3ad75f169b3e0ea51741d59b4ce60bc47897292703538fb572d7892dddc74b5",
+  "workflow_tests": 17,
+  "guarded_execution_checks": [
+    "Approval, API key and exact dated model required before execution",
+    "Prepared request identity and shared cache verified",
+    "Shared spending ledger exhaustion refuses transport",
+    "Unexpected model and timeout retained as indeterminate",
+    "Durable in-progress marker prevents automatic resubmission after interrupted attempt",
+    "Imported and executed outcomes cannot silently replace one another"
+  ],
+  "actual_provider_calls": 0,
+  "docker_scope": "Prior owner-host Docker acceptance applies only to commit26d2118. Newly added workflow code has not been run in Docker; do not inherit the old acceptance."
+}

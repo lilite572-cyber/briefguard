@@ -1,72 +1,57 @@
-# BriefGuard: reproducible temporal sampling study and validation follow-up
+# BriefGuard: reproducible sampling study and local video-review workbench
 
-## Why
+## Problem and preserved result
 
-A sparse video checker can approve a clip because it missed a short violation,
-or because it failed to recognize evidence that it sampled. BriefGuard measures
-these failure modes separately, including the cost of content-aware preprocessing.
-This is a controlled CPU reference study, not a new model or a SOTA claim.
+Sparse video review can miss a brief violation because the event was not selected,
+or because the checker failed to recognize the selected evidence. BriefGuard
+measures those causes separately and includes preprocessing cost.
 
-## Preserved study and result
+The frozen CPU study remains unchanged: 832 clips / 32 source groups / 7,488 checks.
+At eight frames, recall is 34.90% uniform, 43.62% change and 41.54% adaptive.
+Adaptive minus change is -2.08 percentage points (95% interval -4.95 to +0.65).
+The prespecified hypothesis is not supported. These are synthetic pixel-checker
+results, not natural-video or VLM accuracy measurements.
 
-The original protocol, six frozen source/protocol hashes, splits and raw held-out
-results are unchanged. The study contains 832 clips from 32 source groups and
-7,488 checks. At eight frames, recall is 34.90% for uniform, 43.62% for change,
-and 41.54% for adaptive. Adaptive minus change is -2.08 percentage points
-(95% interval -4.95 to +0.65). The prespecified hypothesis is not supported.
-These results use synthetic pixels and a deterministic checker, not a VLM.
+## What changed
 
-## Completion changes
+- Validate complete evidence inventories and reject stale summaries; comparison
+  remains effective under optimized Python.
+- Provide a blinded 16-clip development review packet and strict label scorer.
+- Add a separate local workbench: requirements editor, selected frames with source
+  timestamps, exact request export, guarded API execution and response inspection.
+- Preserve request/response identity and use one persistent workbench spending
+  ledger across bundles. Preparation and import make no network requests.
+- Test malformed evidence, response references, interrupted imports, input limits
+  and command generation. Reports limit judgments to selected frames.
+- Preserve actual owner-host installation, reproduction and Docker evidence.
 
-- Validate complete run inventories, unique paired units, identity and annotations
-  before reporting or exporting a replay; reject stale saved summaries.
-- Replace comparison assertions with explicit checks that also work under `python -O`.
-- Add a static replay checker and a clean committed-source acceptance script.
-- Prepare a blinded human-review packet: 16 clips from distinct development
-  sources, unknown answers, draft/resume support, and a strict label scorer.
-- Add a separately frozen exploratory VLM preparation/execution workflow with
-  explicit human/source gates, fixed approval limits, bounded retries, recorded
-  outcomes and identity-bound resume. No paid inference was run.
-- Document actual acceptance gaps, bounded static review, AI contributions and
-  Russian interview preparation.
+Supported workbench media: GIF, numeric NPZ and numbered PNG sequences. No MP4
+support is claimed. The browser page prepares files/commands; decoding and model
+execution run through the CLI. Imported JSON is operator-supplied and does not
+prove provider origin. The guarded execution command requires separate model and
+budget approval; no paid request was made during implementation.
 
-## Executed verification
+## Verification
 
-- All 73 tests passed on the integrated implementation.
-- A clean archive of the published baseline reproduced all 7,488 deterministic
-  rows using preinstalled pinned dependencies. An independent AI recheck,
-  without importing BriefGuard, reproduced counts and paired bootstrap intervals.
-- The strict inventory validator accepted 832 clips / 32 groups / 7,488 rows.
-- Static replay checks verified six cases, 18 method-case mappings, 153 PNGs and
-  576 exact sprite frames. This is not browser interaction or console testing.
-- Partial pilot preparation produced three synthetic clips and nine selections.
-  Live API calls, human labels and natural-video evaluations: zero.
+Owner-host acceptance for commit `26d2118` passed fresh installation, 73 tests,
+all 7,488 deterministic reproduction rows, static demo checks, Docker build and
+73 Docker tests. All 259 archived source blobs match that commit.
 
-See `results/verification_followup/` and `docs/verification.md` for evidence,
-revision scope and environment limits. The historical verification is preserved.
+Current workbench test counts, exact file hashes and evidence are in
+`results/verification_workflow/`. Static JavaScript/DOM-stub checks are separate
+from real browser QA. The earlier Docker result does not automatically cover
+later implementation changes. See `docs/verification.md` for revision scopes.
 
-## Pending acceptance and empirical work
+## Remaining acceptance
 
-Fresh dependency downloads, Docker execution and browser visual QA were blocked
-in the agent environment. `scripts/acceptance.sh`, `scripts/finish_local.sh` and
-`docs/browser_checklist.md` make the remaining owner-run steps concrete.
-Human annotation and Amir's personal code walkthrough remain pending.
+Browser interaction, real human labels and live VLM/natural-video accuracy remain
+pending. The small NASA pilot is separately frozen; one source and its artificial
+corruptions cannot validate advertising-video compliance. Neither that protocol
+nor fake-transport tests count as an executed model evaluation.
 
-The proposed natural-media pilot uses one credited NOAA/NASA EPIC timelapse
-source, with separately documented provenance and human source confirmation.
-The source has not been downloaded here. Artificial corruptions of one source
-cannot establish accuracy on natural generated ads. The separate six-clip pilot
-requires approval for OpenAI `gpt-4.1-mini-2025-04-14`, a USD 0.50 total limit,
-and at most 36 attempts including retries, plus completed preparation and labels.
-It is exploratory and will not change the original hypothesis or held-out result.
+The formal security workflow remains incomplete; bounded source/regression review
+must not be presented as a full audit. Development history and contribution
+records are centralized in `docs/development_notes.md`.
 
-The earlier formal Codex Security scan remains incomplete. The follow-up is a
-bounded AI static/regression review with an exact code revision, not a full audit.
-
-## Contribution
-
-Amir Asan supplied the project brief, use case and constraints. Codex and delegated
-agents implemented the study and follow-up, executed automated experiments and
-checks, and drafted the analysis and documentation. Human annotations and Amir's
-own code review are not attributed to agents or marked complete. Keep this PR a
-draft until the remaining acceptance decisions are actually completed.
+Keep the PR in draft until outstanding acceptance is actually recorded. No merge
+or default-branch update is part of this work.

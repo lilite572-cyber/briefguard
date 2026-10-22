@@ -9,17 +9,8 @@ At eight frames per clip, the simple change sampler has the highest observed rec
 The adaptive heuristic did not demonstrate an improvement over it. This is a small
 CPU reference study; testing on natural generated videos is still pending.
 
-## Authorship and AI assistance
-
-Personal project of **Amir Asan**, developed with substantial Codex assistance.
-Amir supplied the project brief, target use case and laptop constraints. Codex and
-delegated AI agents drafted the literature review, protocol, implementation, tests
-and documentation, executed the experiments, and reviewed the saved results.
-Personal code review and human annotation checks have not yet been recorded.
-
-The [development notes](docs/development_notes.md) explain the choices made in this
-work session, concrete failures and fixes, and the checks Amir still needs to do.
-They distinguish agent work from completed personal work.
+Personal project of **Amir Asan**. Decisions, contribution history and remaining
+personal checks are recorded in the [development notes](docs/development_notes.md).
 
 For a concrete starting point, follow the [two-case walkthrough in Russian](docs/walkthrough_ru.md)
 and run `python scripts/explain_case.py`. It regenerates a clip, compares the
@@ -31,6 +22,11 @@ compares twelve primary sources, checked on 2026-10-22. The contribution here is
 the implemented experiment and its inspectable results.
 
 ## Results
+
+For a new local clip, use the [workbench](docs/workbench.md): write requirements,
+prepare selected frames and a request, then inspect a separately authorized model
+response. Preparation is offline. This product workflow is separate from the
+frozen experiment below; it supplies no new accuracy result by itself.
 
 <!-- BEGIN GENERATED RESULTS -->
 Held-out run `72b02803d9e0b835`: **32 source groups**, **832 clips** (768 violating, 64 clean), **7,488 recorded checks** across the prespecified budgets. Primary budget: **8 frames per clip**.
@@ -185,8 +181,9 @@ human labels and personal code review cannot be completed by an agent.
 ## Separate host
 
 For a CPU server, run the same commands with the same pinned dependencies and freeze.
-The included Dockerfile is an optional packaging recipe; its build was not executed in
-the restricted authoring environment. A heavier VLM study needs a separately reviewed
+The Dockerfile was built and its tests passed in the recorded owner-host acceptance
+for commit `26d2118`; see [host evidence](results/verification_host/review.json).
+A heavier VLM study needs a separately reviewed
 model/budget and human-labeled data. Do not silently mix its results into this CPU study.
 
 ## License and attribution
