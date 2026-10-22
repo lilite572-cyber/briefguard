@@ -1,0 +1,204 @@
+{
+  "status": "partial_offline_preparation_only",
+  "source_commit_before_changes": "991edc8268bc8b57b7c33092af9f67ab3ece0b0b",
+  "prepared_cases": 3,
+  "logical_frame_selections": 9,
+  "live_vlm_requests": 0,
+  "natural_video_prepared": false,
+  "natural_source_blocker": "curl failed to resolve science.nasa.gov in restricted shell",
+  "human_labels": "blank_pending",
+  "workflow_tests": {
+    "passed": 6,
+    "failed": 0,
+    "transport": "fake; temporary fixtures are not research labels"
+  },
+  "code_hashes": {
+    "configs/vlm_pilot_v1.json": "4263bfbccca8b6c6f09935fe295e808393e2ba6e1d6ae4a7fbf88aef718c13f9",
+    "docs/natural_video_pilot.md": "08bafd38c691148ec14daa51ac864daebf9f9f628235567e49bcccbc4c2177da",
+    "briefguard/pilot.py": "a657fa0f83de21345d6f17df4c0600779ce08ab2146a77083670cba32f11b08c",
+    "briefguard/vlm.py": "98dbc7d91cc3c6dfd20bd79ba646ec36e43c0cf05c3fc87f7ff5ac5dc07d49c5",
+    "briefguard/video.py": "9d1f5d315b573ffac9140bb688a7f583750a1640a87f7498ce6b406019a1c882",
+    "briefguard/sampling.py": "d8dc76c2416d5eea794fdf0c0a98c792ee15334b07bd1b9e768bec3bf625c5cf",
+    "briefguard/data.py": "ffe2ef72e17d0284eb393287b23cade2af0ce89c770665ab5c09e7f93318d9fb",
+    "configs/study.json": "984ed6bdc62c06a70feb3668aef6e0af2bd3f0751963ac4ffa6dc206f209e691"
+  },
+  "input_freeze_sha256": "3c3559980479e98ae09890111641468845d8894c434ced7acd19ff9573a99721",
+  "selections": [
+    {
+      "case_id": "case-01",
+      "method": "uniform",
+      "selected_indices": [
+        6,
+        18,
+        30,
+        42,
+        54,
+        66,
+        78,
+        90
+      ],
+      "prepass_seconds": 0.0,
+      "selection_seconds": 2.0791019778698683e-05,
+      "preprocessed_frames": 0,
+      "preprocessed_pixels": 0,
+      "injected_event_captured": false
+    },
+    {
+      "case_id": "case-01",
+      "method": "change",
+      "selected_indices": [
+        4,
+        11,
+        32,
+        39,
+        53,
+        70,
+        88,
+        95
+      ],
+      "prepass_seconds": 0.01271133398404345,
+      "selection_seconds": 8.750002598389983e-05,
+      "preprocessed_frames": 96,
+      "preprocessed_pixels": 884736,
+      "injected_event_captured": true
+    },
+    {
+      "case_id": "case-01",
+      "method": "adaptive",
+      "selected_indices": [
+        0,
+        7,
+        12,
+        21,
+        36,
+        60,
+        84,
+        95
+      ],
+      "prepass_seconds": 0.020485958026256412,
+      "selection_seconds": 9.054201655089855e-05,
+      "preprocessed_frames": 96,
+      "preprocessed_pixels": 884736,
+      "injected_event_captured": true
+    },
+    {
+      "case_id": "case-02",
+      "method": "uniform",
+      "selected_indices": [
+        6,
+        18,
+        30,
+        42,
+        54,
+        66,
+        78,
+        90
+      ],
+      "prepass_seconds": 0.0,
+      "selection_seconds": 5.707959644496441e-06,
+      "preprocessed_frames": 0,
+      "preprocessed_pixels": 0,
+      "injected_event_captured": false
+    },
+    {
+      "case_id": "case-02",
+      "method": "change",
+      "selected_indices": [
+        4,
+        14,
+        33,
+        39,
+        46,
+        56,
+        77,
+        88
+      ],
+      "prepass_seconds": 0.012619792018085718,
+      "selection_seconds": 4.654203075915575e-05,
+      "preprocessed_frames": 96,
+      "preprocessed_pixels": 884736,
+      "injected_event_captured": true
+    },
+    {
+      "case_id": "case-02",
+      "method": "adaptive",
+      "selected_indices": [
+        0,
+        12,
+        21,
+        33,
+        36,
+        60,
+        84,
+        95
+      ],
+      "prepass_seconds": 0.018166083027608693,
+      "selection_seconds": 7.529102731496096e-05,
+      "preprocessed_frames": 96,
+      "preprocessed_pixels": 884736,
+      "injected_event_captured": true
+    },
+    {
+      "case_id": "case-03",
+      "method": "uniform",
+      "selected_indices": [
+        6,
+        18,
+        30,
+        42,
+        54,
+        66,
+        78,
+        90
+      ],
+      "prepass_seconds": 0.0,
+      "selection_seconds": 5.208014044910669e-06,
+      "preprocessed_frames": 0,
+      "preprocessed_pixels": 0,
+      "injected_event_captured": null
+    },
+    {
+      "case_id": "case-03",
+      "method": "change",
+      "selected_indices": [
+        11,
+        18,
+        32,
+        53,
+        60,
+        77,
+        88,
+        95
+      ],
+      "prepass_seconds": 0.012690625037066638,
+      "selection_seconds": 3.550003748387098e-05,
+      "preprocessed_frames": 96,
+      "preprocessed_pixels": 884736,
+      "injected_event_captured": null
+    },
+    {
+      "case_id": "case-03",
+      "method": "adaptive",
+      "selected_indices": [
+        0,
+        7,
+        12,
+        21,
+        36,
+        60,
+        84,
+        95
+      ],
+      "prepass_seconds": 0.018063790979795158,
+      "selection_seconds": 7.79579859226942e-05,
+      "preprocessed_frames": 96,
+      "preprocessed_pixels": 884736,
+      "injected_event_captured": null
+    }
+  ],
+  "full_plan_estimate_usd": 0.19008,
+  "requested_cap_usd": 0.5,
+  "max_http_attempts": 36,
+  "total_possible_reservations_usd": 0.36,
+  "accuracy_results": null
+}

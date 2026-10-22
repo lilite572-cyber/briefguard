@@ -2,6 +2,8 @@ __pycache__/
 *.py[cod]
 .venv/
 *.egg-info/
+build/
+dist/
 .DS_Store
 .env
 .env.*
@@ -14,3 +16,6 @@ results/pilot/
 results/*/*.jsonl
 !results/*/errors.jsonl
 *.tmp
+results/private*/
+results/acceptance*/
+.venv-acceptance/

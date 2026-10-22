@@ -1,6 +1,10 @@
 # Error analysis
 
-Derived from held-out run `72b02803d9e0b835` at K=8. All slices below were prespecified, are descriptive, and were not used to tune the algorithm.
+Derived from held-out run `72b02803d9e0b835` at K=8. Type, duration and motion slices
+were explicitly prespecified in the protocol. Severity was implemented in the
+frozen analysis code and is reported as a descriptive diagnostic; the protocol
+did not explicitly list it as a prespecified slice.
+None of these viewed test slices was used to tune the algorithm.
 
 ## Separate sampling misses from checker misses
 

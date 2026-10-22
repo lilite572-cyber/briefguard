@@ -5,6 +5,10 @@ The separate bounded static review described below found no confirmed exploitabl
 security vulnerability in the inspected local, single-user research workflow.
 This is not a security certification or a completed formal clean scan.
 
+For the continuation, see the separately scoped
+[follow-up static review](security_review_followup.md). It does not complete or
+change the immutable formal scan documented here.
+
 ## Exact scope
 
 The formal scan and core source review target the immutable range:

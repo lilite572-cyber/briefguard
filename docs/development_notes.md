@@ -4,6 +4,30 @@ These notes describe the recorded work session on 2026-10-22. They are not a
 retrospective personal diary. The implementation and initial analysis were done
 by Codex and delegated AI agents in response to Amir Asan's project brief.
 
+## Continuation from the published branch
+
+The continuation started from the clean published head
+`991edc8268bc8b57b7c33092af9f67ab3ece0b0b`. GitHub PR #1 was checked and had the
+same head. The original `Pasted text(1).txt` task was read in full. Work continued
+in an isolated local clone on `research/briefguard`; the earlier checkout was
+left unchanged. The original protocol, freeze, analytical sources and held-out
+artifacts remain the historical experiment, not a development set for tuning.
+
+Codex performed the follow-up implementation and execution. Separately tasked
+AI agents reviewed methodology and input/output boundaries and prepared the
+VLM-pilot and blinded human-review workflows. These are additional AI reviews,
+not independent human experts. Amir requested the continuation and its acceptance
+criteria; he has not yet supplied human labels, a paid-API approval or a record
+of personal code review.
+
+Fresh-source reproduction again matched all 7,488 deterministic rows. The
+comparison script's use of Python `assert` was identified as a verification
+defect: optimized Python can omit assertions. Follow-up changes make comparison
+fail explicitly and validate completed evidence before reporting it. This fixes
+verification and presentation; it does not amend or rerun a corrected sampling
+algorithm. See [verification](verification.md) for the final executed scope and
+remaining environment restrictions.
+
 ## Starting point
 
 Amir wanted a research project about short advertising-video brief violations,

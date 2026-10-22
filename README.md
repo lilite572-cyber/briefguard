@@ -76,8 +76,10 @@ python3 -m http.server --bind 127.0.0.1 8765 --directory demo
 
 The replay labels synthetic inputs, exact selected frame indices, per-method findings,
 ground-truth intervals and actual misses. The integer frame timeline and lossless
-PNG frames are authoritative. `demo/human_review.csv` leaves
-reviewer decisions blank. Human validation is **pending**.
+PNG frames are authoritative. The gallery is explanatory and reveals the generator's
+answers. For an actual blinded label audit, use the separate
+[human-review package](docs/human_review.md); do not use the gallery as a blind test.
+Human validation is **pending** until a person submits labels.
 
 ## Reproduce
 
@@ -93,6 +95,8 @@ python -m briefguard run --split test --out results/reproduce
 python scripts/compare_runs.py results/test results/reproduce
 ```
 
+Run these commands from the repository root. This is a source-checkout research
+application; the Python wheel alone does not include the frozen study and demo assets.
 The last command compares pixels, briefs, selections, predictions, labels and resources
 exactly. Latency is machine dependent and is intentionally excluded from equality.
 Run the same command again to resume: successful units are loaded from the atomic cache
@@ -159,6 +163,24 @@ risk. The static camera, known template regions, simple shapes and synthetic cor
 limit generalization. There are no natural generated-video failures, independent human
 labels, VLM experiments, confidence calibration or selective-risk guarantees in this run.
 Real ad compliance remains unvalidated.
+
+## Completion and follow-up
+
+The [verification record](docs/verification.md) separates passed checks from checks
+blocked by the execution environment. The original run and historical verification
+record are retained; new evidence is recorded separately. The original task document
+was available and checked against this continuation.
+
+For a fresh machine, `PYTHON_BIN=python3.12 bash scripts/acceptance.sh` performs the
+install, tests, reproduction and artifact checks and records the outcome. See the
+[browser checklist](docs/browser_checklist.md) for the interactive checks that a
+command-line success cannot establish.
+
+The separate [VLM pilot protocol](docs/vlm_pilot.md) and
+[natural-video protocol](docs/natural_video_pilot.md) are exploratory follow-ups.
+They do not change the original hypothesis, frozen hashes or held-out results.
+Live paid inference still requires Amir's explicit provider/model/budget approval;
+human labels and personal code review cannot be completed by an agent.
 
 ## Separate host
 

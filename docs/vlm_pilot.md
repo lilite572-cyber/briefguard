@@ -1,10 +1,15 @@
-# Optional real-model pilot (not executed)
+# Optional real-model pilot (prepared; live inference not executed)
 
 The published CPU experiment uses `pixel-template-v1`. `briefguard.vlm.ResponsesPilot` is a separately invoked OpenAI Responses API adapter; the experiment runner never calls it. All adapter tests use fake transport and fake credentials. They validate request construction and failure handling, not model accuracy or live compatibility.
 
 ## Authorization and cost
 
-There is no default model or budget. Before running, the user must approve a request limit and estimated USD budget, review current model pricing, select a vision/Structured-Outputs-capable **dated snapshot**, and set `OPENAI_API_KEY` outside the repository. Never commit the key or pass it as a command-line argument.
+The low-level adapter has no default model or budget. The executable pilot's
+configuration is a proposal, not authorization. Before running, the user must
+approve the request limit and estimated USD budget, review current model pricing,
+select a vision/Structured-Outputs-capable **dated snapshot**, and set
+`OPENAI_API_KEY` outside the repository. Never commit the key or pass it as a
+command-line argument.
 
 `reservation_usd` is a **user-reviewed conservative estimate per attempt**, including image input tokens, other input and the configured maximum output. `max_spend_usd` limits the sum of these reservations; it is **not a guaranteed provider billing cap**. Tokenization, model pricing, failed requests, other applications and billing adjustments can invalidate an estimate. If a conservative reservation cannot be established, do not run. Confirm the amount with the user first. The adapter computes `estimated_api_cost_usd = (input_tokens × reviewed_input_rate + output_tokens × reviewed_output_rate) / 1,000,000` from returned usage, without cached-token discounts. Missing or invalid usage produces `null`, not a zero-cost claim. The reviewed rates are retained in the ledger; the adapter does not discover prices or authorize spending itself.
 
@@ -14,9 +19,13 @@ Every attempt, including HTTP retries and unknown-outcome timeouts, consumes one
 
 ## Concrete pilot estimate — awaiting authorization
 
-Proposal: 6 development clips × 3 samplers × 8 frames = 18 logical checks,
-with at most one retry each (36 HTTP attempts). Keep the test split untouched.
-Use the same selected frames and structured brief for every sampler. This is an
+Executable proposal: 3 fixed development clips plus 3 siblings of one NASA EPIC
+natural-source timelapse × 3 samplers × 8 frames = 18 logical checks, with at most
+one retry each (36 HTTP attempts). See the separate
+[pilot protocol and commands](natural_video_pilot.md) and
+`configs/vlm_pilot_v1.json`. Keep the original held-out test untouched.
+Use the same frame count, resolution and structured brief for every sampler;
+selected frame indices differ by sampler. This is an
 integration pilot, too small for a general accuracy claim; human review is required.
 
 For a dated reference model, `gpt-4.1-mini-2025-04-14`, the official model page
@@ -86,3 +95,22 @@ Official API documentation checked on 2026-10-22:
 - [Error codes](https://developers.openai.com/api/docs/guides/error-codes)
 
 No live API request was made while implementing this adapter.
+
+## Prepared workflow
+
+`python -m briefguard.pilot prepare --out results/private-vlm-pilot` runs offline,
+freezes code/pixels before sampling and builds a blinded review page and blank
+human CSV. Without the NASA GIF it explicitly produces a partial preparation;
+paid execution refuses it. The full preparation accepts `--natural-input` only
+for the named source, whose original bytes and human provenance confirmation are
+recorded. The live command additionally requires complete human labels and the
+explicit approval flag documented in the separate protocol. Resumption binds
+human labels, source confirmation, code, pixel files, plan and logical outcomes.
+
+A synthetic-only preparation executed nine logical frame selections from three
+clips with zero network calls. Six added workflow tests use fixtures and fake
+transport; they do not supply human research labels or prove live API behavior.
+The NASA source was selected and its credit/educational-use terms checked, but
+could not be downloaded in the restricted shell. No natural-video or VLM result
+is claimed. Complete that acquisition and personal review before requesting the
+18-check paid run. Do not publish `results/private*` without inspecting payloads.

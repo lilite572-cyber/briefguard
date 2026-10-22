@@ -1,0 +1,70 @@
+{
+  "review_type": "separate_AI_agent_statistical_artifact_audit",
+  "human_review": false,
+  "baseline_commit": "991edc8268bc8b57b7c33092af9f67ab3ece0b0b",
+  "implementation": "Independent stdlib/NumPy calculations; no BriefGuard imports",
+  "numpy": "2.3.5",
+  "unique_checks": 7488,
+  "clips": 832,
+  "test_source_groups": 32,
+  "disjoint_sources": {
+    "pilot": 12,
+    "dev": 16,
+    "test": 32
+  },
+  "frozen_hashes_match": 6,
+  "paired_clip_inventory": true,
+  "exact_frame_budgets": true,
+  "half_open_coverage_verified": true,
+  "k8": {
+    "uniform": {
+      "tp": 268,
+      "positive": 768,
+      "fp": 0,
+      "clean": 64,
+      "false_approvals": 500,
+      "event_captures": 429
+    },
+    "change": {
+      "tp": 335,
+      "positive": 768,
+      "fp": 0,
+      "clean": 64,
+      "false_approvals": 433,
+      "event_captures": 495
+    },
+    "adaptive": {
+      "tp": 319,
+      "positive": 768,
+      "fp": 0,
+      "clean": 64,
+      "false_approvals": 449,
+      "event_captures": 468
+    }
+  },
+  "bootstrap": {
+    "draws": 2000,
+    "seed": 572,
+    "unit": "paired source clusters",
+    "adaptive_minus_uniform_pp": {
+      "point": 6.640625,
+      "ci95": [
+        2.9947916666666665,
+        10.15625
+      ]
+    },
+    "adaptive_minus_change_pp": {
+      "point": -2.083333333333333,
+      "ci95": [
+        -4.947916666666667,
+        0.6510416666666666
+      ]
+    },
+    "matches_saved_summary": true
+  },
+  "limits": [
+    "No human annotation validity",
+    "No natural-video/VLM accuracy",
+    "No full-code correctness or security certification"
+  ]
+}
