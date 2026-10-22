@@ -3,9 +3,9 @@
 Checked on 2026-10-22. This record distinguishes automated source/artifact review
 from human annotation validation, which remains **pending**.
 
-## Independent source and artifact review
+## Second AI review of source and saved results
 
-A second automated reviewer inspected `data.py`, `sampling.py`, `verifier.py`,
+A separately tasked AI agent inspected `data.py`, `sampling.py`, `verifier.py`,
 `runner.py`, `metrics.py`, and the experiment protocol. Selectors receive pixels
 only; the verifier receives selected pixels and the public template. Ground-truth
 intervals enter scoring, not selection or verification. The paired bootstrap

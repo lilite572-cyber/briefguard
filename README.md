@@ -1,20 +1,30 @@
 # BriefGuard
 
-**When a video checker sees only a few frames, what does it miss?**
+This experiment asks whether choosing frames by their visual content helps a video
+checker catch short violations. It compares three samplers on synthetic clips using
+the same pixel checker. Sampling an event and recognizing it are measured separately.
+The timing includes each sampler's preprocessing.
 
-A reproducible CPU reference study of transient visual brief violations. It compares
-uniform, global-change and adaptive local-novelty sampling, separating **evidence capture**
-from **checker accuracy**, and charges the complete preprocessing cost.
+At eight frames per clip, the simple change sampler has the highest observed recall.
+The adaptive heuristic did not demonstrate an improvement over it. This is a small
+CPU reference study; testing on natural generated videos is still pending.
 
-![Concept cover](demo/concept-cover.png)
+## Authorship and AI assistance
 
-*AI-generated concept illustration; not a dataset frame or experimental result.*
+Personal project of **Amir Asan**, developed with substantial Codex assistance.
+Amir supplied the project brief, target use case and laptop constraints. Codex and
+delegated AI agents drafted the literature review, protocol, implementation, tests
+and documentation, executed the experiments, and reviewed the saved results.
+Personal code review and human annotation checks have not yet been recorded.
 
-The contribution is an auditable evaluation harness and a controlled negative result,
-not a new sampling paradigm or a production advertising-compliance system. The closest
-prior, [InfoShot/SynFlash](https://arxiv.org/abs/2603.17374), already studies short synthetic
-anomalies. The [related-work table](docs/related_work.md) compares twelve primary sources,
-including VBench, VBench-2.0 and VTR-Bench, checked on 2026-10-22.
+The [development notes](docs/development_notes.md) explain the choices made in this
+work session, concrete failures and fixes, and the checks Amir still needs to do.
+They distinguish agent work from completed personal work.
+
+The closest prior, [InfoShot/SynFlash](https://arxiv.org/abs/2603.17374), already
+studies short synthetic anomalies. The [related-work table](docs/related_work.md)
+compares twelve primary sources, checked on 2026-10-22. The contribution here is
+the implemented experiment and its inspectable results.
 
 ## Results
 
@@ -39,12 +49,16 @@ Measured test execution: 41.16 s, peak process RSS 227.1 MiB, external API spend
 Every value above derives from `results/test/summary.json`, `metadata.json`, and the compressed predictions; regenerate this block with `python scripts/update_readme.py`.
 <!-- END GENERATED RESULTS -->
 
-Interpretation: the adaptive heuristic is a plausible implementation choice, but this
-experiment does not justify its extra complexity over the simple change baseline.
-Small fixed-template requirements are much narrower than semantic brief understanding.
-Subtle violations deliberately fall below the pixel checker's engineering tolerances;
-their failure is a **known diagnostic limitation by construction**, not an unexpected
-discovery about a learned model. No thresholds were tuned on the held-out results.
+The adaptive method costs more preprocessing time without a demonstrated recall
+advantage over change sampling. One useful case to inspect is
+`s010000-distractor-forbidden_patch-6`: the violation occupies frames [8,14), while
+uniform selection takes frames 6 and 18 on either side and misses it.
+
+Some subtle violations are deliberately below the pixel checker's tolerances. Even
+selecting the right frame cannot make that checker recognize them. This known
+limitation helps separate sampling failures from checker failures, but says nothing
+about how a VLM would perform. See the [error analysis](docs/error_analysis.md).
+No thresholds were tuned on the held-out results.
 
 ## Replay in seconds
 
@@ -129,6 +143,7 @@ flowchart TD
 | [Manifest](results/test/manifest.jsonl.gz) | Source grouping and per-clip identities |
 | [Error analysis](docs/error_analysis.md) | Concrete misses and duration/type/severity slices |
 | [Interview guide, Russian](docs/interview_ru.md) | Explain and defend the work without overstating it |
+| [Development notes](docs/development_notes.md) | Decisions, fixes, AI contribution and pending personal review |
 | [VLM follow-up](docs/vlm_pilot.md) | Explicit budget/model requirements for future real inference |
 | [Verification record](docs/verification.md) | Independent artifact review, exact reproduction and remaining checks |
 | [Security review status](docs/security_review.md) | Scoped source review and the incomplete formal scan |

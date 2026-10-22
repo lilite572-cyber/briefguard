@@ -22,3 +22,10 @@ The held-out run covers 832 clips from 32 source groups, with 7,488 checks acros
 ## Scope
 
 This is a controlled CPU reference study, not evidence of production accuracy on natural generated video. Human annotation review, live VLM evaluation, Docker build and browser visual QA remain pending. The formal security workflow status is documented separately.
+
+## AI assistance
+
+Amir Asan supplied the project brief and constraints. Codex and delegated agents
+implemented the study, ran the experiments and drafted the documentation. Personal
+code review and human annotation checks remain pending; development notes record
+the current division of work and the checks needed before presenting the project.
