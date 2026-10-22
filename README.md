@@ -21,6 +21,10 @@ The [development notes](docs/development_notes.md) explain the choices made in t
 work session, concrete failures and fixes, and the checks Amir still needs to do.
 They distinguish agent work from completed personal work.
 
+For a concrete starting point, follow the [two-case walkthrough in Russian](docs/walkthrough_ru.md)
+and run `python scripts/explain_case.py`. It regenerates a clip, compares the
+three methods with saved evidence, and recomputes their recall from the run rows.
+
 The closest prior, [InfoShot/SynFlash](https://arxiv.org/abs/2603.17374), already
 studies short synthetic anomalies. The [related-work table](docs/related_work.md)
 compares twelve primary sources, checked on 2026-10-22. The contribution here is
