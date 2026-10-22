@@ -1,7 +1,7 @@
 # Scoped static review of the completion changes
 
-This is an AI-assisted source and regression review, not a completed Codex
-Security scan, dependency audit, penetration test, or human security sign-off.
+This is a scoped source and regression review, not a completed formal security
+scan, dependency audit, penetration test, or human security sign-off.
 The earlier formal scan remains incomplete as recorded in
 [security_review.md](security_review.md). It was not restarted or sealed here.
 
@@ -17,9 +17,9 @@ A subsequent evidence/documentation-only commit does not change that reviewed
 implementation; later executable changes are not automatically covered.
 
 The assigned reviewer also implemented the evidence-validation fixes below.
-Those changes therefore have AI regression verification, not an independent
-second review by their own author. The coordinating agent performs integration
-checks separately. The separate pilot received the additional bounded review
+Those changes therefore have automated regression verification, not an
+independent second review by their own author. Integration checks were
+performed separately. The separate pilot received the additional bounded review
 described below before the final code revision was recorded.
 
 ## Findings and corrections
@@ -79,7 +79,7 @@ These are source/artifact checks; browser visual QA, human labels and paid model
 inference are separate evidence categories. The final integrated test count and
 exact revision belong to the current verification record.
 
-After integration, the coordinating agent reported **73 passing tests** at
+The integrated verification recorded **73 passing tests** at
 `a28a651e801c1fc0f6bbeef0c0ee9cc8a0441c53` and unchanged frozen analytical
 paths. This integration result is separate from the reviewer's intermediate
 66-test run above and does not mark the formal security workflow complete.

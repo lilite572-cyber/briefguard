@@ -6,7 +6,7 @@ form. No model selections, predictions, generator answers, event intervals or
 source names are shipped in the reviewer payload. The evaluator mapping is kept
 outside that directory in `human_review/evaluator_key.json`.
 
-**No human labels have been supplied.** Agent inspection, asset tests and automated
+**No human labels have been supplied.** Source inspection, asset tests and automated
 parser fixtures do not complete human review. Browser interaction QA for this new
 form is also pending because the current environment cannot open the local page.
 

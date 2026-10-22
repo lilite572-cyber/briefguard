@@ -1,0 +1,92 @@
+[
+  {
+    "case": 0,
+    "method": "Uniform",
+    "loaded": true
+  },
+  {
+    "case": 0,
+    "method": "Frame change",
+    "loaded": true
+  },
+  {
+    "case": 0,
+    "method": "Adaptive",
+    "loaded": true
+  },
+  {
+    "case": 1,
+    "method": "Uniform",
+    "loaded": true
+  },
+  {
+    "case": 1,
+    "method": "Frame change",
+    "loaded": true
+  },
+  {
+    "case": 1,
+    "method": "Adaptive",
+    "loaded": true
+  },
+  {
+    "case": 2,
+    "method": "Uniform",
+    "loaded": true
+  },
+  {
+    "case": 2,
+    "method": "Frame change",
+    "loaded": true
+  },
+  {
+    "case": 2,
+    "method": "Adaptive",
+    "loaded": true
+  },
+  {
+    "case": 3,
+    "method": "Uniform",
+    "loaded": true
+  },
+  {
+    "case": 3,
+    "method": "Frame change",
+    "loaded": true
+  },
+  {
+    "case": 3,
+    "method": "Adaptive",
+    "loaded": true
+  },
+  {
+    "case": 4,
+    "method": "Uniform",
+    "loaded": true
+  },
+  {
+    "case": 4,
+    "method": "Frame change",
+    "loaded": true
+  },
+  {
+    "case": 4,
+    "method": "Adaptive",
+    "loaded": true
+  },
+  {
+    "case": 5,
+    "method": "Uniform",
+    "loaded": true
+  },
+  {
+    "case": 5,
+    "method": "Frame change",
+    "loaded": true
+  },
+  {
+    "case": 5,
+    "method": "Adaptive",
+    "loaded": true
+  }
+]

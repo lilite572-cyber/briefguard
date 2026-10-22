@@ -81,7 +81,7 @@ with the clean sibling. That verifies rendering mechanics, not perceptual or
 semantic validity. Before using this dataset for external claims, a human should
 review a stratified subset spanning type, duration, motion and subtlety, record
 `confirmed`, `ambiguous` or `incorrect`, and annotate any corrected intervals.
-Model or agent inspection is not a substitute for that human audit.
+Automated inspection is not a substitute for that human audit.
 
 ## Reproducibility and resources
 

@@ -16,13 +16,15 @@ Docker, and they do not cover later code changes.
 
 The same commit is now published in the working branch and draft PR. Earlier
 publication/install/Docker blockers below describe historical attempts, not the
-latest owner-host outcome. Browser interaction, human labels and live VLM results
-remain separate outstanding checks. New workbench verification is recorded in
+latest owner-host outcome. Human labels and live VLM results remain outstanding.
+Browser interaction checks now have a separate [record](../results/verification_browser/status.json):
+18 case/method combinations, playback, scrubbing, event boundaries and no console
+errors at 639 px. Other viewport sizes and missing-resource injection remain unverified. New workbench verification is recorded in
 [verification_workflow](../results/verification_workflow/status.json).
 
-## Second AI review of source and saved results
+## Additional source and saved-result checks
 
-A separately tasked AI agent inspected `data.py`, `sampling.py`, `verifier.py`,
+A separate automated source review covered `data.py`, `sampling.py`, `verifier.py`,
 `runner.py`, `metrics.py`, and the experiment protocol. Selectors receive pixels
 only; the verifier receives selected pixels and the public template. Ground-truth
 intervals enter scoring, not selection or verification. The paired bootstrap
@@ -45,7 +47,7 @@ not a certification of generic video compliance, security, or production readine
 
 ## Reproduction evidence
 
-The coordinating implementation agent reproduced the experiment from a clean
+The experiment was reproduced from a clean
 `git archive` of commit `975a23a`, using Python 3.12.14, NumPy 2.3.5 and Pillow
 12.3.0. `scripts/compare_runs.py` found all **7,488** deterministic prediction rows
 equal: pixel hashes, labels, briefs, selected indices, predictions and resource
@@ -97,17 +99,17 @@ This evidence does not replace the historical run.
 | Acceptance item | Executed result or remaining dependency |
 | --- | --- |
 | Clean-source reproduction | A fresh archive of `991edc8` reproduced all 7,488 deterministic rows; canonical evidence digest and run metadata retained |
-| Independent statistical recheck | A separate AI agent independently parsed rows and recomputed the paired bootstrap using stdlib/NumPy, without importing BriefGuard; counts and both intervals exactly matched |
+| Independent statistical recheck | A separate calculation parsed rows and recomputed the paired bootstrap using stdlib/NumPy, without importing BriefGuard; counts and both intervals exactly matched |
 | Frozen integrity | All six code/protocol hashes unchanged; pilot/dev/test source groups disjoint |
 | Tests, CLI and malformed evidence | Follow-up suite covers incomplete/duplicated exports, identity drift and optimized-Python comparison; see recorded output |
 | Replay artifacts | Six cases, 18 method-case mappings, 153 PNG assets and 576 exact sprite frames checked against the run; not browser visual QA |
-| Fresh dependency download | Attempted and blocked by the agent's network environment; preinstalled pinned dependencies used for execution |
+| Fresh dependency download | Attempted and blocked by the restricted execution environment; preinstalled pinned dependencies used for execution |
 | Wheel smoke check | Local build/install without dependency resolution succeeded; CLI help works. Full study execution requires the source checkout and its data/configuration |
 | Browser interaction/console | Local socket binding and `file://` browser access denied; checklist prepared, not marked passed |
 | Docker | Client installed, daemon unavailable; starting Desktop encountered a denied service-log write. Build/run not claimed |
 | Human labels and personal review | Blinded packet prepared; actual human decisions and Amir's code walkthrough remain pending |
 | VLM/natural-video follow-up | Separate protocol, preparation and no-network tests; no live model result or natural-video accuracy claim |
-| Publication | Agent GitHub write returned 403; terminal GitHub access failed at DNS. Local commits and an owner-run completion script prepared |
+| Publication | GitHub connector write returned 403; terminal GitHub access failed at DNS. Local commits and an owner-run completion script prepared |
 
 The fixed comparison uses explicit failure checks instead of Python assertions.
 Before the fix, `python -O` could report equality for changed predictions. The

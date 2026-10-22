@@ -1,0 +1,830 @@
+[
+  {
+    "case": "0",
+    "comparison": "Uniform\tCorrectly clear\tNot applicable\tPass\t0.60 ms\nFrame change\tCorrectly clear\tNot applicable\tPass\t13.31 ms\nAdaptive\tCorrectly clear\tNot applicable\tPass\t19.03 ms",
+    "error": false,
+    "frames": [
+      {
+        "alt": "Selected frame 6",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 18",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 30",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 42",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 54",
+        "loaded": false
+      },
+      {
+        "alt": "Selected frame 66",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 78",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 90",
+        "loaded": true
+      }
+    ],
+    "marks": [
+      8,
+      8,
+      8
+    ],
+    "note": "This control clip contains no violation. The checker correctly returned pass.",
+    "title": "Uniform · selected evidence"
+  },
+  {
+    "case": "0",
+    "comparison": "Uniform\tCorrectly clear\tNot applicable\tPass\t0.60 ms\nFrame change\tCorrectly clear\tNot applicable\tPass\t13.31 ms\nAdaptive\tCorrectly clear\tNot applicable\tPass\t19.03 ms",
+    "error": false,
+    "frames": [
+      {
+        "alt": "Selected frame 16",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 22",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 32",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 43",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 54",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 64",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 80",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 86",
+        "loaded": true
+      }
+    ],
+    "marks": [
+      8,
+      8,
+      8
+    ],
+    "note": "This control clip contains no violation. The checker correctly returned pass.",
+    "title": "Frame change · selected evidence"
+  },
+  {
+    "case": "0",
+    "comparison": "Uniform\tCorrectly clear\tNot applicable\tPass\t0.60 ms\nFrame change\tCorrectly clear\tNot applicable\tPass\t13.31 ms\nAdaptive\tCorrectly clear\tNot applicable\tPass\t19.03 ms",
+    "error": false,
+    "frames": [
+      {
+        "alt": "Selected frame 1",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 12",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 24",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 36",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 49",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 60",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 72",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 84",
+        "loaded": true
+      }
+    ],
+    "marks": [
+      8,
+      8,
+      8
+    ],
+    "note": "This control clip contains no violation. The checker correctly returned pass.",
+    "title": "Adaptive · selected evidence"
+  },
+  {
+    "case": "1",
+    "comparison": "Uniform\tViolation missed\nChecker missed sampled evidence\n\tYes\tPass\t0.63 ms\nFrame change\tViolation missed\nChecker missed sampled evidence\n\tYes\tPass\t13.93 ms\nAdaptive\tViolation missed\nChecker missed sampled evidence\n\tYes\tPass\t19.61 ms",
+    "error": false,
+    "frames": [
+      {
+        "alt": "Selected frame 6",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 18",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 30",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 42",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 54",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 66",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 78",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 90",
+        "loaded": true
+      }
+    ],
+    "marks": [
+      8,
+      8,
+      8
+    ],
+    "note": "The event is present in the selected frames, but the checker missed it. This is a checker failure.",
+    "title": "Uniform · selected evidence"
+  },
+  {
+    "case": "1",
+    "comparison": "Uniform\tViolation missed\nChecker missed sampled evidence\n\tYes\tPass\t0.63 ms\nFrame change\tViolation missed\nChecker missed sampled evidence\n\tYes\tPass\t13.93 ms\nAdaptive\tViolation missed\nChecker missed sampled evidence\n\tYes\tPass\t19.61 ms",
+    "error": false,
+    "frames": [
+      {
+        "alt": "Selected frame 16",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 22",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 32",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 43",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 54",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 64",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 80",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 86",
+        "loaded": true
+      }
+    ],
+    "marks": [
+      8,
+      8,
+      8
+    ],
+    "note": "The event is present in the selected frames, but the checker missed it. This is a checker failure.",
+    "title": "Frame change · selected evidence"
+  },
+  {
+    "case": "1",
+    "comparison": "Uniform\tViolation missed\nChecker missed sampled evidence\n\tYes\tPass\t0.63 ms\nFrame change\tViolation missed\nChecker missed sampled evidence\n\tYes\tPass\t13.93 ms\nAdaptive\tViolation missed\nChecker missed sampled evidence\n\tYes\tPass\t19.61 ms",
+    "error": false,
+    "frames": [
+      {
+        "alt": "Selected frame 1",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 12",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 24",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 36",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 49",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 60",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 72",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 84",
+        "loaded": true
+      }
+    ],
+    "marks": [
+      8,
+      8,
+      8
+    ],
+    "note": "The event is present in the selected frames, but the checker missed it. This is a checker failure.",
+    "title": "Adaptive · selected evidence"
+  },
+  {
+    "case": "2",
+    "comparison": "Uniform\tViolation missed\nChecker missed sampled evidence\n\tYes\tPass\t0.59 ms\nFrame change\tViolation missed\nNo frame from the event\n\tNo\tPass\t13.43 ms\nAdaptive\tViolation missed\nNo frame from the event\n\tNo\tPass\t19.02 ms",
+    "error": false,
+    "frames": [
+      {
+        "alt": "Selected frame 6",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 18",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 30",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 42",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 54",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 66",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 78",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 90",
+        "loaded": true
+      }
+    ],
+    "marks": [
+      8,
+      8,
+      8
+    ],
+    "note": "The event is present in the selected frames, but the checker missed it. This is a checker failure.",
+    "title": "Uniform · selected evidence"
+  },
+  {
+    "case": "2",
+    "comparison": "Uniform\tViolation missed\nChecker missed sampled evidence\n\tYes\tPass\t0.59 ms\nFrame change\tViolation missed\nNo frame from the event\n\tNo\tPass\t13.43 ms\nAdaptive\tViolation missed\nNo frame from the event\n\tNo\tPass\t19.02 ms",
+    "error": false,
+    "frames": [
+      {
+        "alt": "Selected frame 16",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 22",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 32",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 43",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 54",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 64",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 80",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 86",
+        "loaded": true
+      }
+    ],
+    "marks": [
+      8,
+      8,
+      8
+    ],
+    "note": "None of the selected frames overlap the event. The checker never saw the violation. This is a sampling failure.",
+    "title": "Frame change · selected evidence"
+  },
+  {
+    "case": "2",
+    "comparison": "Uniform\tViolation missed\nChecker missed sampled evidence\n\tYes\tPass\t0.59 ms\nFrame change\tViolation missed\nNo frame from the event\n\tNo\tPass\t13.43 ms\nAdaptive\tViolation missed\nNo frame from the event\n\tNo\tPass\t19.02 ms",
+    "error": false,
+    "frames": [
+      {
+        "alt": "Selected frame 1",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 12",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 24",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 36",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 49",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 60",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 72",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 84",
+        "loaded": true
+      }
+    ],
+    "marks": [
+      8,
+      8,
+      8
+    ],
+    "note": "None of the selected frames overlap the event. The checker never saw the violation. This is a sampling failure.",
+    "title": "Adaptive · selected evidence"
+  },
+  {
+    "case": "3",
+    "comparison": "Uniform\tViolation missed\nNo frame from the event\n\tNo\tPass\t0.60 ms\nFrame change\tViolation missed\nNo frame from the event\n\tNo\tPass\t13.18 ms\nAdaptive\tViolation detected\tYes\tFlagged\t19.02 ms",
+    "error": false,
+    "frames": [
+      {
+        "alt": "Selected frame 6",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 18",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 30",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 42",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 54",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 66",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 78",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 90",
+        "loaded": true
+      }
+    ],
+    "marks": [
+      8,
+      8,
+      8
+    ],
+    "note": "None of the selected frames overlap the event. The checker never saw the violation. This is a sampling failure.",
+    "title": "Uniform · selected evidence"
+  },
+  {
+    "case": "3",
+    "comparison": "Uniform\tViolation missed\nNo frame from the event\n\tNo\tPass\t0.60 ms\nFrame change\tViolation missed\nNo frame from the event\n\tNo\tPass\t13.18 ms\nAdaptive\tViolation detected\tYes\tFlagged\t19.02 ms",
+    "error": false,
+    "frames": [
+      {
+        "alt": "Selected frame 16",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 22",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 32",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 43",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 54",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 64",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 80",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 86",
+        "loaded": true
+      }
+    ],
+    "marks": [
+      8,
+      8,
+      8
+    ],
+    "note": "None of the selected frames overlap the event. The checker never saw the violation. This is a sampling failure.",
+    "title": "Frame change · selected evidence"
+  },
+  {
+    "case": "3",
+    "comparison": "Uniform\tViolation missed\nNo frame from the event\n\tNo\tPass\t0.60 ms\nFrame change\tViolation missed\nNo frame from the event\n\tNo\tPass\t13.18 ms\nAdaptive\tViolation detected\tYes\tFlagged\t19.02 ms",
+    "error": false,
+    "frames": [
+      {
+        "alt": "Selected frame 1",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 12",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 24",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 36",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 49",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 60",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 72",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 84",
+        "loaded": true
+      }
+    ],
+    "marks": [
+      8,
+      8,
+      8
+    ],
+    "note": "Checker evidence: forbidden_element_absent. Click a frame to inspect its pixels.",
+    "title": "Adaptive · selected evidence"
+  },
+  {
+    "case": "4",
+    "comparison": "Uniform\tViolation detected\tYes\tFlagged\t0.59 ms\nFrame change\tViolation detected\tYes\tFlagged\t13.18 ms\nAdaptive\tViolation detected\tYes\tFlagged\t19.31 ms",
+    "error": false,
+    "frames": [
+      {
+        "alt": "Selected frame 6",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 18",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 30",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 42",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 54",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 66",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 78",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 90",
+        "loaded": true
+      }
+    ],
+    "marks": [
+      8,
+      8,
+      8
+    ],
+    "note": "Checker evidence: label_unchanged. Click a frame to inspect its pixels.",
+    "title": "Uniform · selected evidence"
+  },
+  {
+    "case": "4",
+    "comparison": "Uniform\tViolation detected\tYes\tFlagged\t0.59 ms\nFrame change\tViolation detected\tYes\tFlagged\t13.18 ms\nAdaptive\tViolation detected\tYes\tFlagged\t19.31 ms",
+    "error": false,
+    "frames": [
+      {
+        "alt": "Selected frame 16",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 22",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 32",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 43",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 54",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 64",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 80",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 86",
+        "loaded": true
+      }
+    ],
+    "marks": [
+      8,
+      8,
+      8
+    ],
+    "note": "Checker evidence: label_unchanged. Click a frame to inspect its pixels.",
+    "title": "Frame change · selected evidence"
+  },
+  {
+    "case": "4",
+    "comparison": "Uniform\tViolation detected\tYes\tFlagged\t0.59 ms\nFrame change\tViolation detected\tYes\tFlagged\t13.18 ms\nAdaptive\tViolation detected\tYes\tFlagged\t19.31 ms",
+    "error": false,
+    "frames": [
+      {
+        "alt": "Selected frame 1",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 12",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 24",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 36",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 49",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 60",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 72",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 84",
+        "loaded": true
+      }
+    ],
+    "marks": [
+      8,
+      8,
+      8
+    ],
+    "note": "Checker evidence: label_unchanged. Click a frame to inspect its pixels.",
+    "title": "Adaptive · selected evidence"
+  },
+  {
+    "case": "5",
+    "comparison": "Uniform\tViolation missed\nChecker missed sampled evidence\n\tYes\tPass\t0.59 ms\nFrame change\tViolation missed\nChecker missed sampled evidence\n\tYes\tPass\t13.22 ms\nAdaptive\tViolation missed\nChecker missed sampled evidence\n\tYes\tPass\t19.20 ms",
+    "error": false,
+    "frames": [
+      {
+        "alt": "Selected frame 6",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 18",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 30",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 42",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 54",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 66",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 78",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 90",
+        "loaded": true
+      }
+    ],
+    "marks": [
+      8,
+      8,
+      8
+    ],
+    "note": "The event is present in the selected frames, but the checker missed it. This is a checker failure.",
+    "title": "Uniform · selected evidence"
+  },
+  {
+    "case": "5",
+    "comparison": "Uniform\tViolation missed\nChecker missed sampled evidence\n\tYes\tPass\t0.59 ms\nFrame change\tViolation missed\nChecker missed sampled evidence\n\tYes\tPass\t13.22 ms\nAdaptive\tViolation missed\nChecker missed sampled evidence\n\tYes\tPass\t19.20 ms",
+    "error": false,
+    "frames": [
+      {
+        "alt": "Selected frame 16",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 22",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 32",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 43",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 54",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 64",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 80",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 86",
+        "loaded": true
+      }
+    ],
+    "marks": [
+      8,
+      8,
+      8
+    ],
+    "note": "The event is present in the selected frames, but the checker missed it. This is a checker failure.",
+    "title": "Frame change · selected evidence"
+  },
+  {
+    "case": "5",
+    "comparison": "Uniform\tViolation missed\nChecker missed sampled evidence\n\tYes\tPass\t0.59 ms\nFrame change\tViolation missed\nChecker missed sampled evidence\n\tYes\tPass\t13.22 ms\nAdaptive\tViolation missed\nChecker missed sampled evidence\n\tYes\tPass\t19.20 ms",
+    "error": false,
+    "frames": [
+      {
+        "alt": "Selected frame 1",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 12",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 24",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 36",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 49",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 60",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 72",
+        "loaded": true
+      },
+      {
+        "alt": "Selected frame 84",
+        "loaded": true
+      }
+    ],
+    "marks": [
+      8,
+      8,
+      8
+    ],
+    "note": "The event is present in the selected frames, but the checker missed it. This is a checker failure.",
+    "title": "Adaptive · selected evidence"
+  }
+]

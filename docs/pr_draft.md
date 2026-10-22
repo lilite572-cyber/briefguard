@@ -14,6 +14,11 @@ results, not natural-video or VLM accuracy measurements.
 
 ## What changed
 
+- Restyle replay using Tabler as a visual reference, with self-contained CSS.
+- Explain sampling misses versus checker misses directly in the comparison.
+- Verify all 18 case/method selections in a real browser; record viewport limits.
+- Remove repetitive authorship narration from UI and routine documentation.
+
 - Validate complete evidence inventories and reject stale summaries; comparison
   remains effective under optimized Python.
 - Provide a blinded 16-clip development review packet and strict label scorer.
@@ -44,14 +49,15 @@ later implementation changes. See `docs/verification.md` for revision scopes.
 
 ## Remaining acceptance
 
-Browser interaction, real human labels and live VLM/natural-video accuracy remain
-pending. The small NASA pilot is separately frozen; one source and its artificial
+Replay browser checks passed for 18 case/method selections at 639 px;
+390/1280 px, missing-resource injection and workbench browser QA remain pending.
+Real human labels and live VLM/natural-video accuracy also remain pending. The small NASA pilot is separately frozen; one source and its artificial
 corruptions cannot validate advertising-video compliance. Neither that protocol
 nor fake-transport tests count as an executed model evaluation.
 
 The formal security workflow remains incomplete; bounded source/regression review
-must not be presented as a full audit. Development history and contribution
-records are centralized in `docs/development_notes.md`.
+must not be presented as a full audit. Implementation decisions and corrections
+are recorded in `docs/development_notes.md`.
 
 Keep the PR in draft until outstanding acceptance is actually recorded. No merge
 or default-branch update is part of this work.

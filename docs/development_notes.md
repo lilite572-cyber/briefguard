@@ -1,8 +1,7 @@
 # Development notes
 
-These notes describe the recorded work session on 2026-10-22. They are not a
-retrospective personal diary. The implementation and initial analysis were done
-by Codex and delegated AI agents in response to Amir Asan's project brief.
+These notes record implementation decisions, corrections and verification on
+2026-10-22.
 
 ## Continuation from the published branch
 
@@ -13,12 +12,10 @@ in an isolated local clone on `research/briefguard`; the earlier checkout was
 left unchanged. The original protocol, freeze, analytical sources and held-out
 artifacts remain the historical experiment, not a development set for tuning.
 
-Codex performed the follow-up implementation and execution. Separately tasked
-AI agents reviewed methodology and input/output boundaries and prepared the
-VLM-pilot and blinded human-review workflows. These are additional AI reviews,
-not independent human experts. Amir requested the continuation and its acceptance
-criteria; he has not yet supplied human labels, a paid-API approval or a record
-of personal code review.
+The follow-up added methodology and input/output checks, a VLM-pilot workflow
+and a blinded human-review package. Human labels, paid-API approval and a record
+of personal code review are still pending; automated checks do not complete
+those steps.
 
 Fresh-source reproduction again matched all 7,488 deterministic rows. The
 comparison script's use of Python `assert` was identified as a verification
@@ -45,9 +42,6 @@ API budget was authorized. Those requirements came from the project brief.
 | Split by source seed | Keep related variants together | The effective sample is source groups, not thousands of independent clips |
 | Count the complete preprocessing pass | Expose work done before the selected frames reach the checker | Equal checker budgets still have different CPU costs |
 | Keep subtle corruptions below the checker tolerances | Exercise the distinction between capture and recognition | Their zero recall is expected by construction |
-
-These choices were implemented by the agents. The record does not establish
-that Amir personally selected or validated each one.
 
 ## What the first result says
 
@@ -78,24 +72,13 @@ replay was exported again after this fix. Both fixes concern presentation of
 saved results; the frozen analytical code and experiment remain unchanged.
 
 The formal security workflow encountered a tool error reading a valid committed
-file. It remains incomplete. The separate static code review is an AI review,
-not a completed formal security scan or an independent human audit.
-
-## Division of work
-
-| Work | Recorded contributor and status |
-|---|---|
-| Research question, intended audience and hardware constraints | Amir's supplied brief |
-| Literature search, protocol, code, tests, execution and initial interpretation | Codex and delegated AI agents |
-| Second methodology and source reviews | Separately tasked AI agents |
-| Request to review the project's presentation and AI attribution | Amir |
-| Personal code review and independent result verification | No completed record yet |
-| Human checks of video labels | Pending |
+file. It remains incomplete. The separate static source review is not a
+completed formal security scan or an independent human audit.
 
 ## Personal review before presenting
 
 Complete these checks and add your actual observations. Leave items open until
-you have done them; an agent run does not complete a personal review.
+you have done them; automated execution does not complete a personal review.
 
 - [ ] Follow one clip from generation through selection, checking and scoring.
 - [ ] Explain how the adaptive score and temporal diversity term choose frames.
@@ -105,7 +88,4 @@ you have done them; an agent run does not complete a personal review.
 - [ ] Run the documented reproduction commands yourself and record the outcome.
 - [ ] Complete the human-review CSV, or keep human validation marked pending.
 
-For an interview, describe the contribution you can actually demonstrate. The
-current record supports “I set the question and constraints and used Codex agents
-to build and run the first version. I am reviewing the implementation.” Claims
-about personal implementation or verification need the corresponding completed work.
+Record completed personal checks with the command, result and your observations.

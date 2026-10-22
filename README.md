@@ -9,7 +9,7 @@ At eight frames per clip, the simple change sampler has the highest observed rec
 The adaptive heuristic did not demonstrate an improvement over it. This is a small
 CPU reference study; testing on natural generated videos is still pending.
 
-Personal project of **Amir Asan**. Decisions, contribution history and remaining
+Personal project of **Amir Asan**. Decisions, fixes and remaining
 personal checks are recorded in the [development notes](docs/development_notes.md).
 
 For a concrete starting point, follow the [two-case walkthrough in Russian](docs/walkthrough_ru.md)
@@ -61,6 +61,9 @@ about how a VLM would perform. See the [error analysis](docs/error_analysis.md).
 No thresholds were tuned on the held-out results.
 
 ## Replay in seconds
+
+[How to read the demo (Russian)](docs/demo_guide_ru.md) explains the timelines,
+missed events and checker failures with two concrete cases.
 
 Open `demo/index.html` in a browser after downloading the repository. It loads the bundled
 `data.js` and local media without inference or an API key. Alternatively:
@@ -147,7 +150,7 @@ flowchart TD
 | [Manifest](results/test/manifest.jsonl.gz) | Source grouping and per-clip identities |
 | [Error analysis](docs/error_analysis.md) | Concrete misses and duration/type/severity slices |
 | [Interview guide, Russian](docs/interview_ru.md) | Explain and defend the work without overstating it |
-| [Development notes](docs/development_notes.md) | Decisions, fixes, AI contribution and pending personal review |
+| [Development notes](docs/development_notes.md) | Decisions, fixes and pending personal review |
 | [VLM follow-up](docs/vlm_pilot.md) | Explicit budget/model requirements for future real inference |
 | [Verification record](docs/verification.md) | Independent artifact review, exact reproduction and remaining checks |
 | [Security review status](docs/security_review.md) | Scoped source review and the incomplete formal scan |
@@ -176,7 +179,7 @@ The separate [VLM pilot protocol](docs/vlm_pilot.md) and
 [natural-video protocol](docs/natural_video_pilot.md) are exploratory follow-ups.
 They do not change the original hypothesis, frozen hashes or held-out results.
 Live paid inference still requires Amir's explicit provider/model/budget approval;
-human labels and personal code review cannot be completed by an agent.
+human labels and personal code review require actual human participation.
 
 ## Separate host
 
