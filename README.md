@@ -131,6 +131,7 @@ flowchart TD
 | [Interview guide, Russian](docs/interview_ru.md) | Explain and defend the work without overstating it |
 | [VLM follow-up](docs/vlm_pilot.md) | Explicit budget/model requirements for future real inference |
 | [Verification record](docs/verification.md) | Independent artifact review, exact reproduction and remaining checks |
+| [Security review status](docs/security_review.md) | Scoped source review and the incomplete formal scan |
 
 The clean controls are easy and few; an observed zero false-alarm count is not a population
 guarantee. Source siblings are dependent and are resampled together. This dataset's high

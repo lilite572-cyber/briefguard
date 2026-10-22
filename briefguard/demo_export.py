@@ -117,7 +117,15 @@ def export_demo(result_dir: Path, output_dir: Path, config: dict[str, Any]) -> d
     import hashlib
 
     result_dir, output_dir = Path(result_dir), Path(output_dir)
+    metadata_path = result_dir / "metadata.json"
+    if not metadata_path.is_file():
+        raise ValueError("Replay requires completed-run metadata.json")
+    metadata = json.loads(metadata_path.read_text())
+    if metadata.get("complete") is not True:
+        raise ValueError("Replay requires a completed run")
     rows, source_path = _read_rows(result_dir)
+    if metadata.get("rows") != len(rows):
+        raise ValueError("Prediction count differs from completed-run metadata")
     budget = int(config.get("demo_budget", 8))
     available = sorted({int(r["budget"]) for r in rows})
     if budget not in available:

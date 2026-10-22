@@ -48,6 +48,7 @@ class DemoTests(unittest.TestCase):
             base = Path(temporary)
             results = base / "run"
             results.mkdir()
+            (results / "metadata.json").write_text(json.dumps({"complete": True, "rows": 1}))
             record = row("../../untrusted", "uniform", False, False)
             (results / "predictions.jsonl").write_text(json.dumps(record) + "\n")
             frames = np.zeros((4, 4, 6, 3), dtype=np.uint8)
@@ -75,6 +76,7 @@ class DemoTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             base = Path(temporary)
             record = row("clip", "uniform", False, False)
+            (base / "metadata.json").write_text(json.dumps({"complete": True, "rows": 1}))
             record["pixels_sha256"] = "not-a-matching-hash"
             (base / "predictions.jsonl").write_text(json.dumps(record) + "\n")
             clip = SimpleNamespace(clip_id="clip", source_id=1,
@@ -83,6 +85,17 @@ class DemoTests(unittest.TestCase):
             with patch("briefguard.data.iter_clips", return_value=iter([clip])):
                 with self.assertRaisesRegex(ValueError, "differ from run"):
                     export_demo(base, base / "viewer", {})
+
+    def test_incomplete_or_truncated_runs_are_not_presented_as_completed(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            base = Path(temporary)
+            (base / "predictions.jsonl").write_text(json.dumps(row("clip", "uniform", False, False)) + "\n")
+            for metadata in (None, {"complete": False, "rows": 1}, {"complete": True, "rows": 2}):
+                if metadata is not None:
+                    (base / "metadata.json").write_text(json.dumps(metadata))
+                with self.subTest(metadata=metadata), self.assertRaises(ValueError):
+                    export_demo(base, base / "viewer", {})
+            self.assertFalse((base / "viewer").exists())
 
     def test_gzip_predictions_are_read(self):
         from briefguard.demo_export import _read_rows

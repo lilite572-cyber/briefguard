@@ -22,8 +22,8 @@
   },
   "environment_note": "Fresh source checkout, preinstalled pinned NumPy/Pillow. Clean network install and Docker build were not run; package download network is restricted.",
   "automated_tests": {
-    "count": 49,
-    "passed": 49,
+    "count": 50,
+    "passed": 50,
     "command": "python -m unittest discover -s tests -v"
   },
   "demo": {
@@ -36,5 +36,11 @@
   "optional_vlm": {
     "fake_transport_tests": 15,
     "live_requests": 0
+  },
+  "security": {
+    "formal_scan_id": "74477850-2353-4eee-860f-b0a655e98777",
+    "formal_status": "incomplete_inventory_helper_error",
+    "static_review": "no_confirmed_exploitable_vulnerability_in_local_scope",
+    "report": "docs/security_review.md"
   }
 }

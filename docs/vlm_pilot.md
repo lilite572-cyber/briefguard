@@ -12,6 +12,33 @@ If any returned usage estimate exceeds its per-attempt reservation, the ledger p
 
 Every attempt, including HTTP retries and unknown-outcome timeouts, consumes one request and a full reservation before transmission. The persistent ledger is locked on macOS/Linux and flushed to disk. Reuse the same directory and configuration when resuming. Do not delete the ledger, change directories or launch separate budgets to bypass the approved limit. Successful identical requests replay from the cache.
 
+## Concrete pilot estimate — awaiting authorization
+
+Proposal: 6 development clips × 3 samplers × 8 frames = 18 logical checks,
+with at most one retry each (36 HTTP attempts). Keep the test split untouched.
+Use the same selected frames and structured brief for every sampler. This is an
+integration pilot, too small for a general accuracy claim; human review is required.
+
+For a dated reference model, `gpt-4.1-mini-2025-04-14`, the official model page
+checked on 2026-10-22 lists $0.40 per million input tokens and $1.60 per million
+output tokens. Vision uses 32-pixel patches with a 1.62 multiplier: a 128×72 frame
+is approximately 20 billable image tokens before any other prompt content.
+The model is deprecated and scheduled to shut down on 2027-01-14; recheck
+availability and choose a new pinned snapshot for any later study.
+
+A deliberately loose planning allowance of 10,000 total input tokens and 800
+output tokens per attempt gives `(10000 × 0.40 + 800 × 1.60) / 1000000 = $0.00528`,
+or **$0.19008 for 36 attempts**. These are projected costs, not measured usage.
+Proposed authorization: **$0.50 maximum planned spend, 36 attempts**, with a
+$0.01 reservation per attempt (at most $0.36 reserved). Stop and review if any
+observed charge estimate exceeds its reservation; do not use the remaining
+allowance to reset the ledger. Confirm this limit and API access before sending
+any request. Neither model access nor exact provider billing has been verified.
+
+Sources: [model and prices](https://developers.openai.com/api/docs/models/gpt-4.1-mini),
+[vision accounting](https://developers.openai.com/api/docs/guides/images-vision),
+[shutdown schedule](https://developers.openai.com/api/docs/deprecations).
+
 ## Python usage
 
 The following skeleton deliberately leaves prices, model and budget unspecified. Fill them only after approval; it is not an authorized runnable paid experiment.
