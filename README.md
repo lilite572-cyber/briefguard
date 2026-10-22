@@ -186,6 +186,13 @@ allocated here for OpenAI `gpt-4.1-mini-2025-04-14`. Human labels, source confir
 and a privately configured API key remain necessary; personal code review requires
 actual human participation.
 
+Use `python scripts/run_pilot_guarded.py --check-only` to check the prepared v2
+packet without reading a key or sending requests. The separate guarded runner
+stops subsequent HTTP attempts when earlier outcomes or usage costs are unknown;
+it leaves the frozen v1/v2 runtime and packet unchanged. Execution uses the same
+packet and ledger with `--approve-openai-gpt41mini-usd050` and the key in the
+process environment. Never reset the ledger to repeat a failed run.
+
 ## Separate host
 
 For a CPU server, run the same commands with the same pinned dependencies and freeze.

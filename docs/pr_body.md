@@ -55,6 +55,11 @@ and the v1 pilot runtime/config/protocol match their prior versions. Evidence:
 `results/verification_vlm_preparation.json`. This does not repeat the historical
 CPU reproduction or Docker run, or establish live-model quality.
 
+The separate execution guard subsequently passed the complete 102-test local suite.
+It checks real human inputs and halts subsequent HTTP attempts when earlier usage
+or outcomes are unknown, without modifying the frozen v1/v2 runtime. The guarded
+runner has not executed live inference; human annotations remain pending.
+
 ## Remaining acceptance
 
 Replay browser checks passed for 18 case/method selections at 639 px;
