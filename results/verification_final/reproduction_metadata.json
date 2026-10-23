@@ -1,0 +1,118 @@
+{
+  "run_id": "72b02803d9e0b835",
+  "identity": {
+    "config": {
+      "study_version": "briefguard-v1",
+      "n_frames": 96,
+      "width": 128,
+      "height": 72,
+      "fps": 24,
+      "durations": [
+        2,
+        6,
+        12
+      ],
+      "budgets": [
+        4,
+        8,
+        16
+      ],
+      "primary_budget": 8,
+      "methods": [
+        "uniform",
+        "change",
+        "adaptive"
+      ],
+      "pilot_sources": [
+        1000,
+        1011
+      ],
+      "dev_sources": [
+        2000,
+        2015
+      ],
+      "test_start": 10000,
+      "test_min_sources": 32,
+      "test_max_sources": 96,
+      "target_ci_halfwidth": 0.06,
+      "bootstrap_resamples": 2000,
+      "bootstrap_seed": 572,
+      "sampling": {
+        "feature_width": 32,
+        "feature_height": 18,
+        "noise_floor": 6.0,
+        "local_quantile": 0.995,
+        "anchor_fraction": 0.5,
+        "change_weight": 0.25,
+        "diversity_floor": 0.25,
+        "change_gap_fraction": 0.5
+      },
+      "api_spend_limit_usd": 0,
+      "human_audit_status": "pending"
+    },
+    "split": "test",
+    "source_ids": [
+      10000,
+      10001,
+      10002,
+      10003,
+      10004,
+      10005,
+      10006,
+      10007,
+      10008,
+      10009,
+      10010,
+      10011,
+      10012,
+      10013,
+      10014,
+      10015,
+      10016,
+      10017,
+      10018,
+      10019,
+      10020,
+      10021,
+      10022,
+      10023,
+      10024,
+      10025,
+      10026,
+      10027,
+      10028,
+      10029,
+      10030,
+      10031
+    ],
+    "core_files": {
+      "briefguard/data.py": "ffe2ef72e17d0284eb393287b23cade2af0ce89c770665ab5c09e7f93318d9fb",
+      "briefguard/verifier.py": "a22566dbafe24eb3d1970e52cbe6734fb2b0b96ba0e01d2006564e7b91f7b319",
+      "briefguard/sampling.py": "d8dc76c2416d5eea794fdf0c0a98c792ee15334b07bd1b9e768bec3bf625c5cf",
+      "briefguard/runner.py": "b38d69edd03331ccf7b7aa12db920bdf4ce90ce9ec2f36ea258f91f6c125e7ff",
+      "briefguard/metrics.py": "99da95a05abd6c2e9641a3b5a12665a1ce45c12066591c1de08ae00c158e8863",
+      "docs/protocol.md": "eb34efa4f3fd7e6d4fb201924767d46c4b8a78d8f14edc227bfeb6ca9b2770e9"
+    },
+    "model_version": "pixel-template-v1",
+    "numpy": "2.3.5",
+    "pillow": "12.3.0",
+    "freeze_id": "7f40d4fda38dff8ee5976915bb6df812f9b17c7f9e350ec43e5afa97b2f5d65b"
+  },
+  "started_at_utc": "2026-10-23T00:59:20.990382+00:00",
+  "host": {
+    "platform": "macOS-15.0-arm64-arm-64bit",
+    "machine": "arm64",
+    "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]"
+  },
+  "complete": true,
+  "mode": "actual_local_pixel_experiment",
+  "human_audit": "pending",
+  "finished_at_utc": "2026-10-23T01:00:03.203270+00:00",
+  "invocation_wall_s": 42.203830541984644,
+  "fresh_units": 7488,
+  "reused_units": 0,
+  "rows": 7488,
+  "errors": 0,
+  "peak_rss_bytes": 198639616,
+  "api_spend_usd": 0.0
+}

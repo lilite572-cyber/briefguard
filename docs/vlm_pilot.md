@@ -1,0 +1,116 @@
+# Optional real-model pilot (prepared; live inference not executed)
+
+The published CPU experiment uses `pixel-template-v1`. `briefguard.vlm.ResponsesPilot` is a separately invoked OpenAI Responses API adapter; the experiment runner never calls it. All adapter tests use fake transport and fake credentials. They validate request construction and failure handling, not model accuracy or live compatibility.
+
+## Authorization and cost
+
+The low-level adapter has no default model or budget. The executable pilot's
+configuration is a proposal, not authorization. Before running, the user must
+approve the request limit and estimated USD budget, review current model pricing,
+select a vision/Structured-Outputs-capable **dated snapshot**, and set
+`OPENAI_API_KEY` outside the repository. Never commit the key or pass it as a
+command-line argument.
+
+`reservation_usd` is a **user-reviewed conservative estimate per attempt**, including image input tokens, other input and the configured maximum output. `max_spend_usd` limits the sum of these reservations; it is **not a guaranteed provider billing cap**. Tokenization, model pricing, failed requests, other applications and billing adjustments can invalidate an estimate. If a conservative reservation cannot be established, do not run. Confirm the amount with the user first. The adapter computes `estimated_api_cost_usd = (input_tokens × reviewed_input_rate + output_tokens × reviewed_output_rate) / 1,000,000` from returned usage, without cached-token discounts. Missing or invalid usage produces `null`, not a zero-cost claim. The reviewed rates are retained in the ledger; the adapter does not discover prices or authorize spending itself.
+
+If any returned usage estimate exceeds its per-attempt reservation, the ledger permanently halts new requests for budget review, including after an incomplete or invalid model result. Already cached responses remain replayable without network calls. This detects an underestimated reservation after the request; it cannot undo the charge or guarantee the provider bill stayed within the approved amount. A successful result's `budget_halted` flag exposes that condition. Result cache files are written using a flushed temporary file and atomic replacement so interrupted writes cannot publish partial results.
+
+Every attempt, including HTTP retries and unknown-outcome timeouts, consumes one request and a full reservation before transmission. The persistent ledger is locked on macOS/Linux and flushed to disk. Reuse the same directory and configuration when resuming. Do not delete the ledger, change directories or launch separate budgets to bypass the approved limit. Successful identical requests replay from the cache.
+
+## Concrete pilot estimate — awaiting authorization
+
+Executable proposal: 3 fixed development clips plus 3 siblings of one NASA EPIC
+natural-source timelapse × 3 samplers × 8 frames = 18 logical checks, with at most
+one retry each (36 HTTP attempts). See the separate
+[pilot protocol and commands](natural_video_pilot.md) and
+`configs/vlm_pilot_v1.json`. Keep the original held-out test untouched.
+Use the same frame count, resolution and structured brief for every sampler;
+selected frame indices differ by sampler. This is an
+integration pilot, too small for a general accuracy claim; human review is required.
+
+For a dated reference model, `gpt-4.1-mini-2025-04-14`, the official model page
+checked on 2026-10-22 lists $0.40 per million input tokens and $1.60 per million
+output tokens. Vision uses 32-pixel patches with a 1.62 multiplier: a 128×72 frame
+is approximately 20 billable image tokens before any other prompt content.
+The model is deprecated and scheduled to shut down on 2027-01-14; recheck
+availability and choose a new pinned snapshot for any later study.
+
+A deliberately loose planning allowance of 10,000 total input tokens and 800
+output tokens per attempt gives `(10000 × 0.40 + 800 × 1.60) / 1000000 = $0.00528`,
+or **$0.19008 for 36 attempts**. These are projected costs, not measured usage.
+Proposed authorization: **$0.50 maximum planned spend, 36 attempts**, with a
+$0.01 reservation per attempt (at most $0.36 reserved). Stop and review if any
+observed charge estimate exceeds its reservation; do not use the remaining
+allowance to reset the ledger. Confirm this limit and API access before sending
+any request. Neither model access nor exact provider billing has been verified.
+
+Sources: [model and prices](https://developers.openai.com/api/docs/models/gpt-4.1-mini),
+[vision accounting](https://developers.openai.com/api/docs/guides/images-vision),
+[shutdown schedule](https://developers.openai.com/api/docs/deprecations).
+
+## Python usage
+
+The following skeleton deliberately leaves prices, model and budget unspecified. Fill them only after approval; it is not an authorized runnable paid experiment.
+
+```python
+from PIL import Image
+from briefguard.vlm import PilotConfig, ResponsesPilot
+
+config = PilotConfig(
+    model=reviewed_dated_snapshot,
+    max_requests=approved_request_limit,
+    max_spend_usd=approved_reservation_budget,
+    reservation_usd=reviewed_conservative_per_attempt_estimate,
+    input_usd_per_million=reviewed_input_rate,
+    output_usd_per_million=reviewed_output_rate,
+    authorized=True,
+)
+pilot = ResponsesPilot(config, "results/private-vlm-pilot")
+result = pilot.verify(
+    [Image.open("selected-frame.png")], [24],
+    {"package_color": "The package must remain blue"},
+    {"product": "Example product", "required_color": "blue"},
+)
+```
+
+Pass the same selected resolution, brief, requirement IDs, model, output limit and image detail for all compared samplers. The adapter uses PNG data URIs and `detail=low`; small text may be unreadable, and this is a model/input limitation to measure. A pass refers only to supplied frames, never proves unseen parts comply. Model instructions treat image text and brief values as untrusted evidence, but prompt-injection resistance is not guaranteed.
+
+## Outputs and failure semantics
+
+Outputs have `status` (`pass`, `fail`, `indeterminate`) and `evidence` entries with `frame_index`, `requirement`, and `reason`. Cited indices must have been supplied and requirement IDs must exist. Failure needs evidence; pass cannot contain violation evidence. Invalid output, refusal, incomplete response, malformed JSON and HTTP errors raise `PilotError`; callers must record these as operational indeterminate outcomes rather than exclude them from evaluation or silently approve the clip.
+
+The directory preserves the request without authentication headers, redacted raw response per attempt, returned model identifier, usage, response ID and result. It can contain sensitive images and briefs: inspect it before publishing. Exact API-key occurrences are redacted from raw responses. The URL is fixed to `https://api.openai.com/v1/responses`, redirects are refused, and environment proxy forwarding is disabled. The adapter uses no tools and requests `store=false`.
+
+Only HTTP 429/5xx responses are candidates for bounded retries. Timeouts retain their reservation and are not automatically retried because the server outcome is unknown. `Retry-After` is honored when numeric and at most 30 seconds; longer/unsupported delays require manual action. At most two retries and a 60-second socket timeout can be configured. This timeout bounds individual socket operations, not total wall time for a malicious slow streaming peer.
+
+## Pilot protocol before any expanded claim
+
+Use a small development-only sample and a separately human-reviewed control subset. Preserve fixed settings before held-out evaluation. Reconcile every response's usage against the reviewed prices; include retries, prepasses, failures and abstentions. Report evidence-capture rate separately from end-to-end violation detection. Do not replace deterministic experiment results with projected VLM performance.
+
+Official API documentation checked on 2026-10-22:
+
+- [Responses API](https://developers.openai.com/api/reference/resources/responses/methods/create)
+- [Images and vision](https://developers.openai.com/api/docs/guides/images-vision)
+- [Structured outputs](https://developers.openai.com/api/docs/guides/structured-outputs)
+- [Error codes](https://developers.openai.com/api/docs/guides/error-codes)
+
+No live API request was made while implementing this adapter.
+
+## Prepared workflow
+
+`python -m briefguard.pilot prepare --out results/private-vlm-pilot` runs offline,
+freezes code/pixels before sampling and builds a blinded review page and blank
+human CSV. Without the NASA GIF it explicitly produces a partial preparation;
+paid execution refuses it. The full preparation accepts `--natural-input` only
+for the named source, whose original bytes and human provenance confirmation are
+recorded. The live command additionally requires complete human labels and the
+explicit approval flag documented in the separate protocol. Resumption binds
+human labels, source confirmation, code, pixel files, plan and logical outcomes.
+
+A synthetic-only preparation executed nine logical frame selections from three
+clips with zero network calls. Six added workflow tests use fixtures and fake
+transport; they do not supply human research labels or prove live API behavior.
+The NASA source was selected and its credit/educational-use terms checked, but
+could not be downloaded in the restricted shell. No natural-video or VLM result
+is claimed. Complete that acquisition and personal review before requesting the
+18-check paid run. Do not publish `results/private*` without inspecting payloads.

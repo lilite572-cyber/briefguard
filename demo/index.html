@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BriefGuard — Frame sampling experiment</title>
+<style>
+/* Layout reference: Tabler (https://tabler.io), independently implemented. */
+:root{color-scheme:light;--bg:#f5f7fb;--panel:#fff;--panel2:#f1f4f8;--line:#dce1e7;--text:#182433;--muted:#667382;--cyan:#206bc4;--amber:#996000;--red:#b42332;--green:#187449;--mono:ui-monospace,SFMono-Regular,Consolas,monospace}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,select,input{font:inherit}button,select{color:var(--text);background:white;border:1px solid var(--line);border-radius:4px}button{cursor:pointer}button:hover,select:hover{border-color:var(--cyan)}button:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}a{color:var(--cyan)}.shell{max-width:1280px;margin:auto;padding:0 32px 32px}.top{display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:72px;border-bottom:1px solid var(--line)}.brand{font-weight:700;letter-spacing:-.5px;font-size:24px}.brand small{font-size:13px;font-weight:400;letter-spacing:0;color:var(--muted);margin-left:18px}.seal{font-size:12px;color:var(--muted)}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--muted)}h1{font-weight:650;letter-spacing:-.6px;font-size:28px;line-height:1.2;margin:6px 0 10px}h2{font-size:16px;font-weight:600;margin:0}p{margin:0}.intro{margin:26px 0 20px}.intro p{color:var(--muted);max-width:780px}.badge{display:inline-flex;align-items:center;font-size:11px;padding:4px 8px;border-radius:3px;background:#fff1d5;color:#784d00}.status-strip{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px}.status-strip .badge{padding:0;background:none;color:var(--muted)}.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:18px 0 24px}.metric-card{border:1px solid var(--line);background:white;padding:18px 20px;border-radius:5px;box-shadow:0 1px 2px #18243305}.metric-head{display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}.metric-value{font-size:30px;letter-spacing:-.6px;font-weight:600;margin:5px 0}.metric-value span{font-size:12px;color:var(--muted);font-weight:400;letter-spacing:0;margin-left:9px}.metric-foot{font-size:11px;color:var(--muted);display:flex;justify-content:space-between;gap:8px;margin:10px 0 4px}.metric-bar{height:3px;background:#e9edf2;margin-top:12px}.metric-bar span{display:block;height:100%;background:var(--cyan)}.workspace>div,.workspace>aside{min-width:0}.workspace{display:grid;grid-template-columns:minmax(0,1fr) 292px;gap:20px;align-items:start}.panel{background:white;border:1px solid var(--line);border-radius:5px;overflow:hidden;box-shadow:0 1px 2px #18243305}.panel-pad{padding:20px}.panel-head{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:16px}.small{font-size:11px;color:var(--muted)}.case-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:16px 20px;border-bottom:1px solid var(--line)}.case-bar label{font-size:12px;font-weight:600}.case-bar select{flex:1;min-width:190px;padding:8px 10px;max-width:100%}.visual-stage{background:#eef1f5;padding:20px 24px 16px}.canvas-wrap{max-width:600px;margin:auto;position:relative}.canvas-wrap canvas{display:block;width:100%;aspect-ratio:16/9;background:#182433;border-radius:3px;image-rendering:pixelated}.frame-stamp{position:absolute;top:10px;left:10px;font:10px var(--mono);color:#fff;padding:4px 6px;border-radius:3px;background:#182433db}.truth-stamp{position:absolute;bottom:10px;right:10px;display:none}.transport{display:flex;align-items:center;gap:12px;margin:14px auto 0;max-width:600px}.transport button{width:34px;height:30px;color:var(--cyan)}.transport input{flex:1;min-width:40px;accent-color:var(--cyan)}.transport output{font:11px var(--mono);white-space:nowrap;color:var(--muted)}.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:11px;color:var(--muted)}.dot{width:7px;height:7px;border-radius:2px;display:inline-block;margin-right:6px;vertical-align:middle}.dot.cyan{background:var(--cyan)}.dot.red{background:var(--red)}.dot.amber{background:#edb753}.timeline-controls{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted)}input{accent-color:var(--cyan)}.timeline-group{margin-top:14px}.timeline-method{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:12px;margin:12px 0 5px}.timeline-method button{border:0;background:transparent;padding:3px 8px;color:var(--muted)}.timeline-method button.active{background:#eaf2fd;color:var(--cyan);font-weight:600}.timeline{height:30px;position:relative;background:#f5f7fa;border:1px solid var(--line);border-radius:3px;overflow:hidden;cursor:pointer}.timeline .event{position:absolute;top:0;bottom:0;background:#edb75355;border-left:1px solid #d29632;border-right:1px solid #d29632}.timeline .point{position:absolute;top:9px;width:4px;height:12px;border-radius:1px;background:var(--cyan);transform:translateX(-50%)}.timeline .point.hit{background:var(--red);height:20px;top:4px}.timeline .cursor{position:absolute;top:0;bottom:0;width:1px;background:#18243388}.axis{display:flex;justify-content:space-between;color:var(--muted);font:10px var(--mono);margin-top:6px}.annotation{font-size:12px;color:var(--muted);padding-top:10px}.requirements{list-style:none;margin:0;padding:0}.requirements li{padding:12px 0;border-bottom:1px solid var(--line);font-size:13px;display:flex;gap:10px}.requirements li:last-child{border:0}.req-number{font:10px var(--mono);color:var(--muted);padding-top:4px}.detail-list{margin:12px 0 0;padding:0}.detail-list div{display:flex;justify-content:space-between;gap:12px;padding:6px 0;font-size:12px}.detail-list dt{color:var(--muted)}.detail-list dd{margin:0;text-align:right;font:11px/1.5 var(--mono);max-width:63%;overflow-wrap:anywhere}.divider{border:0;border-top:1px solid var(--line);margin:18px 0}.notice{border-left:3px solid #d9aa57;background:#fffaf0;padding:12px 15px;font-size:12px;color:#62553e}.notice strong{display:block;color:#57472c;font-weight:600;margin-bottom:3px}aside .notice{margin-top:18px;background:#f5f7fa;border-left-color:var(--line);color:var(--muted)}aside .notice strong{color:var(--text)}.compare,.evidence{margin-top:20px}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;white-space:nowrap}th{text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);background:#f8fafc;padding:11px 14px;border-bottom:1px solid var(--line)}td{padding:13px 14px;font-size:12px;border-bottom:1px solid var(--line)}tbody tr:last-child td{border:0}td:first-child,th:first-child{padding-left:20px}.pill{font-size:11px;border-radius:3px;padding:4px 7px;display:inline-block}.pill.pass{background:#e7f4ec;color:var(--green)}.pill.fail{background:#fcebed;color:var(--red)}.pill.unknown{background:#fff1d5;color:var(--amber)}.bad{color:var(--red)}.good{color:var(--green)}.filmstrip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.frame-card{border-radius:3px;padding:0;overflow:hidden;text-align:left;background:white}.frame-card.flagged{border-color:var(--red)}.frame-card img{width:100%;display:block;image-rendering:pixelated;aspect-ratio:16/9}.frame-card .caption{padding:7px;display:flex;justify-content:space-between;gap:5px;font:10px var(--mono);color:var(--muted)}.frame-card .caption b{font-weight:400;color:var(--cyan)}.frame-card.flagged .caption b{color:var(--red)}.evidence-note{margin-top:14px;font-size:13px;color:var(--muted)}.footer{margin-top:24px;display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:16px;font-size:11px;color:var(--muted)}.loading{padding:40px;text-align:center;color:var(--muted)}.error{border:1px solid #df9aa3;background:#fff0f1;padding:24px;border-radius:4px;margin-top:25px;white-space:pre-wrap;color:var(--red)}.hidden{display:none!important}.guide{margin:0 0 16px;color:var(--muted);font-size:13px}.outcome-note{font-size:11px;color:var(--muted);white-space:normal;min-width:135px;margin-top:4px}details{font-size:12px;color:var(--muted);margin-top:18px}summary{cursor:pointer;color:var(--text);font-weight:500}details p{margin-top:8px}
+@media(max-width:1000px){.workspace{grid-template-columns:1fr 260px}.shell{padding:0 20px 24px}.metric-card{padding:16px}.metric-foot{display:block}.metric-foot span{display:block}.brand small{display:none}}
+@media(max-width:780px){.workspace{grid-template-columns:1fr}.shell{padding:0 14px 24px}.top{min-height:60px}.summary{gap:8px}.metric-card{padding:12px 10px}.metric-value{font-size:25px}.metric-value span{display:block;margin:0;font-size:11px}.metric-head{display:block}.metric-head span+span{display:none}.metric-foot{font-size:10px}.metric-card>.small{font-size:10px}.visual-stage{padding:14px}.panel-pad{padding:16px}.case-bar{padding:14px}.filmstrip{grid-template-columns:repeat(4,minmax(0,1fr))}.frame-card .caption{padding:5px;font-size:9px;display:block}.frame-card .caption b{display:block}.footer{display:block}.footer p+p{margin-top:8px}h1{font-size:25px}.seal{font-size:11px}}
+</style>
+</head>
+<body>
+<main class="shell">
+ <header class="top"><div class="brand">BriefGuard<small>Video compliance / Experiments</small></div><span class="seal">Study 01 · Saved results</span></header>
+ <section class="intro"><div><div class="eyebrow">Frame sampling benchmark</div><h1>Which frames catch a violation?</h1><p>Three ways to select 8 frames from a video. One fixed checker. Compare what each method sees — and what it misses.</p><div class="status-strip"><span class="badge">Synthetic video</span><span class="badge">CPU pixel checker</span><span class="badge">Saved experiment · no live inference</span></div></div></section>
+ <div id="loading" class="loading">Loading completed run artifacts…</div><div id="error" class="error hidden" role="alert"></div>
+ <div id="app" class="hidden">
+  <div id="researchResult" class="notice hidden"></div>
+  <section id="summary" class="summary" aria-label="Complete run summary"></section>
+  <p class="guide">Choose a case → compare the timelines → click a method to inspect its 8 frames.</p>
+  <div class="workspace">
+   <div>
+    <section class="panel">
+     <div class="case-bar"><label for="caseSelect">INSPECT CASE</label><select id="caseSelect"></select></div>
+     <div class="visual-stage"><div class="canvas-wrap"><canvas id="video" width="128" height="72" aria-label="Exact synthetic video frames"></canvas><span id="frameStamp" class="frame-stamp"></span><span id="truthStamp" class="truth-stamp badge">ANNOTATED VIOLATION</span></div><div class="transport"><button id="play" type="button" aria-label="Play clip">▶</button><input id="scrub" type="range" min="0" max="95" value="0" step="1" aria-label="Current frame"><output id="timecode"></output></div></div>
+     <div class="panel-pad"><div class="panel-head"><h2>Evidence timeline</h2><label class="timeline-controls"><input id="showTruth" type="checkbox" checked> Ground truth</label></div><div class="legend"><span><i class="dot cyan"></i>Selected frame</span><span><i class="dot red"></i>Checker finding</span><span><i class="dot amber"></i>Annotated interval</span></div><div id="timelines" class="timeline-group"></div><div id="axis" class="axis"></div><p id="intervalNote" class="annotation"></p></div>
+    </section>
+    <section class="panel compare"><div class="panel-pad" style="padding-bottom:0"><div class="panel-head"><h2>Same clip. Same frame budget.</h2><span id="budgetLabel" class="small"></span></div></div><div class="table-wrap"><table><thead><tr><th>Sampler</th><th>Result on this clip</th><th>Event sampled</th><th>Checker output</th><th>CPU pipeline</th></tr></thead><tbody id="comparison"></tbody></table></div></section>
+    <section class="panel evidence"><div class="panel-pad"><div class="panel-head"><h2 id="evidenceTitle">Selected evidence</h2><span class="small">CLICK TO INSPECT</span></div><div id="filmstrip" class="filmstrip"></div><p id="evidenceNote" class="evidence-note"></p></div></section>
+   </div>
+   <aside class="panel panel-pad"><div class="panel-head"><h2>The brief</h2><span class="small">FIXED TEMPLATE</span></div><ul id="requirements" class="requirements"></ul><hr class="divider"><div class="eyebrow">Case record</div><dl id="details" class="detail-list"></dl><details><summary>Dataset and limitations</summary><p>Synthetic scenes and a fixed pixel checker. These results do not measure natural-video or VLM accuracy.</p><p id="selectionNote"></p></details><hr class="divider"><div class="small" id="sourceNote"></div></aside>
+  </div>
+  <footer class="footer"><p>CPU time = prepass + frame selection + checking. Generation excluded.</p><p id="runNote"></p></footer>
+ </div>
+</main>
+<script src="data.js"></script>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const names={uniform:'Uniform',change:'Frame change',adaptive:'Adaptive'};
+const order=['uniform','change','adaptive'];
+const state={data:null,clip:null,method:'adaptive',frame:0,playing:false,lastTick:0,sprite:null,loadId:0};
+const percent=value=>value==null?'—':`${(100*value).toFixed(1)}%`;
+const text=(tag,value,className)=>{const el=document.createElement(tag);el.textContent=value;if(className)el.className=className;return el;};
+const methodOrder=methods=>Object.keys(methods).sort((a,b)=>(order.indexOf(a)<0?99:order.indexOf(a))-(order.indexOf(b)<0?99:order.indexOf(b)));
+function safeAsset(url){if(typeof url!=='string'||!/^assets\/[a-zA-Z0-9_.-]+$/.test(url))throw new Error('Invalid local asset path');return url;}
+function evidenceIndices(row){return new Set((row.prediction?.evidence||[]).filter(e=>e.frame_index!=null).map(e=>Number(e.frame_index)));}
+function status(row){return row.prediction?.violated===true?'fail':row.prediction?.violated===false?'pass':'unknown';}
+function totalMs(row){const t=row.timing||{};return 1000*['prepass_s','selection_s','verification_s'].reduce((s,k)=>s+Number(t[k]||0),0);}
+function renderSummary(){
+ const wrap=$('summary');wrap.replaceChildren();
+ for(const item of [...state.data.summary].sort((a,b)=>order.indexOf(a.method)-order.indexOf(b.method))){
+  const card=text('article','', 'metric-card'),head=text('div','', 'metric-head');head.append(text('span',names[item.method]||item.method),text('span',`${item.n_clips} CLIPS`));
+  const value=text('div',percent(item.recall),'metric-value');value.append(text('span','violations detected'));
+  const foot=text('div','', 'metric-foot');foot.append(text('span',`${percent(item.false_approval_rate)} false approvals`),text('span',`${Number(item.median_pipeline_ms??item.mean_pipeline_ms??0).toFixed(2)} ms ${item.median_pipeline_ms!=null?'median':'mean'}`));card.append(head,value,foot);const bar=text('div','','metric-bar'),fill=text('span','');fill.style.width=`${100*(item.recall||0)}%`;bar.append(fill);card.append(bar);
+  if(item.recall_ci95)card.append(text('div',`95% source-cluster CI: ${percent(item.recall_ci95[0])}–${percent(item.recall_ci95[1])}`, 'small'));
+  wrap.append(card);
+ }
+}
+async function selectClip(index){
+ state.playing=false;$('play').textContent='▶';$('play').setAttribute('aria-label','Play clip');state.clip=state.data.clips[index];state.frame=0;state.sprite=null;
+ if(!state.clip.methods[state.method])state.method=methodOrder(state.clip.methods)[0];
+ $('scrub').max=state.clip.n_frames-1;$('video').width=state.clip.width;$('video').height=state.clip.height;
+ const loadId=++state.loadId;const sprite=new Image();
+ sprite.onload=()=>{if(state.loadId===loadId){state.sprite=sprite;drawFrame();}};
+ sprite.onerror=()=>showError('A replay asset could not be loaded. Re-export this demo from the matching run configuration.');
+ sprite.src=safeAsset(state.clip.sprite_url);
+ renderBrief();renderTimelines();renderComparison();renderEvidence();drawFrame();
+}
+function renderBrief(){
+ const clip=state.clip,brief=clip.brief,a=clip.annotation;
+ const list=$('requirements');list.replaceChildren();
+ let requirements=brief.requirements;
+ if(!Array.isArray(requirements))requirements=['The required product remains visible.','Packaging retains its required color.','The label matches the reference bitmap.','The prohibited patch remains absent.'];
+ requirements.forEach((requirement,i)=>{const li=text('li','');let label=typeof requirement==='string'?requirement:requirement.description||requirement.text||requirement.requirement||requirement.name||JSON.stringify(requirement);li.append(text('span',`${String(i+1).padStart(2,'0')}`,'req-number'),text('span',label));list.append(li);});
+ const details=$('details');details.replaceChildren();
+ const values=[['Case',clip.clip_id],['Source',String(clip.source_id)],['Condition',a.violation_type||'compliant'],['Background',a.motion||'—'],['Duration',`${(clip.n_frames/clip.fps).toFixed(2)} s · ${clip.fps} fps`],['Violation',a.violated?`${a.duration_frames} frames (${(a.duration_frames/clip.fps).toFixed(3)} s)`:'none'],['Checker',Object.values(clip.methods)[0].prediction?.model_version||'pixel verifier'],['Human audit',a.human_audit||'pending']];
+ for(const [key,value] of values){const row=text('div','');row.append(text('dt',key),text('dd',value));details.append(row);}
+ $('selectionNote').textContent=`${clip.reason}. ${state.data.selection_note}`;
+ $('sourceNote').textContent=`Artifact: ${state.data.result_directory}/${state.data.source_predictions}`;
+ $('budgetLabel').textContent=`${state.data.budget} FRAMES / METHOD`;
+ $('runNote').textContent=`${state.data.result_directory}\nOffline replay · no paid calls`;
+}
+function renderTimelines(){
+ const wrap=$('timelines');wrap.replaceChildren();const clip=state.clip;
+ for(const method of methodOrder(clip.methods)){
+  const row=clip.methods[method],findings=evidenceIndices(row),header=text('div','', 'timeline-method'),label=text('button',names[method]||method,method===state.method?'active':'');label.type='button';label.onclick=()=>{state.method=method;renderTimelines();renderEvidence();};
+  header.append(label,text('span',`${row.selected_indices.length} frames`, 'small'));const line=text('div','', 'timeline');line.setAttribute('aria-label',`${names[method]||method} frame timeline`);
+  if($('showTruth').checked&&clip.annotation.violated){const event=text('span','', 'event');event.style.left=`${clip.annotation.start_frame/clip.n_frames*100}%`;event.style.width=`${(clip.annotation.end_frame-clip.annotation.start_frame)/clip.n_frames*100}%`;line.append(event);}
+  for(const index of row.selected_indices){const point=text('span','', `point${findings.has(index)?' hit':''}`);point.style.left=`${(index+.5)/clip.n_frames*100}%`;point.title=`Frame ${index}${findings.has(index)?' · checker finding':''}`;line.append(point);}
+  const cursor=text('span','', 'cursor');cursor.style.left=`${(state.frame+.5)/clip.n_frames*100}%`;line.append(cursor);
+  line.onclick=event=>{state.playing=false;$('play').textContent='▶';$('play').setAttribute('aria-label','Play clip');const box=line.getBoundingClientRect();state.frame=Math.min(clip.n_frames-1,Math.max(0,Math.floor((event.clientX-box.left)/box.width*clip.n_frames)));drawFrame();};wrap.append(header,line);
+ }
+ const axis=$('axis');axis.replaceChildren();[0,.25,.5,.75,1].forEach(r=>axis.append(text('span',`${(r*clip.n_frames/clip.fps).toFixed(1)}s`)));
+ $('intervalNote').textContent=$('showTruth').checked?(clip.annotation.violated?`Ground truth: frames [${clip.annotation.start_frame}, ${clip.annotation.end_frame}) — the end frame is excluded.`:'Compliant control: no generated violation.'):'Ground truth hidden. Timelines still show the actual selected frames and checker findings.';
+}
+function renderComparison(){
+ const body=$('comparison');body.replaceChildren();const clip=state.clip;
+ for(const method of methodOrder(clip.methods)){
+  const row=clip.methods[method],decision=status(row),falseApproval=clip.annotation.violated&&row.prediction?.violated===false;
+  const found=row.prediction?.violated===true,unknown=row.prediction?.violated==null;
+  const outcome=unknown?'Unresolved':clip.annotation.violated?(found?'Violation detected':'Violation missed'):(found?'False alarm':'Correctly clear');
+  const tone=unknown?'unknown':falseApproval||(!clip.annotation.violated&&found)?'fail':'pass';
+  const cause=unknown?'No definite checker answer':falseApproval?(row.sampling_hit?'Checker missed sampled evidence':'No frame from the event') :'';
+  const tr=text('tr','');tr.append(text('td',names[method]||method));const result=text('td','');result.append(text('span',outcome,`pill ${tone}`));if(cause)result.append(text('div',cause,'outcome-note'));
+  tr.append(result,text('td',clip.annotation.violated?(row.sampling_hit?'Yes':'No'):'Not applicable'),text('td',decision==='unknown'?'Indeterminate':decision==='pass'?'Pass':'Flagged'),text('td',`${totalMs(row).toFixed(2)} ms`));body.append(tr);
+ }
+}
+function renderEvidence(){
+ const clip=state.clip,row=clip.methods[state.method],findings=evidenceIndices(row),strip=$('filmstrip');strip.replaceChildren();$('evidenceTitle').textContent=`${names[state.method]||state.method} · selected evidence`;
+ for(const index of row.selected_indices){const button=text('button','',`frame-card${findings.has(index)?' flagged':''}`);button.type='button';const img=new Image();img.src=safeAsset(clip.frame_urls[String(index)]);img.alt=`Selected frame ${index}`;const caption=text('div','', 'caption');caption.append(text('span',`f${String(index).padStart(3,'0')}`),text('b',findings.has(index)?'FINDING':`${(index/clip.fps).toFixed(2)}s`));button.append(img,caption);button.onclick=()=>{state.playing=false;$('play').textContent='▶';$('play').setAttribute('aria-label','Play clip');state.frame=index;drawFrame();};strip.append(button);}
+ const evidence=row.prediction?.evidence||[];
+ const descriptions={forbidden_element_absent:'Forbidden red element detected',label_unchanged:'Label differs from the reference',product_present:'Required product is missing',color_correct:'Packaging color differs from the reference'};
+ const labels=[...new Set(evidence.map(e=>{const key=e.requirement||e.requirement_id||e.kind;return descriptions[key]||key||'Visual mismatch';}))];
+ $('evidenceNote').textContent=labels.length?`Checker evidence: ${labels.join('; ')}. Click a frame to inspect its pixels.`:row.prediction?.violated==null?'The checker returned an indeterminate result. This is not an approval.':clip.annotation.violated?(row.sampling_hit?'The event is present in the selected frames, but the checker missed it. This is a checker failure.':'None of the selected frames overlap the event. The checker never saw the violation. This is a sampling failure.'):'This control clip contains no violation. The checker correctly returned pass.';
+}
+function drawFrame(){
+ const clip=state.clip;if(!clip)return;const canvas=$('video'),context=canvas.getContext('2d');
+ if(state.sprite){context.imageSmoothingEnabled=false;context.drawImage(state.sprite,(state.frame%clip.sprite_columns)*clip.width,Math.floor(state.frame/clip.sprite_columns)*clip.height,clip.width,clip.height,0,0,clip.width,clip.height);}else{context.clearRect(0,0,canvas.width,canvas.height);}
+ $('scrub').value=state.frame;$('frameStamp').textContent=`FRAME ${String(state.frame).padStart(3,'0')} / ${clip.n_frames-1}`;$('timecode').textContent=`${(state.frame/clip.fps).toFixed(2)} / ${(clip.n_frames/clip.fps).toFixed(2)} s`;
+ const a=clip.annotation;const active=$('showTruth').checked&&a.violated&&state.frame>=a.start_frame&&state.frame<a.end_frame;$('truthStamp').style.display=active?'inline-flex':'none';
+ document.querySelectorAll('.timeline .cursor').forEach(el=>el.style.left=`${(state.frame+.5)/clip.n_frames*100}%`);
+}
+function tick(now){if(state.playing&&state.clip){if(!state.lastTick)state.lastTick=now;const elapsed=now-state.lastTick,steps=Math.floor(elapsed/(1000/state.clip.fps));if(steps){state.frame=(state.frame+steps)%state.clip.n_frames;state.lastTick+=steps*1000/state.clip.fps;drawFrame();}}else state.lastTick=0;requestAnimationFrame(tick);}
+function showError(message){$('loading').classList.add('hidden');$('error').classList.remove('hidden');$('error').textContent=message;}
+$('caseSelect').addEventListener('change',event=>selectClip(Number(event.target.value)).catch(error=>showError(error.message)));
+$('play').addEventListener('click',()=>{state.playing=!state.playing;state.lastTick=0;$('play').textContent=state.playing?'Ⅱ':'▶';$('play').setAttribute('aria-label',state.playing?'Pause clip':'Play clip');});
+$('scrub').addEventListener('input',event=>{state.playing=false;$('play').textContent='▶';$('play').setAttribute('aria-label','Play clip');state.frame=Number(event.target.value);drawFrame();});
+$('showTruth').addEventListener('change',()=>{renderTimelines();drawFrame();});
+const replayData = window.BRIEFGUARD_DATA ? Promise.resolve(window.BRIEFGUARD_DATA) : fetch('data.json').then(response=>{if(!response.ok)throw new Error(`data.json returned HTTP ${response.status}`);return response.json();});
+replayData.then(async data=>{
+ if(data.mode!=='replay'||!data.synthetic||!Array.isArray(data.clips)||!data.clips.length)throw new Error('This viewer requires an exported synthetic replay dataset.');
+ state.data=data;renderSummary();
+ if(data.hypothesis_supported===false){$('researchResult').classList.remove('hidden');$('researchResult').append(text('strong','No confirmed advantage for adaptive'),text('span','The cards summarize the complete run at this frame budget. The cases below explain individual successes and failures; they are not a separate test set.'));}
+ data.clips.forEach((clip,i)=>{const option=text('option',`${String(i+1).padStart(2,'0')} · ${clip.reason}`);option.value=i;$('caseSelect').append(option);});
+ $('loading').classList.add('hidden');$('app').classList.remove('hidden');await selectClip(0);requestAnimationFrame(tick);
+}).catch(error=>showError(`Replay not available: ${error.message}\n\nExport a completed run, then open this index.html file alongside data.js and assets/.\n\nOptional server:\npython3 -m http.server --bind 127.0.0.1 8765 --directory demo`));
+</script>
+</body>
+</html>

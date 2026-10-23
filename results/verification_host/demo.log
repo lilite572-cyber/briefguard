@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "kind": "static_evidence_and_pixel_check",
+  "cases": 6,
+  "method_cases": 18,
+  "image_assets": 153,
+  "sprite_frames": 576,
+  "browser_visual_qa": "not_performed_by_this_script"
+}

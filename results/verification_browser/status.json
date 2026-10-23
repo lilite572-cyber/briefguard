@@ -1,0 +1,45 @@
+{
+  "base_commit": "77662f0",
+  "tested_file": "demo/index.html",
+  "tested_file_sha256": "39a0acb73087d15b7a9f48f0acde9f17004a9da8c9df9e086d8a9f2ad1f60bdc",
+  "date": "2026-10-22",
+  "browser": "ChatGPT in-app browser; engine version unavailable",
+  "observed_viewport_width_css_px": 639,
+  "case_method_checks": 18,
+  "selected_frame_indices_match_saved_data": true,
+  "all_144_thumbnail_loads_passed_on_repeat": true,
+  "console_warnings_errors": [],
+  "event_boundary_frames_checked": [
+    7,
+    8,
+    13,
+    14
+  ],
+  "event_interval": [
+    8,
+    14
+  ],
+  "timeline_center_click_frame": 47,
+  "playback_advanced": true,
+  "paused_thumbnail_frame": 12,
+  "truth_toggle_passed": true,
+  "frozen_core_hashes_passed": 6,
+  "static_assets": {
+    "cases": 6,
+    "method_cases": 18,
+    "images": 153,
+    "sprite_frames": 576
+  },
+  "targeted_python_tests_passed": 9,
+  "limitations": [
+    "390px and 1280px viewport requests did not change actual 639px viewport; those sizes remain unverified.",
+    "Missing-resource request blocking not available; fault injection not performed.",
+    "Canvas pixel readback is not exposed by browser DOM API; exact pixel comparison is provided by the separate static asset checker.",
+    "No human annotation or live model inference performed."
+  ],
+  "fixed": [
+    "Grid minimum width caused horizontal page overflow at 639px; corrected, document width now equals viewport.",
+    "Pausing through clip/scrub/thumbnail/timeline navigation now resets the accessible play-button label."
+  ],
+  "asset_observation": "One initial thumbnail was still loading at immediate observation; it loaded subsequently and all 18 selections passed on repeat."
+}

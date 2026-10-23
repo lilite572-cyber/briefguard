@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src blob: data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<title>BriefGuard · Подготовить проверку</title>
+<style>
+:root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#e7edf5;background:#10161f;color-scheme:dark;line-height:1.55}*{box-sizing:border-box}body{margin:0}main{max-width:1050px;margin:auto;padding:42px 24px 60px}header{max-width:780px;margin-bottom:30px}.eyebrow{color:#70dec1;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}h1{font-size:clamp(28px,4vw,43px);line-height:1.15;margin:12px 0}h2{font-size:21px;margin:0 0 18px}p{color:#b4c0d0}section{padding:24px;border:1px solid #344254;border-radius:16px;background:#17212e;margin:18px 0}label{display:block;margin:15px 0 6px;font-weight:600}input,select,textarea,button{font:inherit}input,select,textarea{background:#0f1721;border:1px solid #586b84;border-radius:8px;color:#eef3fa;padding:10px 12px;width:100%}textarea{min-height:140px;resize:vertical}button{border:1px solid #77dcc4;border-radius:8px;padding:11px 17px;cursor:pointer;background:#77dcc4;color:#10261f;font-weight:650}button.secondary{color:#d5e4f4;background:transparent;border-color:#758ca8}button:disabled{opacity:.5;cursor:not-allowed}:focus-visible{outline:3px solid #d4bdff;outline-offset:3px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}.hint{font-size:13px;color:#b4c0d0;margin:7px 0}.notice{border-left:3px solid #77dcc4;padding:10px 15px;background:#142e2d;color:#daefe8}.actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:16px}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#0e151e;border-radius:8px;padding:16px;color:#d5e4f4;font-size:13px;user-select:all}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}.error{color:#ffb5b5;min-height:1.55em}.status{color:#8fe5cf;min-height:1.55em}details{margin:16px 0}summary{cursor:pointer;color:#d8c8ff}#preview{max-width:100%;max-height:260px;object-fit:contain;display:block;margin:14px 0;border-radius:8px}#preview[hidden]{display:none}footer{font-size:13px;color:#a8b8ca}ol{padding-left:22px}li{margin:8px 0}@media(max-width:650px){.grid{grid-template-columns:1fr}main{padding:24px 16px}section{padding:18px}}
+</style>
+</head>
+<body><main>
+<header><div class="eyebrow">BriefGuard · Local workbench</div><h1>От требований к проверяемым кадрам</h1><p>Сформулируйте визуальные требования и подготовьте локальный запуск. Получите выбранные кадры, их временные отметки и отчёт для проверки.</p><p class="notice">Эта страница не отправляет файлы в сеть и не запускает модель. Подготовка выполняется отдельной командой на вашем компьютере. До получения настоящего ответа модели результат проверки отсутствует.</p></header>
+<section aria-labelledby="source-heading"><h2 id="source-heading">1. Укажите исходные данные</h2>
+<div class="grid"><div><label for="format">Формат</label><select id="format"><option value="gif">Анимированный GIF</option><option value="npz">NPZ: frames + fps</option><option value="png">Папка кадров PNG</option></select></div><div><label for="inputPath">Путь к файлу или папке</label><input id="inputPath" value="/absolute/path/to/clip.gif" autocomplete="off" spellcheck="false"></div></div>
+<p class="hint">Путь используется только в команде. Браузер не имеет доступа к указанному пути. MP4/MOV этим процессом не декодируются.</p>
+<div id="fpsBlock" hidden><label for="fps">Частота PNG-последовательности, кадров/с</label><input id="fps" type="number" min="0.001" max="1000" step="any" value="24"><p class="hint">Укажите реальную постоянную частоту исходника. Переменную частоту нельзя молча заменять постоянной.</p></div>
+<details><summary>Предварительный просмотр GIF на этом устройстве</summary><label for="previewFile">Выбрать GIF для просмотра</label><input id="previewFile" type="file" accept="image/gif,.gif"><p class="hint">Это только просмотр: он не запускает декодер BriefGuard и не подтверждает требования. Полный путь для команды всё равно нужно указать выше.</p><img id="preview" alt="Выбранный локальный GIF" hidden><p id="previewStatus" class="hint" role="status"></p></details>
+</section>
+<section aria-labelledby="requirements-heading"><h2 id="requirements-heading">2. Запишите требования</h2>
+<label for="requirements">Одно проверяемое визуальное требование на строку</label><textarea id="requirements" spellcheck="true" placeholder="Продукт должен оставаться видимым.&#10;На упаковке не должно быть яркой пурпурной накладки."></textarea>
+<p class="hint">Формулируйте то, что можно увидеть на кадре. «Ролик должен быть хорошим» не задаёт проверяемого критерия. Проверка отдельных кадров не подтверждает соблюдение требования между ними.</p>
+<label for="requirementsPath">Куда вы сохраните requirements.json</label><input id="requirementsPath" value="requirements.json" spellcheck="false"><p class="hint">Скачайте файл и поместите его по этому пути относительно корня репозитория либо укажите абсолютный путь.</p>
+<div class="actions"><button id="download">Скачать requirements.json</button><span id="downloadStatus" class="status" role="status"></span></div>
+<details><summary>Предпросмотр JSON</summary><pre id="requirementsPreview">{}</pre></details>
+</section>
+<section aria-labelledby="prepare-heading"><h2 id="prepare-heading">3. Подготовьте кадры и отчёт</h2>
+<div class="grid"><div><label for="method">Метод выбора</label><select id="method"><option value="uniform">uniform — равномерно</option><option value="change">change — по изменению</option><option value="adaptive">adaptive — новизна и покрытие</option></select></div><div><label for="budget">Бюджет кадров</label><input id="budget" type="number" min="1" max="32" step="1" value="8"></div></div>
+<label for="outputPath">Новая папка результатов</label><input id="outputPath" value="results/private-workbench-01" spellcheck="false"><p class="hint">Используйте новую папку для нового запуска. Не перезаписывайте результаты исследования. Папки results/private* не публикуются в Git.</p>
+<p id="errors" class="error" role="alert"></p><pre id="prepareCommand" tabindex="0" aria-label="Команда подготовки"></pre><button id="copyPrepare" class="secondary">Скопировать команду</button>
+<p class="hint">Запустите из корня репозитория в Python-окружении с установленными зависимостями. Команда не обращается к API. Затем откройте report.html внутри папки результатов: там находятся выбранные кадры и их отметки времени.</p>
+</section>
+<section aria-labelledby="execute-heading"><h2 id="execute-heading">4. Отдельный платный запуск — только после согласования</h2><p>Провайдер: OpenAI. Модель: <code>gpt-4.1-mini-2025-04-14</code>. Общий плановый лимит: $0,50; максимум 36 попыток с повторами. Пока разрешение на эти расходы не получено, оставайтесь на шаге подготовки.</p><p class="notice">Копирование команды не является разрешением на расходы. Эта страница ничего не запускает. После отдельного согласования ключ задаётся через OPENAI_API_KEY в окружении процесса, вне чата и репозитория.</p><pre id="executeCommand" tabindex="0" aria-label="Команда отдельного платного запуска"></pre><button id="copyExecute" class="secondary">Скопировать команду платного шага</button><p class="hint">Все подготовки используют общий журнал results/private-workbench-api. Не удаляйте его и не создавайте новую копию репозитория для обхода лимита. Резерв $0,01 за попытку — локальное ограничение, не гарантия счёта провайдера. После выполнения заново откройте report.html. Проверка выбранных кадров не подтверждает весь ролик.</p></section>
+<section aria-labelledby="response-heading"><h2 id="response-heading">5. Альтернатива: импорт готового ответа</h2><p>Подготовленная папка содержит request.json. Если запрос уже выполнен отдельно, можно импортировать сохранённый ответ вместо повторной оплаты. Эта страница не выполняет вызов. Не вставляйте API-ключи в файлы проекта или в эту страницу.</p>
+<label for="responsePath">Путь к сохранённому JSON-ответу Responses API</label><input id="responsePath" value="/absolute/path/to/response.json" spellcheck="false"><pre id="importCommand" tabindex="0" aria-label="Команда импорта ответа"></pre><button id="copyImport" class="secondary">Скопировать команду импорта</button>
+<p class="hint">Импорт проверяет структуру и ссылки на кадры и требования. Происхождение ответа от провайдера и связь с этим запросом не аутентифицированы. Это не проверка правдивости вывода модели и не человеческая разметка. После импорта заново откройте report.html и сопоставьте доказательства с кадрами. Без ответа не следует считать ролик прошедшим проверку.</p></section>
+<p id="copyStatus" class="status" role="status"></p><footer>Эксперимент на синтетических данных и проверка нового ролика — разные задачи. Этот интерфейс не меняет исходный протокол, алгоритмы или опубликованные результаты.</footer>
+</main><script>
+'use strict';
+const $ = id => document.getElementById(id);
+const fieldIds = ['format','inputPath','fps','requirements','requirementsPath','method','budget','outputPath','responsePath'];
+let previewUrl = null;
+const quote = value => "'" + value.replace(/'/g, "'\\''") + "'";
+function requirementsObject(){
+  return Object.fromEntries($('requirements').value.split(/\r?\n/).map(s=>s.trim()).filter(Boolean).map((text,index)=>['rule_'+(index+1),text]));
+}
+function build(){
+  $('fpsBlock').hidden = $('format').value !== 'png';
+  $('inputPath').placeholder = {gif:'/absolute/path/to/clip.gif', npz:'/absolute/path/to/clip.npz', png:'/absolute/path/to/frames'}[$('format').value];
+  const req = requirementsObject();
+  $('requirementsPreview').textContent = JSON.stringify(req,null,2);
+  const errors = [];
+  if(!Object.keys(req).length) errors.push('Добавьте хотя бы одно требование.');
+  if(Object.keys(req).length>50) errors.push('Используйте не более 50 требований.');
+  if(Object.values(req).some(s=>s.length>2000)) errors.push('Сократите каждое требование до 2000 символов.');
+  const paths = ['inputPath','requirementsPath','outputPath','responsePath'];
+  if(paths.some(id=>!$(id).value.trim() || /[\r\n\0]/.test($(id).value))) errors.push('Укажите непустые пути без переводов строк.');
+  const k = Number($('budget').value);
+  if(!Number.isInteger(k)||k<1||k>32) errors.push('Бюджет: целое число от 1 до 32.');
+  const fps = Number($('fps').value);
+  if($('format').value==='png'&&(!Number.isFinite(fps)||fps<=0||fps>1000)) errors.push('Для PNG нужна частота от 0 до 1000 кадров/с (не включая 0).');
+  const base = 'python -m briefguard.workflow ';
+  $('prepareCommand').textContent = base+'prepare --input '+quote($('inputPath').value.trim())+' --requirements '+quote($('requirementsPath').value.trim())+' --out '+quote($('outputPath').value.trim())+' --method '+$('method').value+' --budget '+(Number.isInteger(k)?k:8)+($('format').value==='png'?' --fps '+fps:'');
+  $('executeCommand').textContent = base+'execute --directory '+quote($('outputPath').value.trim())+' --approve-openai-gpt41mini-usd050';
+  $('copyExecute').disabled = !$('outputPath').value.trim() || /[\r\n\0]/.test($('outputPath').value);
+  $('importCommand').textContent = base+'import-response --directory '+quote($('outputPath').value.trim())+' --response '+quote($('responsePath').value.trim());
+  $('errors').textContent = errors.join(' ');
+  $('download').disabled = !Object.keys(req).length || Object.keys(req).length>50 || Object.values(req).some(s=>s.length>2000);
+  $('copyPrepare').disabled = errors.length>0;
+  $('copyImport').disabled = paths.some(id=>!$(id).value.trim()||/[\r\n\0]/.test($(id).value));
+}
+for(const id of fieldIds) $(id).addEventListener('input',()=>{ $('downloadStatus').textContent=''; build(); });
+$('download').addEventListener('click',()=>{
+  const blob=new Blob([JSON.stringify(requirementsObject(),null,2)+'\n'],{type:'application/json'});
+  const url=URL.createObjectURL(blob), a=document.createElement('a'); a.href=url;a.download='requirements.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+  $('downloadStatus').textContent='Файл подготовлен. Проверьте папку загрузок.';
+});
+async function copy(id){
+  try{await navigator.clipboard.writeText($(id).textContent);$('copyStatus').textContent='Команда скопирована.';}
+  catch(_){const selection=window.getSelection(),range=document.createRange();range.selectNodeContents($(id));selection.removeAllRanges();selection.addRange(range);$('copyStatus').textContent='Браузер не разрешил копирование. Текст выделен — нажмите ⌘C / Ctrl+C.';}
+}
+$('copyPrepare').addEventListener('click',()=>copy('prepareCommand'));
+$('copyImport').addEventListener('click',()=>copy('importCommand'));
+$('copyExecute').addEventListener('click',()=>copy('executeCommand'));
+$('previewFile').addEventListener('change',()=>{
+  if(previewUrl){URL.revokeObjectURL(previewUrl);previewUrl=null;}
+  $('preview').hidden=true;$('preview').removeAttribute('src');
+  const file=$('previewFile').files[0];if(!file){$('previewStatus').textContent='';return;}
+  if(!/\.gif$/i.test(file.name)||file.size>16*1024*1024){$('previewStatus').textContent='Для просмотра выберите GIF не больше 16 МиБ.';return;}
+  previewUrl=URL.createObjectURL(file);$('preview').src=previewUrl;$('preview').hidden=false;$('previewStatus').textContent=file.name+' · '+(file.size/1024/1024).toFixed(2)+' МиБ. Файл остаётся на устройстве.';
+});
+$('preview').addEventListener('error',()=>{$('preview').hidden=true;$('previewStatus').textContent='Браузер не смог показать GIF. Проверьте формат файла.';});
+build();
+</script></body></html>

@@ -1,0 +1,10 @@
+Collecting numpy==2.3.5 (from -r requirements.txt (line 1))
+  Downloading numpy-2.3.5-cp312-cp312-macosx_14_0_arm64.whl.metadata (62 kB)
+Collecting Pillow==12.3.0 (from -r requirements.txt (line 2))
+  Downloading pillow-12.3.0-cp312-cp312-macosx_11_0_arm64.whl.metadata (9.1 kB)
+Downloading numpy-2.3.5-cp312-cp312-macosx_14_0_arm64.whl (5.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.1/5.1 MB 2.9 MB/s eta 0:00:00
+Downloading pillow-12.3.0-cp312-cp312-macosx_11_0_arm64.whl (4.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.8/4.8 MB 5.8 MB/s eta 0:00:00
+Installing collected packages: Pillow, numpy
+Successfully installed Pillow-12.3.0 numpy-2.3.5

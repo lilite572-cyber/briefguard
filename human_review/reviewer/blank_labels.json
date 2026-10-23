@@ -1,0 +1,137 @@
+{
+  "schema_version": "human-labels-v1",
+  "dataset_id": "992c57883615422e034e45c85ba30b430cf66a72a85389d3ffa737909e55abaf",
+  "reviewer_id": "",
+  "reviewer_role": "human",
+  "human_attestation": false,
+  "labels": [
+    {
+      "case_id": "case-6b39d9550786",
+      "decision": "",
+      "violation_type": null,
+      "start_frame": null,
+      "end_frame": null,
+      "notes": ""
+    },
+    {
+      "case_id": "case-f82860c4a834",
+      "decision": "",
+      "violation_type": null,
+      "start_frame": null,
+      "end_frame": null,
+      "notes": ""
+    },
+    {
+      "case_id": "case-6a6d206214e3",
+      "decision": "",
+      "violation_type": null,
+      "start_frame": null,
+      "end_frame": null,
+      "notes": ""
+    },
+    {
+      "case_id": "case-016a8bb71b4a",
+      "decision": "",
+      "violation_type": null,
+      "start_frame": null,
+      "end_frame": null,
+      "notes": ""
+    },
+    {
+      "case_id": "case-b826e2a5a73a",
+      "decision": "",
+      "violation_type": null,
+      "start_frame": null,
+      "end_frame": null,
+      "notes": ""
+    },
+    {
+      "case_id": "case-8cdcacd1a7aa",
+      "decision": "",
+      "violation_type": null,
+      "start_frame": null,
+      "end_frame": null,
+      "notes": ""
+    },
+    {
+      "case_id": "case-8134f0f05b4f",
+      "decision": "",
+      "violation_type": null,
+      "start_frame": null,
+      "end_frame": null,
+      "notes": ""
+    },
+    {
+      "case_id": "case-f20263f8aaa9",
+      "decision": "",
+      "violation_type": null,
+      "start_frame": null,
+      "end_frame": null,
+      "notes": ""
+    },
+    {
+      "case_id": "case-a582f8a0e3d7",
+      "decision": "",
+      "violation_type": null,
+      "start_frame": null,
+      "end_frame": null,
+      "notes": ""
+    },
+    {
+      "case_id": "case-6eed817bd988",
+      "decision": "",
+      "violation_type": null,
+      "start_frame": null,
+      "end_frame": null,
+      "notes": ""
+    },
+    {
+      "case_id": "case-37a8e5b9d64f",
+      "decision": "",
+      "violation_type": null,
+      "start_frame": null,
+      "end_frame": null,
+      "notes": ""
+    },
+    {
+      "case_id": "case-cb2ad14ce45c",
+      "decision": "",
+      "violation_type": null,
+      "start_frame": null,
+      "end_frame": null,
+      "notes": ""
+    },
+    {
+      "case_id": "case-c35e0a8db31b",
+      "decision": "",
+      "violation_type": null,
+      "start_frame": null,
+      "end_frame": null,
+      "notes": ""
+    },
+    {
+      "case_id": "case-813969b271d9",
+      "decision": "",
+      "violation_type": null,
+      "start_frame": null,
+      "end_frame": null,
+      "notes": ""
+    },
+    {
+      "case_id": "case-37624c95af31",
+      "decision": "",
+      "violation_type": null,
+      "start_frame": null,
+      "end_frame": null,
+      "notes": ""
+    },
+    {
+      "case_id": "case-3cf203c3781d",
+      "decision": "",
+      "violation_type": null,
+      "start_frame": null,
+      "end_frame": null,
+      "notes": ""
+    }
+  ]
+}

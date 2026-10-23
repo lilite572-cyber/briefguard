@@ -1,0 +1,5524 @@
+{
+  "schema_version": 1,
+  "mode": "replay",
+  "synthetic": true,
+  "human_audit": "pending",
+  "budget": 8,
+  "source_predictions": "predictions.jsonl",
+  "result_directory": "test",
+  "selection_note": "Post-run illustrative cases; aggregate metrics use all completed rows, not this gallery.",
+  "cost_note": "CPU pipeline = prepass + selection + verification; excludes generation. See run artifacts for full accounting.",
+  "summary_source": "summary.json",
+  "hypothesis_supported": false,
+  "summary": [
+    {
+      "method": "uniform",
+      "n_clips": 832,
+      "recall": 0.3489583333333333,
+      "false_approval_rate": 0.6510416666666666,
+      "false_positive_rate": 0.0,
+      "median_pipeline_ms": 0.623853993602097,
+      "recall_ci95": [
+        0.3189778645833333,
+        0.37890625
+      ]
+    },
+    {
+      "method": "change",
+      "n_clips": 832,
+      "recall": 0.4361979166666667,
+      "false_approval_rate": 0.5638020833333334,
+      "false_positive_rate": 0.0,
+      "median_pipeline_ms": 13.329146459000185,
+      "recall_ci95": [
+        0.4075520833333333,
+        0.4661458333333333
+      ]
+    },
+    {
+      "method": "adaptive",
+      "n_clips": 832,
+      "recall": 0.4153645833333333,
+      "false_approval_rate": 0.5846354166666666,
+      "false_positive_rate": 0.0,
+      "median_pipeline_ms": 19.27133250865154,
+      "recall_ci95": [
+        0.3880208333333333,
+        0.4440104166666667
+      ]
+    }
+  ],
+  "clips": [
+    {
+      "clip_id": "s010000-distractor-clean-0",
+      "source_id": 10000,
+      "fps": 24,
+      "n_frames": 96,
+      "width": 128,
+      "height": 72,
+      "annotation": {
+        "violated": false,
+        "violation_type": null,
+        "start_frame": null,
+        "end_frame": null,
+        "duration_frames": 0,
+        "duration_seconds": 0.0,
+        "motion": "distractor",
+        "severity": "none",
+        "provenance": "synthetic",
+        "generator_version": "template-ad-v1",
+        "human_audit": "pending"
+      },
+      "brief": {
+        "schema_version": "brief-v1",
+        "workload": "fixed-template-synthetic-ad",
+        "fps": 24.0,
+        "frame_size": [
+          128,
+          72
+        ],
+        "requirements": [
+          "The product remains present in its specified region throughout the clip.",
+          "The package retains the specified RGB target, allowing the documented benign lighting jitter.",
+          "The NOVA bitmap remains unchanged; changing even one bitmap cell is a violation.",
+          "No pixels of the forbidden red element may appear in its specified inspection region."
+        ],
+        "product_roi": [
+          0.4296875,
+          0.2361111111111111,
+          0.71875,
+          0.8472222222222222
+        ],
+        "color_roi": [
+          0.453125,
+          0.6944444444444444,
+          0.6953125,
+          0.8055555555555556
+        ],
+        "label_roi": [
+          0.515625,
+          0.4305555555555556,
+          0.6328125,
+          0.5
+        ],
+        "forbidden_roi": [
+          0.8515625,
+          0.06944444444444445,
+          0.9453125,
+          0.18055555555555555
+        ],
+        "target_rgb": [
+          187,
+          108,
+          52
+        ],
+        "label_rgb": [
+          240,
+          242,
+          235
+        ],
+        "forbidden_rgb": [
+          235,
+          40,
+          70
+        ],
+        "label_bitmap": [
+          [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ]
+        ],
+        "benign_channel_jitter_max": 3
+      },
+      "reason": "Compliant control",
+      "methods": {
+        "adaptive": {
+          "annotation": {
+            "duration_frames": 0,
+            "duration_seconds": 0.0,
+            "end_frame": null,
+            "generator_version": "template-ad-v1",
+            "human_audit": "pending",
+            "motion": "distractor",
+            "provenance": "synthetic",
+            "severity": "none",
+            "start_frame": null,
+            "violated": false,
+            "violation_type": null
+          },
+          "brief": {
+            "benign_channel_jitter_max": 3,
+            "color_roi": [
+              0.453125,
+              0.6944444444444444,
+              0.6953125,
+              0.8055555555555556
+            ],
+            "forbidden_rgb": [
+              235,
+              40,
+              70
+            ],
+            "forbidden_roi": [
+              0.8515625,
+              0.06944444444444445,
+              0.9453125,
+              0.18055555555555555
+            ],
+            "fps": 24.0,
+            "frame_size": [
+              128,
+              72
+            ],
+            "label_bitmap": [
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                1
+              ]
+            ],
+            "label_rgb": [
+              240,
+              242,
+              235
+            ],
+            "label_roi": [
+              0.515625,
+              0.4305555555555556,
+              0.6328125,
+              0.5
+            ],
+            "product_roi": [
+              0.4296875,
+              0.2361111111111111,
+              0.71875,
+              0.8472222222222222
+            ],
+            "requirements": [
+              "The product remains present in its specified region throughout the clip.",
+              "The package retains the specified RGB target, allowing the documented benign lighting jitter.",
+              "The NOVA bitmap remains unchanged; changing even one bitmap cell is a violation.",
+              "No pixels of the forbidden red element may appear in its specified inspection region."
+            ],
+            "schema_version": "brief-v1",
+            "target_rgb": [
+              187,
+              108,
+              52
+            ],
+            "workload": "fixed-template-synthetic-ad"
+          },
+          "budget": 8,
+          "clip_id": "s010000-distractor-clean-0",
+          "method": "adaptive",
+          "pixels_sha256": "f0fc4efbb8b4a6d88a0b31c7ae9f5dc8fffcd7f3a9806fd3135a00b8185944dd",
+          "prediction": {
+            "api_cost_usd": 0.0,
+            "calls": 1,
+            "evidence": [],
+            "frames_verified": 8,
+            "model_version": "pixel-template-v1",
+            "per_frame": [
+              {
+                "failed_requirements": [],
+                "frame_index": 1
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 12
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 24
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 36
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 49
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 60
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 72
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 84
+              }
+            ],
+            "status": "pass",
+            "violated": false
+          },
+          "resources": {
+            "api_calls": 0,
+            "api_cost_usd": 0.0,
+            "checked_frames": 8,
+            "checked_pixels": 73728,
+            "feature_reuse_across_budgets": true,
+            "full_prepass_charged": true,
+            "prepass_frames": 96,
+            "prepass_low_res_pixels": 55296,
+            "prepass_source_pixels": 884736,
+            "verifier_calls": 1
+          },
+          "run_id": "72b02803d9e0b835",
+          "sampling_hit": null,
+          "selected_indices": [
+            1,
+            12,
+            24,
+            36,
+            49,
+            60,
+            72,
+            84
+          ],
+          "source_id": 10000,
+          "split": "test",
+          "timing": {
+            "generation_s": 0.01063891698140651,
+            "prepass_s": 0.018306792015209794,
+            "selection_s": 6.920803571119905e-05,
+            "verification_s": 0.0006541249458678067
+          },
+          "unit_id": "aa39e7c192ad09a5e4fa4916d0ed08d5dc3702d0926b889b4e8fde57747539f2"
+        },
+        "change": {
+          "annotation": {
+            "duration_frames": 0,
+            "duration_seconds": 0.0,
+            "end_frame": null,
+            "generator_version": "template-ad-v1",
+            "human_audit": "pending",
+            "motion": "distractor",
+            "provenance": "synthetic",
+            "severity": "none",
+            "start_frame": null,
+            "violated": false,
+            "violation_type": null
+          },
+          "brief": {
+            "benign_channel_jitter_max": 3,
+            "color_roi": [
+              0.453125,
+              0.6944444444444444,
+              0.6953125,
+              0.8055555555555556
+            ],
+            "forbidden_rgb": [
+              235,
+              40,
+              70
+            ],
+            "forbidden_roi": [
+              0.8515625,
+              0.06944444444444445,
+              0.9453125,
+              0.18055555555555555
+            ],
+            "fps": 24.0,
+            "frame_size": [
+              128,
+              72
+            ],
+            "label_bitmap": [
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                1
+              ]
+            ],
+            "label_rgb": [
+              240,
+              242,
+              235
+            ],
+            "label_roi": [
+              0.515625,
+              0.4305555555555556,
+              0.6328125,
+              0.5
+            ],
+            "product_roi": [
+              0.4296875,
+              0.2361111111111111,
+              0.71875,
+              0.8472222222222222
+            ],
+            "requirements": [
+              "The product remains present in its specified region throughout the clip.",
+              "The package retains the specified RGB target, allowing the documented benign lighting jitter.",
+              "The NOVA bitmap remains unchanged; changing even one bitmap cell is a violation.",
+              "No pixels of the forbidden red element may appear in its specified inspection region."
+            ],
+            "schema_version": "brief-v1",
+            "target_rgb": [
+              187,
+              108,
+              52
+            ],
+            "workload": "fixed-template-synthetic-ad"
+          },
+          "budget": 8,
+          "clip_id": "s010000-distractor-clean-0",
+          "method": "change",
+          "pixels_sha256": "f0fc4efbb8b4a6d88a0b31c7ae9f5dc8fffcd7f3a9806fd3135a00b8185944dd",
+          "prediction": {
+            "api_cost_usd": 0.0,
+            "calls": 1,
+            "evidence": [],
+            "frames_verified": 8,
+            "model_version": "pixel-template-v1",
+            "per_frame": [
+              {
+                "failed_requirements": [],
+                "frame_index": 16
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 22
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 32
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 43
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 54
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 64
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 80
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 86
+              }
+            ],
+            "status": "pass",
+            "violated": false
+          },
+          "resources": {
+            "api_calls": 0,
+            "api_cost_usd": 0.0,
+            "checked_frames": 8,
+            "checked_pixels": 73728,
+            "feature_reuse_across_budgets": true,
+            "full_prepass_charged": true,
+            "prepass_frames": 96,
+            "prepass_low_res_pixels": 55296,
+            "prepass_source_pixels": 884736,
+            "verifier_calls": 1
+          },
+          "run_id": "72b02803d9e0b835",
+          "sampling_hit": null,
+          "selected_indices": [
+            16,
+            22,
+            32,
+            43,
+            54,
+            64,
+            80,
+            86
+          ],
+          "source_id": 10000,
+          "split": "test",
+          "timing": {
+            "generation_s": 0.01063891698140651,
+            "prepass_s": 0.012686458008829504,
+            "selection_s": 2.9958027880638838e-05,
+            "verification_s": 0.0005953329964540899
+          },
+          "unit_id": "b36ab7a363203b6b848448143fd35d524679623b2823cab4a4e44b8cfb8261fb"
+        },
+        "uniform": {
+          "annotation": {
+            "duration_frames": 0,
+            "duration_seconds": 0.0,
+            "end_frame": null,
+            "generator_version": "template-ad-v1",
+            "human_audit": "pending",
+            "motion": "distractor",
+            "provenance": "synthetic",
+            "severity": "none",
+            "start_frame": null,
+            "violated": false,
+            "violation_type": null
+          },
+          "brief": {
+            "benign_channel_jitter_max": 3,
+            "color_roi": [
+              0.453125,
+              0.6944444444444444,
+              0.6953125,
+              0.8055555555555556
+            ],
+            "forbidden_rgb": [
+              235,
+              40,
+              70
+            ],
+            "forbidden_roi": [
+              0.8515625,
+              0.06944444444444445,
+              0.9453125,
+              0.18055555555555555
+            ],
+            "fps": 24.0,
+            "frame_size": [
+              128,
+              72
+            ],
+            "label_bitmap": [
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                1
+              ]
+            ],
+            "label_rgb": [
+              240,
+              242,
+              235
+            ],
+            "label_roi": [
+              0.515625,
+              0.4305555555555556,
+              0.6328125,
+              0.5
+            ],
+            "product_roi": [
+              0.4296875,
+              0.2361111111111111,
+              0.71875,
+              0.8472222222222222
+            ],
+            "requirements": [
+              "The product remains present in its specified region throughout the clip.",
+              "The package retains the specified RGB target, allowing the documented benign lighting jitter.",
+              "The NOVA bitmap remains unchanged; changing even one bitmap cell is a violation.",
+              "No pixels of the forbidden red element may appear in its specified inspection region."
+            ],
+            "schema_version": "brief-v1",
+            "target_rgb": [
+              187,
+              108,
+              52
+            ],
+            "workload": "fixed-template-synthetic-ad"
+          },
+          "budget": 8,
+          "clip_id": "s010000-distractor-clean-0",
+          "method": "uniform",
+          "pixels_sha256": "f0fc4efbb8b4a6d88a0b31c7ae9f5dc8fffcd7f3a9806fd3135a00b8185944dd",
+          "prediction": {
+            "api_cost_usd": 0.0,
+            "calls": 1,
+            "evidence": [],
+            "frames_verified": 8,
+            "model_version": "pixel-template-v1",
+            "per_frame": [
+              {
+                "failed_requirements": [],
+                "frame_index": 6
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 18
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 30
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 42
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 54
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 66
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 78
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 90
+              }
+            ],
+            "status": "pass",
+            "violated": false
+          },
+          "resources": {
+            "api_calls": 0,
+            "api_cost_usd": 0.0,
+            "checked_frames": 8,
+            "checked_pixels": 73728,
+            "feature_reuse_across_budgets": true,
+            "full_prepass_charged": true,
+            "prepass_frames": 0,
+            "prepass_low_res_pixels": 0,
+            "prepass_source_pixels": 0,
+            "verifier_calls": 1
+          },
+          "run_id": "72b02803d9e0b835",
+          "sampling_hit": null,
+          "selected_indices": [
+            6,
+            18,
+            30,
+            42,
+            54,
+            66,
+            78,
+            90
+          ],
+          "source_id": 10000,
+          "split": "test",
+          "timing": {
+            "generation_s": 0.01063891698140651,
+            "prepass_s": 0.0,
+            "selection_s": 6.125017534941435e-06,
+            "verification_s": 0.0005901249824091792
+          },
+          "unit_id": "7fd27bb3f9b1ac4a8f735dfae0c67cfb935983b22d11ed5068c779563bd8e4cb"
+        }
+      },
+      "sprite_url": "assets/319df681eac5225a-frames.png",
+      "sprite_columns": 12,
+      "frames_sha256": "f0fc4efbb8b4a6d88a0b31c7ae9f5dc8fffcd7f3a9806fd3135a00b8185944dd",
+      "frame_urls": {
+        "0": "assets/319df681eac5225a-000.png",
+        "1": "assets/319df681eac5225a-001.png",
+        "6": "assets/319df681eac5225a-006.png",
+        "12": "assets/319df681eac5225a-012.png",
+        "16": "assets/319df681eac5225a-016.png",
+        "18": "assets/319df681eac5225a-018.png",
+        "22": "assets/319df681eac5225a-022.png",
+        "24": "assets/319df681eac5225a-024.png",
+        "30": "assets/319df681eac5225a-030.png",
+        "32": "assets/319df681eac5225a-032.png",
+        "36": "assets/319df681eac5225a-036.png",
+        "42": "assets/319df681eac5225a-042.png",
+        "43": "assets/319df681eac5225a-043.png",
+        "49": "assets/319df681eac5225a-049.png",
+        "54": "assets/319df681eac5225a-054.png",
+        "60": "assets/319df681eac5225a-060.png",
+        "64": "assets/319df681eac5225a-064.png",
+        "66": "assets/319df681eac5225a-066.png",
+        "72": "assets/319df681eac5225a-072.png",
+        "78": "assets/319df681eac5225a-078.png",
+        "80": "assets/319df681eac5225a-080.png",
+        "84": "assets/319df681eac5225a-084.png",
+        "86": "assets/319df681eac5225a-086.png",
+        "90": "assets/319df681eac5225a-090.png"
+      }
+    },
+    {
+      "clip_id": "s010000-distractor-forbidden_patch-12",
+      "source_id": 10000,
+      "fps": 24,
+      "n_frames": 96,
+      "width": 128,
+      "height": 72,
+      "annotation": {
+        "violated": true,
+        "violation_type": "forbidden_patch",
+        "start_frame": 10,
+        "end_frame": 22,
+        "duration_frames": 12,
+        "duration_seconds": 0.5,
+        "motion": "distractor",
+        "severity": "subtle",
+        "provenance": "synthetic",
+        "generator_version": "template-ad-v1",
+        "human_audit": "pending"
+      },
+      "brief": {
+        "schema_version": "brief-v1",
+        "workload": "fixed-template-synthetic-ad",
+        "fps": 24.0,
+        "frame_size": [
+          128,
+          72
+        ],
+        "requirements": [
+          "The product remains present in its specified region throughout the clip.",
+          "The package retains the specified RGB target, allowing the documented benign lighting jitter.",
+          "The NOVA bitmap remains unchanged; changing even one bitmap cell is a violation.",
+          "No pixels of the forbidden red element may appear in its specified inspection region."
+        ],
+        "product_roi": [
+          0.4296875,
+          0.2361111111111111,
+          0.71875,
+          0.8472222222222222
+        ],
+        "color_roi": [
+          0.453125,
+          0.6944444444444444,
+          0.6953125,
+          0.8055555555555556
+        ],
+        "label_roi": [
+          0.515625,
+          0.4305555555555556,
+          0.6328125,
+          0.5
+        ],
+        "forbidden_roi": [
+          0.8515625,
+          0.06944444444444445,
+          0.9453125,
+          0.18055555555555555
+        ],
+        "target_rgb": [
+          187,
+          108,
+          52
+        ],
+        "label_rgb": [
+          240,
+          242,
+          235
+        ],
+        "forbidden_rgb": [
+          235,
+          40,
+          70
+        ],
+        "label_bitmap": [
+          [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ]
+        ],
+        "benign_channel_jitter_max": 3
+      },
+      "reason": "Adaptive false approval",
+      "methods": {
+        "adaptive": {
+          "annotation": {
+            "duration_frames": 12,
+            "duration_seconds": 0.5,
+            "end_frame": 22,
+            "generator_version": "template-ad-v1",
+            "human_audit": "pending",
+            "motion": "distractor",
+            "provenance": "synthetic",
+            "severity": "subtle",
+            "start_frame": 10,
+            "violated": true,
+            "violation_type": "forbidden_patch"
+          },
+          "brief": {
+            "benign_channel_jitter_max": 3,
+            "color_roi": [
+              0.453125,
+              0.6944444444444444,
+              0.6953125,
+              0.8055555555555556
+            ],
+            "forbidden_rgb": [
+              235,
+              40,
+              70
+            ],
+            "forbidden_roi": [
+              0.8515625,
+              0.06944444444444445,
+              0.9453125,
+              0.18055555555555555
+            ],
+            "fps": 24.0,
+            "frame_size": [
+              128,
+              72
+            ],
+            "label_bitmap": [
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                1
+              ]
+            ],
+            "label_rgb": [
+              240,
+              242,
+              235
+            ],
+            "label_roi": [
+              0.515625,
+              0.4305555555555556,
+              0.6328125,
+              0.5
+            ],
+            "product_roi": [
+              0.4296875,
+              0.2361111111111111,
+              0.71875,
+              0.8472222222222222
+            ],
+            "requirements": [
+              "The product remains present in its specified region throughout the clip.",
+              "The package retains the specified RGB target, allowing the documented benign lighting jitter.",
+              "The NOVA bitmap remains unchanged; changing even one bitmap cell is a violation.",
+              "No pixels of the forbidden red element may appear in its specified inspection region."
+            ],
+            "schema_version": "brief-v1",
+            "target_rgb": [
+              187,
+              108,
+              52
+            ],
+            "workload": "fixed-template-synthetic-ad"
+          },
+          "budget": 8,
+          "clip_id": "s010000-distractor-forbidden_patch-12",
+          "method": "adaptive",
+          "pixels_sha256": "874973564be420b3cdb626213c8cde818bcc2030ef15eb13a7d2fc3918d36666",
+          "prediction": {
+            "api_cost_usd": 0.0,
+            "calls": 1,
+            "evidence": [],
+            "frames_verified": 8,
+            "model_version": "pixel-template-v1",
+            "per_frame": [
+              {
+                "failed_requirements": [],
+                "frame_index": 1
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 12
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 24
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 36
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 49
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 60
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 72
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 84
+              }
+            ],
+            "status": "pass",
+            "violated": false
+          },
+          "resources": {
+            "api_calls": 0,
+            "api_cost_usd": 0.0,
+            "checked_frames": 8,
+            "checked_pixels": 73728,
+            "feature_reuse_across_budgets": true,
+            "full_prepass_charged": true,
+            "prepass_frames": 96,
+            "prepass_low_res_pixels": 55296,
+            "prepass_source_pixels": 884736,
+            "verifier_calls": 1
+          },
+          "run_id": "72b02803d9e0b835",
+          "sampling_hit": true,
+          "selected_indices": [
+            1,
+            12,
+            24,
+            36,
+            49,
+            60,
+            72,
+            84
+          ],
+          "source_id": 10000,
+          "split": "test",
+          "timing": {
+            "generation_s": 0.004747624974697828,
+            "prepass_s": 0.01894270902266726,
+            "selection_s": 7.033400470390916e-05,
+            "verification_s": 0.000601916981395334
+          },
+          "unit_id": "24d886a833890583da05a06812a40777ce0715a9ec426fef8cc6722ca2e4a6f0"
+        },
+        "change": {
+          "annotation": {
+            "duration_frames": 12,
+            "duration_seconds": 0.5,
+            "end_frame": 22,
+            "generator_version": "template-ad-v1",
+            "human_audit": "pending",
+            "motion": "distractor",
+            "provenance": "synthetic",
+            "severity": "subtle",
+            "start_frame": 10,
+            "violated": true,
+            "violation_type": "forbidden_patch"
+          },
+          "brief": {
+            "benign_channel_jitter_max": 3,
+            "color_roi": [
+              0.453125,
+              0.6944444444444444,
+              0.6953125,
+              0.8055555555555556
+            ],
+            "forbidden_rgb": [
+              235,
+              40,
+              70
+            ],
+            "forbidden_roi": [
+              0.8515625,
+              0.06944444444444445,
+              0.9453125,
+              0.18055555555555555
+            ],
+            "fps": 24.0,
+            "frame_size": [
+              128,
+              72
+            ],
+            "label_bitmap": [
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                1
+              ]
+            ],
+            "label_rgb": [
+              240,
+              242,
+              235
+            ],
+            "label_roi": [
+              0.515625,
+              0.4305555555555556,
+              0.6328125,
+              0.5
+            ],
+            "product_roi": [
+              0.4296875,
+              0.2361111111111111,
+              0.71875,
+              0.8472222222222222
+            ],
+            "requirements": [
+              "The product remains present in its specified region throughout the clip.",
+              "The package retains the specified RGB target, allowing the documented benign lighting jitter.",
+              "The NOVA bitmap remains unchanged; changing even one bitmap cell is a violation.",
+              "No pixels of the forbidden red element may appear in its specified inspection region."
+            ],
+            "schema_version": "brief-v1",
+            "target_rgb": [
+              187,
+              108,
+              52
+            ],
+            "workload": "fixed-template-synthetic-ad"
+          },
+          "budget": 8,
+          "clip_id": "s010000-distractor-forbidden_patch-12",
+          "method": "change",
+          "pixels_sha256": "874973564be420b3cdb626213c8cde818bcc2030ef15eb13a7d2fc3918d36666",
+          "prediction": {
+            "api_cost_usd": 0.0,
+            "calls": 1,
+            "evidence": [],
+            "frames_verified": 8,
+            "model_version": "pixel-template-v1",
+            "per_frame": [
+              {
+                "failed_requirements": [],
+                "frame_index": 16
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 22
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 32
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 43
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 54
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 64
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 80
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 86
+              }
+            ],
+            "status": "pass",
+            "violated": false
+          },
+          "resources": {
+            "api_calls": 0,
+            "api_cost_usd": 0.0,
+            "checked_frames": 8,
+            "checked_pixels": 73728,
+            "feature_reuse_across_budgets": true,
+            "full_prepass_charged": true,
+            "prepass_frames": 96,
+            "prepass_low_res_pixels": 55296,
+            "prepass_source_pixels": 884736,
+            "verifier_calls": 1
+          },
+          "run_id": "72b02803d9e0b835",
+          "sampling_hit": true,
+          "selected_indices": [
+            16,
+            22,
+            32,
+            43,
+            54,
+            64,
+            80,
+            86
+          ],
+          "source_id": 10000,
+          "split": "test",
+          "timing": {
+            "generation_s": 0.004747624974697828,
+            "prepass_s": 0.01328720903256908,
+            "selection_s": 3.362499410286546e-05,
+            "verification_s": 0.0006045420304872096
+          },
+          "unit_id": "0aa24cd9db9799676139e40461c33012d7ad80676af5b8d1800c7b6ab8cb0aa0"
+        },
+        "uniform": {
+          "annotation": {
+            "duration_frames": 12,
+            "duration_seconds": 0.5,
+            "end_frame": 22,
+            "generator_version": "template-ad-v1",
+            "human_audit": "pending",
+            "motion": "distractor",
+            "provenance": "synthetic",
+            "severity": "subtle",
+            "start_frame": 10,
+            "violated": true,
+            "violation_type": "forbidden_patch"
+          },
+          "brief": {
+            "benign_channel_jitter_max": 3,
+            "color_roi": [
+              0.453125,
+              0.6944444444444444,
+              0.6953125,
+              0.8055555555555556
+            ],
+            "forbidden_rgb": [
+              235,
+              40,
+              70
+            ],
+            "forbidden_roi": [
+              0.8515625,
+              0.06944444444444445,
+              0.9453125,
+              0.18055555555555555
+            ],
+            "fps": 24.0,
+            "frame_size": [
+              128,
+              72
+            ],
+            "label_bitmap": [
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                1
+              ]
+            ],
+            "label_rgb": [
+              240,
+              242,
+              235
+            ],
+            "label_roi": [
+              0.515625,
+              0.4305555555555556,
+              0.6328125,
+              0.5
+            ],
+            "product_roi": [
+              0.4296875,
+              0.2361111111111111,
+              0.71875,
+              0.8472222222222222
+            ],
+            "requirements": [
+              "The product remains present in its specified region throughout the clip.",
+              "The package retains the specified RGB target, allowing the documented benign lighting jitter.",
+              "The NOVA bitmap remains unchanged; changing even one bitmap cell is a violation.",
+              "No pixels of the forbidden red element may appear in its specified inspection region."
+            ],
+            "schema_version": "brief-v1",
+            "target_rgb": [
+              187,
+              108,
+              52
+            ],
+            "workload": "fixed-template-synthetic-ad"
+          },
+          "budget": 8,
+          "clip_id": "s010000-distractor-forbidden_patch-12",
+          "method": "uniform",
+          "pixels_sha256": "874973564be420b3cdb626213c8cde818bcc2030ef15eb13a7d2fc3918d36666",
+          "prediction": {
+            "api_cost_usd": 0.0,
+            "calls": 1,
+            "evidence": [],
+            "frames_verified": 8,
+            "model_version": "pixel-template-v1",
+            "per_frame": [
+              {
+                "failed_requirements": [],
+                "frame_index": 6
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 18
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 30
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 42
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 54
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 66
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 78
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 90
+              }
+            ],
+            "status": "pass",
+            "violated": false
+          },
+          "resources": {
+            "api_calls": 0,
+            "api_cost_usd": 0.0,
+            "checked_frames": 8,
+            "checked_pixels": 73728,
+            "feature_reuse_across_budgets": true,
+            "full_prepass_charged": true,
+            "prepass_frames": 0,
+            "prepass_low_res_pixels": 0,
+            "prepass_source_pixels": 0,
+            "verifier_calls": 1
+          },
+          "run_id": "72b02803d9e0b835",
+          "sampling_hit": true,
+          "selected_indices": [
+            6,
+            18,
+            30,
+            42,
+            54,
+            66,
+            78,
+            90
+          ],
+          "source_id": 10000,
+          "split": "test",
+          "timing": {
+            "generation_s": 0.004747624974697828,
+            "prepass_s": 0.0,
+            "selection_s": 5.959009286016226e-06,
+            "verification_s": 0.0006207500118762255
+          },
+          "unit_id": "8ba070a839be61d0a79d50ea1d33dabcb07dd5c7466e457cd310064efad508d7"
+        }
+      },
+      "sprite_url": "assets/8d7c6d3a99d2fa68-frames.png",
+      "sprite_columns": 12,
+      "frames_sha256": "874973564be420b3cdb626213c8cde818bcc2030ef15eb13a7d2fc3918d36666",
+      "frame_urls": {
+        "0": "assets/8d7c6d3a99d2fa68-000.png",
+        "1": "assets/8d7c6d3a99d2fa68-001.png",
+        "6": "assets/8d7c6d3a99d2fa68-006.png",
+        "10": "assets/8d7c6d3a99d2fa68-010.png",
+        "12": "assets/8d7c6d3a99d2fa68-012.png",
+        "16": "assets/8d7c6d3a99d2fa68-016.png",
+        "18": "assets/8d7c6d3a99d2fa68-018.png",
+        "22": "assets/8d7c6d3a99d2fa68-022.png",
+        "24": "assets/8d7c6d3a99d2fa68-024.png",
+        "30": "assets/8d7c6d3a99d2fa68-030.png",
+        "32": "assets/8d7c6d3a99d2fa68-032.png",
+        "36": "assets/8d7c6d3a99d2fa68-036.png",
+        "42": "assets/8d7c6d3a99d2fa68-042.png",
+        "43": "assets/8d7c6d3a99d2fa68-043.png",
+        "49": "assets/8d7c6d3a99d2fa68-049.png",
+        "54": "assets/8d7c6d3a99d2fa68-054.png",
+        "60": "assets/8d7c6d3a99d2fa68-060.png",
+        "64": "assets/8d7c6d3a99d2fa68-064.png",
+        "66": "assets/8d7c6d3a99d2fa68-066.png",
+        "72": "assets/8d7c6d3a99d2fa68-072.png",
+        "78": "assets/8d7c6d3a99d2fa68-078.png",
+        "80": "assets/8d7c6d3a99d2fa68-080.png",
+        "84": "assets/8d7c6d3a99d2fa68-084.png",
+        "86": "assets/8d7c6d3a99d2fa68-086.png",
+        "90": "assets/8d7c6d3a99d2fa68-090.png"
+      }
+    },
+    {
+      "clip_id": "s010000-distractor-forbidden_patch-2",
+      "source_id": 10000,
+      "fps": 24,
+      "n_frames": 96,
+      "width": 128,
+      "height": 72,
+      "annotation": {
+        "violated": true,
+        "violation_type": "forbidden_patch",
+        "start_frame": 66,
+        "end_frame": 68,
+        "duration_frames": 2,
+        "duration_seconds": 0.08333333333333333,
+        "motion": "distractor",
+        "severity": "subtle",
+        "provenance": "synthetic",
+        "generator_version": "template-ad-v1",
+        "human_audit": "pending"
+      },
+      "brief": {
+        "schema_version": "brief-v1",
+        "workload": "fixed-template-synthetic-ad",
+        "fps": 24.0,
+        "frame_size": [
+          128,
+          72
+        ],
+        "requirements": [
+          "The product remains present in its specified region throughout the clip.",
+          "The package retains the specified RGB target, allowing the documented benign lighting jitter.",
+          "The NOVA bitmap remains unchanged; changing even one bitmap cell is a violation.",
+          "No pixels of the forbidden red element may appear in its specified inspection region."
+        ],
+        "product_roi": [
+          0.4296875,
+          0.2361111111111111,
+          0.71875,
+          0.8472222222222222
+        ],
+        "color_roi": [
+          0.453125,
+          0.6944444444444444,
+          0.6953125,
+          0.8055555555555556
+        ],
+        "label_roi": [
+          0.515625,
+          0.4305555555555556,
+          0.6328125,
+          0.5
+        ],
+        "forbidden_roi": [
+          0.8515625,
+          0.06944444444444445,
+          0.9453125,
+          0.18055555555555555
+        ],
+        "target_rgb": [
+          187,
+          108,
+          52
+        ],
+        "label_rgb": [
+          240,
+          242,
+          235
+        ],
+        "forbidden_rgb": [
+          235,
+          40,
+          70
+        ],
+        "label_bitmap": [
+          [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ]
+        ],
+        "benign_channel_jitter_max": 3
+      },
+      "reason": "Evidence sampled, checker missed",
+      "methods": {
+        "adaptive": {
+          "annotation": {
+            "duration_frames": 2,
+            "duration_seconds": 0.08333333333333333,
+            "end_frame": 68,
+            "generator_version": "template-ad-v1",
+            "human_audit": "pending",
+            "motion": "distractor",
+            "provenance": "synthetic",
+            "severity": "subtle",
+            "start_frame": 66,
+            "violated": true,
+            "violation_type": "forbidden_patch"
+          },
+          "brief": {
+            "benign_channel_jitter_max": 3,
+            "color_roi": [
+              0.453125,
+              0.6944444444444444,
+              0.6953125,
+              0.8055555555555556
+            ],
+            "forbidden_rgb": [
+              235,
+              40,
+              70
+            ],
+            "forbidden_roi": [
+              0.8515625,
+              0.06944444444444445,
+              0.9453125,
+              0.18055555555555555
+            ],
+            "fps": 24.0,
+            "frame_size": [
+              128,
+              72
+            ],
+            "label_bitmap": [
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                1
+              ]
+            ],
+            "label_rgb": [
+              240,
+              242,
+              235
+            ],
+            "label_roi": [
+              0.515625,
+              0.4305555555555556,
+              0.6328125,
+              0.5
+            ],
+            "product_roi": [
+              0.4296875,
+              0.2361111111111111,
+              0.71875,
+              0.8472222222222222
+            ],
+            "requirements": [
+              "The product remains present in its specified region throughout the clip.",
+              "The package retains the specified RGB target, allowing the documented benign lighting jitter.",
+              "The NOVA bitmap remains unchanged; changing even one bitmap cell is a violation.",
+              "No pixels of the forbidden red element may appear in its specified inspection region."
+            ],
+            "schema_version": "brief-v1",
+            "target_rgb": [
+              187,
+              108,
+              52
+            ],
+            "workload": "fixed-template-synthetic-ad"
+          },
+          "budget": 8,
+          "clip_id": "s010000-distractor-forbidden_patch-2",
+          "method": "adaptive",
+          "pixels_sha256": "47f3299e951e115f5fd041312d2c84680bd0acf1cdb771ac299570d69e1e698b",
+          "prediction": {
+            "api_cost_usd": 0.0,
+            "calls": 1,
+            "evidence": [],
+            "frames_verified": 8,
+            "model_version": "pixel-template-v1",
+            "per_frame": [
+              {
+                "failed_requirements": [],
+                "frame_index": 1
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 12
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 24
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 36
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 49
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 60
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 72
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 84
+              }
+            ],
+            "status": "pass",
+            "violated": false
+          },
+          "resources": {
+            "api_calls": 0,
+            "api_cost_usd": 0.0,
+            "checked_frames": 8,
+            "checked_pixels": 73728,
+            "feature_reuse_across_budgets": true,
+            "full_prepass_charged": true,
+            "prepass_frames": 96,
+            "prepass_low_res_pixels": 55296,
+            "prepass_source_pixels": 884736,
+            "verifier_calls": 1
+          },
+          "run_id": "72b02803d9e0b835",
+          "sampling_hit": false,
+          "selected_indices": [
+            1,
+            12,
+            24,
+            36,
+            49,
+            60,
+            72,
+            84
+          ],
+          "source_id": 10000,
+          "split": "test",
+          "timing": {
+            "generation_s": 0.005095458996947855,
+            "prepass_s": 0.018356457992922515,
+            "selection_s": 6.837502587586641e-05,
+            "verification_s": 0.0005904169520363212
+          },
+          "unit_id": "3e39bcdb01a65b1205e31639109783926f905a213841858c87d1a4a2ceaa83b9"
+        },
+        "change": {
+          "annotation": {
+            "duration_frames": 2,
+            "duration_seconds": 0.08333333333333333,
+            "end_frame": 68,
+            "generator_version": "template-ad-v1",
+            "human_audit": "pending",
+            "motion": "distractor",
+            "provenance": "synthetic",
+            "severity": "subtle",
+            "start_frame": 66,
+            "violated": true,
+            "violation_type": "forbidden_patch"
+          },
+          "brief": {
+            "benign_channel_jitter_max": 3,
+            "color_roi": [
+              0.453125,
+              0.6944444444444444,
+              0.6953125,
+              0.8055555555555556
+            ],
+            "forbidden_rgb": [
+              235,
+              40,
+              70
+            ],
+            "forbidden_roi": [
+              0.8515625,
+              0.06944444444444445,
+              0.9453125,
+              0.18055555555555555
+            ],
+            "fps": 24.0,
+            "frame_size": [
+              128,
+              72
+            ],
+            "label_bitmap": [
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                1
+              ]
+            ],
+            "label_rgb": [
+              240,
+              242,
+              235
+            ],
+            "label_roi": [
+              0.515625,
+              0.4305555555555556,
+              0.6328125,
+              0.5
+            ],
+            "product_roi": [
+              0.4296875,
+              0.2361111111111111,
+              0.71875,
+              0.8472222222222222
+            ],
+            "requirements": [
+              "The product remains present in its specified region throughout the clip.",
+              "The package retains the specified RGB target, allowing the documented benign lighting jitter.",
+              "The NOVA bitmap remains unchanged; changing even one bitmap cell is a violation.",
+              "No pixels of the forbidden red element may appear in its specified inspection region."
+            ],
+            "schema_version": "brief-v1",
+            "target_rgb": [
+              187,
+              108,
+              52
+            ],
+            "workload": "fixed-template-synthetic-ad"
+          },
+          "budget": 8,
+          "clip_id": "s010000-distractor-forbidden_patch-2",
+          "method": "change",
+          "pixels_sha256": "47f3299e951e115f5fd041312d2c84680bd0acf1cdb771ac299570d69e1e698b",
+          "prediction": {
+            "api_cost_usd": 0.0,
+            "calls": 1,
+            "evidence": [],
+            "frames_verified": 8,
+            "model_version": "pixel-template-v1",
+            "per_frame": [
+              {
+                "failed_requirements": [],
+                "frame_index": 16
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 22
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 32
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 43
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 54
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 64
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 80
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 86
+              }
+            ],
+            "status": "pass",
+            "violated": false
+          },
+          "resources": {
+            "api_calls": 0,
+            "api_cost_usd": 0.0,
+            "checked_frames": 8,
+            "checked_pixels": 73728,
+            "feature_reuse_across_budgets": true,
+            "full_prepass_charged": true,
+            "prepass_frames": 96,
+            "prepass_low_res_pixels": 55296,
+            "prepass_source_pixels": 884736,
+            "verifier_calls": 1
+          },
+          "run_id": "72b02803d9e0b835",
+          "sampling_hit": false,
+          "selected_indices": [
+            16,
+            22,
+            32,
+            43,
+            54,
+            64,
+            80,
+            86
+          ],
+          "source_id": 10000,
+          "split": "test",
+          "timing": {
+            "generation_s": 0.005095458996947855,
+            "prepass_s": 0.0128009999752976,
+            "selection_s": 3.38749960064888e-05,
+            "verification_s": 0.0005983750452287495
+          },
+          "unit_id": "2972626efb4e7b211c429cdf7d7230bc16386181bbd2a40c2dadd25b92c85b42"
+        },
+        "uniform": {
+          "annotation": {
+            "duration_frames": 2,
+            "duration_seconds": 0.08333333333333333,
+            "end_frame": 68,
+            "generator_version": "template-ad-v1",
+            "human_audit": "pending",
+            "motion": "distractor",
+            "provenance": "synthetic",
+            "severity": "subtle",
+            "start_frame": 66,
+            "violated": true,
+            "violation_type": "forbidden_patch"
+          },
+          "brief": {
+            "benign_channel_jitter_max": 3,
+            "color_roi": [
+              0.453125,
+              0.6944444444444444,
+              0.6953125,
+              0.8055555555555556
+            ],
+            "forbidden_rgb": [
+              235,
+              40,
+              70
+            ],
+            "forbidden_roi": [
+              0.8515625,
+              0.06944444444444445,
+              0.9453125,
+              0.18055555555555555
+            ],
+            "fps": 24.0,
+            "frame_size": [
+              128,
+              72
+            ],
+            "label_bitmap": [
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                1
+              ]
+            ],
+            "label_rgb": [
+              240,
+              242,
+              235
+            ],
+            "label_roi": [
+              0.515625,
+              0.4305555555555556,
+              0.6328125,
+              0.5
+            ],
+            "product_roi": [
+              0.4296875,
+              0.2361111111111111,
+              0.71875,
+              0.8472222222222222
+            ],
+            "requirements": [
+              "The product remains present in its specified region throughout the clip.",
+              "The package retains the specified RGB target, allowing the documented benign lighting jitter.",
+              "The NOVA bitmap remains unchanged; changing even one bitmap cell is a violation.",
+              "No pixels of the forbidden red element may appear in its specified inspection region."
+            ],
+            "schema_version": "brief-v1",
+            "target_rgb": [
+              187,
+              108,
+              52
+            ],
+            "workload": "fixed-template-synthetic-ad"
+          },
+          "budget": 8,
+          "clip_id": "s010000-distractor-forbidden_patch-2",
+          "method": "uniform",
+          "pixels_sha256": "47f3299e951e115f5fd041312d2c84680bd0acf1cdb771ac299570d69e1e698b",
+          "prediction": {
+            "api_cost_usd": 0.0,
+            "calls": 1,
+            "evidence": [],
+            "frames_verified": 8,
+            "model_version": "pixel-template-v1",
+            "per_frame": [
+              {
+                "failed_requirements": [],
+                "frame_index": 6
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 18
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 30
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 42
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 54
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 66
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 78
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 90
+              }
+            ],
+            "status": "pass",
+            "violated": false
+          },
+          "resources": {
+            "api_calls": 0,
+            "api_cost_usd": 0.0,
+            "checked_frames": 8,
+            "checked_pixels": 73728,
+            "feature_reuse_across_budgets": true,
+            "full_prepass_charged": true,
+            "prepass_frames": 0,
+            "prepass_low_res_pixels": 0,
+            "prepass_source_pixels": 0,
+            "verifier_calls": 1
+          },
+          "run_id": "72b02803d9e0b835",
+          "sampling_hit": true,
+          "selected_indices": [
+            6,
+            18,
+            30,
+            42,
+            54,
+            66,
+            78,
+            90
+          ],
+          "source_id": 10000,
+          "split": "test",
+          "timing": {
+            "generation_s": 0.005095458996947855,
+            "prepass_s": 0.0,
+            "selection_s": 6.125017534941435e-06,
+            "verification_s": 0.0005830419831909239
+          },
+          "unit_id": "dccff91968a4e28300ebe1852f3937c3bcbc103b481ea7365a36561853b776e9"
+        }
+      },
+      "sprite_url": "assets/2d32ea8b4861db74-frames.png",
+      "sprite_columns": 12,
+      "frames_sha256": "47f3299e951e115f5fd041312d2c84680bd0acf1cdb771ac299570d69e1e698b",
+      "frame_urls": {
+        "0": "assets/2d32ea8b4861db74-000.png",
+        "1": "assets/2d32ea8b4861db74-001.png",
+        "6": "assets/2d32ea8b4861db74-006.png",
+        "12": "assets/2d32ea8b4861db74-012.png",
+        "16": "assets/2d32ea8b4861db74-016.png",
+        "18": "assets/2d32ea8b4861db74-018.png",
+        "22": "assets/2d32ea8b4861db74-022.png",
+        "24": "assets/2d32ea8b4861db74-024.png",
+        "30": "assets/2d32ea8b4861db74-030.png",
+        "32": "assets/2d32ea8b4861db74-032.png",
+        "36": "assets/2d32ea8b4861db74-036.png",
+        "42": "assets/2d32ea8b4861db74-042.png",
+        "43": "assets/2d32ea8b4861db74-043.png",
+        "49": "assets/2d32ea8b4861db74-049.png",
+        "54": "assets/2d32ea8b4861db74-054.png",
+        "60": "assets/2d32ea8b4861db74-060.png",
+        "64": "assets/2d32ea8b4861db74-064.png",
+        "66": "assets/2d32ea8b4861db74-066.png",
+        "72": "assets/2d32ea8b4861db74-072.png",
+        "78": "assets/2d32ea8b4861db74-078.png",
+        "80": "assets/2d32ea8b4861db74-080.png",
+        "84": "assets/2d32ea8b4861db74-084.png",
+        "86": "assets/2d32ea8b4861db74-086.png",
+        "90": "assets/2d32ea8b4861db74-090.png"
+      }
+    },
+    {
+      "clip_id": "s010000-distractor-forbidden_patch-6",
+      "source_id": 10000,
+      "fps": 24,
+      "n_frames": 96,
+      "width": 128,
+      "height": 72,
+      "annotation": {
+        "violated": true,
+        "violation_type": "forbidden_patch",
+        "start_frame": 8,
+        "end_frame": 14,
+        "duration_frames": 6,
+        "duration_seconds": 0.25,
+        "motion": "distractor",
+        "severity": "clear",
+        "provenance": "synthetic",
+        "generator_version": "template-ad-v1",
+        "human_audit": "pending"
+      },
+      "brief": {
+        "schema_version": "brief-v1",
+        "workload": "fixed-template-synthetic-ad",
+        "fps": 24.0,
+        "frame_size": [
+          128,
+          72
+        ],
+        "requirements": [
+          "The product remains present in its specified region throughout the clip.",
+          "The package retains the specified RGB target, allowing the documented benign lighting jitter.",
+          "The NOVA bitmap remains unchanged; changing even one bitmap cell is a violation.",
+          "No pixels of the forbidden red element may appear in its specified inspection region."
+        ],
+        "product_roi": [
+          0.4296875,
+          0.2361111111111111,
+          0.71875,
+          0.8472222222222222
+        ],
+        "color_roi": [
+          0.453125,
+          0.6944444444444444,
+          0.6953125,
+          0.8055555555555556
+        ],
+        "label_roi": [
+          0.515625,
+          0.4305555555555556,
+          0.6328125,
+          0.5
+        ],
+        "forbidden_roi": [
+          0.8515625,
+          0.06944444444444445,
+          0.9453125,
+          0.18055555555555555
+        ],
+        "target_rgb": [
+          187,
+          108,
+          52
+        ],
+        "label_rgb": [
+          240,
+          242,
+          235
+        ],
+        "forbidden_rgb": [
+          235,
+          40,
+          70
+        ],
+        "label_bitmap": [
+          [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ]
+        ],
+        "benign_channel_jitter_max": 3
+      },
+      "reason": "Adaptive caught, uniform missed",
+      "methods": {
+        "adaptive": {
+          "annotation": {
+            "duration_frames": 6,
+            "duration_seconds": 0.25,
+            "end_frame": 14,
+            "generator_version": "template-ad-v1",
+            "human_audit": "pending",
+            "motion": "distractor",
+            "provenance": "synthetic",
+            "severity": "clear",
+            "start_frame": 8,
+            "violated": true,
+            "violation_type": "forbidden_patch"
+          },
+          "brief": {
+            "benign_channel_jitter_max": 3,
+            "color_roi": [
+              0.453125,
+              0.6944444444444444,
+              0.6953125,
+              0.8055555555555556
+            ],
+            "forbidden_rgb": [
+              235,
+              40,
+              70
+            ],
+            "forbidden_roi": [
+              0.8515625,
+              0.06944444444444445,
+              0.9453125,
+              0.18055555555555555
+            ],
+            "fps": 24.0,
+            "frame_size": [
+              128,
+              72
+            ],
+            "label_bitmap": [
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                1
+              ]
+            ],
+            "label_rgb": [
+              240,
+              242,
+              235
+            ],
+            "label_roi": [
+              0.515625,
+              0.4305555555555556,
+              0.6328125,
+              0.5
+            ],
+            "product_roi": [
+              0.4296875,
+              0.2361111111111111,
+              0.71875,
+              0.8472222222222222
+            ],
+            "requirements": [
+              "The product remains present in its specified region throughout the clip.",
+              "The package retains the specified RGB target, allowing the documented benign lighting jitter.",
+              "The NOVA bitmap remains unchanged; changing even one bitmap cell is a violation.",
+              "No pixels of the forbidden red element may appear in its specified inspection region."
+            ],
+            "schema_version": "brief-v1",
+            "target_rgb": [
+              187,
+              108,
+              52
+            ],
+            "workload": "fixed-template-synthetic-ad"
+          },
+          "budget": 8,
+          "clip_id": "s010000-distractor-forbidden_patch-6",
+          "method": "adaptive",
+          "pixels_sha256": "51736da166d23f650f72796fe522a9c8516a4546aa60a2e19599c6e659a58f89",
+          "prediction": {
+            "api_cost_usd": 0.0,
+            "calls": 1,
+            "evidence": [
+              {
+                "frame_index": 12,
+                "requirement": "forbidden_element_absent",
+                "score": 1.0
+              }
+            ],
+            "frames_verified": 8,
+            "model_version": "pixel-template-v1",
+            "per_frame": [
+              {
+                "failed_requirements": [],
+                "frame_index": 1
+              },
+              {
+                "failed_requirements": [
+                  "forbidden_element_absent"
+                ],
+                "frame_index": 12
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 24
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 36
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 49
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 60
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 72
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 84
+              }
+            ],
+            "status": "fail",
+            "violated": true
+          },
+          "resources": {
+            "api_calls": 0,
+            "api_cost_usd": 0.0,
+            "checked_frames": 8,
+            "checked_pixels": 73728,
+            "feature_reuse_across_budgets": true,
+            "full_prepass_charged": true,
+            "prepass_frames": 96,
+            "prepass_low_res_pixels": 55296,
+            "prepass_source_pixels": 884736,
+            "verifier_calls": 1
+          },
+          "run_id": "72b02803d9e0b835",
+          "sampling_hit": true,
+          "selected_indices": [
+            1,
+            12,
+            24,
+            36,
+            49,
+            60,
+            72,
+            84
+          ],
+          "source_id": 10000,
+          "split": "test",
+          "timing": {
+            "generation_s": 0.004689291992690414,
+            "prepass_s": 0.018354333005845547,
+            "selection_s": 6.862502777948976e-05,
+            "verification_s": 0.0005965419695712626
+          },
+          "unit_id": "7b46775ec55880ce403751be1ae33fc2ff4ca378814b2d0a28dd750b550e46ee"
+        },
+        "change": {
+          "annotation": {
+            "duration_frames": 6,
+            "duration_seconds": 0.25,
+            "end_frame": 14,
+            "generator_version": "template-ad-v1",
+            "human_audit": "pending",
+            "motion": "distractor",
+            "provenance": "synthetic",
+            "severity": "clear",
+            "start_frame": 8,
+            "violated": true,
+            "violation_type": "forbidden_patch"
+          },
+          "brief": {
+            "benign_channel_jitter_max": 3,
+            "color_roi": [
+              0.453125,
+              0.6944444444444444,
+              0.6953125,
+              0.8055555555555556
+            ],
+            "forbidden_rgb": [
+              235,
+              40,
+              70
+            ],
+            "forbidden_roi": [
+              0.8515625,
+              0.06944444444444445,
+              0.9453125,
+              0.18055555555555555
+            ],
+            "fps": 24.0,
+            "frame_size": [
+              128,
+              72
+            ],
+            "label_bitmap": [
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                1
+              ]
+            ],
+            "label_rgb": [
+              240,
+              242,
+              235
+            ],
+            "label_roi": [
+              0.515625,
+              0.4305555555555556,
+              0.6328125,
+              0.5
+            ],
+            "product_roi": [
+              0.4296875,
+              0.2361111111111111,
+              0.71875,
+              0.8472222222222222
+            ],
+            "requirements": [
+              "The product remains present in its specified region throughout the clip.",
+              "The package retains the specified RGB target, allowing the documented benign lighting jitter.",
+              "The NOVA bitmap remains unchanged; changing even one bitmap cell is a violation.",
+              "No pixels of the forbidden red element may appear in its specified inspection region."
+            ],
+            "schema_version": "brief-v1",
+            "target_rgb": [
+              187,
+              108,
+              52
+            ],
+            "workload": "fixed-template-synthetic-ad"
+          },
+          "budget": 8,
+          "clip_id": "s010000-distractor-forbidden_patch-6",
+          "method": "change",
+          "pixels_sha256": "51736da166d23f650f72796fe522a9c8516a4546aa60a2e19599c6e659a58f89",
+          "prediction": {
+            "api_cost_usd": 0.0,
+            "calls": 1,
+            "evidence": [],
+            "frames_verified": 8,
+            "model_version": "pixel-template-v1",
+            "per_frame": [
+              {
+                "failed_requirements": [],
+                "frame_index": 16
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 22
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 32
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 43
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 54
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 64
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 80
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 86
+              }
+            ],
+            "status": "pass",
+            "violated": false
+          },
+          "resources": {
+            "api_calls": 0,
+            "api_cost_usd": 0.0,
+            "checked_frames": 8,
+            "checked_pixels": 73728,
+            "feature_reuse_across_budgets": true,
+            "full_prepass_charged": true,
+            "prepass_frames": 96,
+            "prepass_low_res_pixels": 55296,
+            "prepass_source_pixels": 884736,
+            "verifier_calls": 1
+          },
+          "run_id": "72b02803d9e0b835",
+          "sampling_hit": false,
+          "selected_indices": [
+            16,
+            22,
+            32,
+            43,
+            54,
+            64,
+            80,
+            86
+          ],
+          "source_id": 10000,
+          "split": "test",
+          "timing": {
+            "generation_s": 0.004689291992690414,
+            "prepass_s": 0.012558166985400021,
+            "selection_s": 3.312499029561877e-05,
+            "verification_s": 0.0005932499771006405
+          },
+          "unit_id": "a15d350493f930c028f3286473d4b012f6d8d22954d181b12261749f2cc10710"
+        },
+        "uniform": {
+          "annotation": {
+            "duration_frames": 6,
+            "duration_seconds": 0.25,
+            "end_frame": 14,
+            "generator_version": "template-ad-v1",
+            "human_audit": "pending",
+            "motion": "distractor",
+            "provenance": "synthetic",
+            "severity": "clear",
+            "start_frame": 8,
+            "violated": true,
+            "violation_type": "forbidden_patch"
+          },
+          "brief": {
+            "benign_channel_jitter_max": 3,
+            "color_roi": [
+              0.453125,
+              0.6944444444444444,
+              0.6953125,
+              0.8055555555555556
+            ],
+            "forbidden_rgb": [
+              235,
+              40,
+              70
+            ],
+            "forbidden_roi": [
+              0.8515625,
+              0.06944444444444445,
+              0.9453125,
+              0.18055555555555555
+            ],
+            "fps": 24.0,
+            "frame_size": [
+              128,
+              72
+            ],
+            "label_bitmap": [
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                1
+              ]
+            ],
+            "label_rgb": [
+              240,
+              242,
+              235
+            ],
+            "label_roi": [
+              0.515625,
+              0.4305555555555556,
+              0.6328125,
+              0.5
+            ],
+            "product_roi": [
+              0.4296875,
+              0.2361111111111111,
+              0.71875,
+              0.8472222222222222
+            ],
+            "requirements": [
+              "The product remains present in its specified region throughout the clip.",
+              "The package retains the specified RGB target, allowing the documented benign lighting jitter.",
+              "The NOVA bitmap remains unchanged; changing even one bitmap cell is a violation.",
+              "No pixels of the forbidden red element may appear in its specified inspection region."
+            ],
+            "schema_version": "brief-v1",
+            "target_rgb": [
+              187,
+              108,
+              52
+            ],
+            "workload": "fixed-template-synthetic-ad"
+          },
+          "budget": 8,
+          "clip_id": "s010000-distractor-forbidden_patch-6",
+          "method": "uniform",
+          "pixels_sha256": "51736da166d23f650f72796fe522a9c8516a4546aa60a2e19599c6e659a58f89",
+          "prediction": {
+            "api_cost_usd": 0.0,
+            "calls": 1,
+            "evidence": [],
+            "frames_verified": 8,
+            "model_version": "pixel-template-v1",
+            "per_frame": [
+              {
+                "failed_requirements": [],
+                "frame_index": 6
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 18
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 30
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 42
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 54
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 66
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 78
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 90
+              }
+            ],
+            "status": "pass",
+            "violated": false
+          },
+          "resources": {
+            "api_calls": 0,
+            "api_cost_usd": 0.0,
+            "checked_frames": 8,
+            "checked_pixels": 73728,
+            "feature_reuse_across_budgets": true,
+            "full_prepass_charged": true,
+            "prepass_frames": 0,
+            "prepass_low_res_pixels": 0,
+            "prepass_source_pixels": 0,
+            "verifier_calls": 1
+          },
+          "run_id": "72b02803d9e0b835",
+          "sampling_hit": false,
+          "selected_indices": [
+            6,
+            18,
+            30,
+            42,
+            54,
+            66,
+            78,
+            90
+          ],
+          "source_id": 10000,
+          "split": "test",
+          "timing": {
+            "generation_s": 0.004689291992690414,
+            "prepass_s": 0.0,
+            "selection_s": 5.832989700138569e-06,
+            "verification_s": 0.0005990409990772605
+          },
+          "unit_id": "20f8938d7ccc7ec9369a6967f56057090999a0404bf110aaf1cf1a6715615244"
+        }
+      },
+      "sprite_url": "assets/6b391c5de0749374-frames.png",
+      "sprite_columns": 12,
+      "frames_sha256": "51736da166d23f650f72796fe522a9c8516a4546aa60a2e19599c6e659a58f89",
+      "frame_urls": {
+        "0": "assets/6b391c5de0749374-000.png",
+        "1": "assets/6b391c5de0749374-001.png",
+        "6": "assets/6b391c5de0749374-006.png",
+        "8": "assets/6b391c5de0749374-008.png",
+        "12": "assets/6b391c5de0749374-012.png",
+        "16": "assets/6b391c5de0749374-016.png",
+        "18": "assets/6b391c5de0749374-018.png",
+        "22": "assets/6b391c5de0749374-022.png",
+        "24": "assets/6b391c5de0749374-024.png",
+        "30": "assets/6b391c5de0749374-030.png",
+        "32": "assets/6b391c5de0749374-032.png",
+        "36": "assets/6b391c5de0749374-036.png",
+        "42": "assets/6b391c5de0749374-042.png",
+        "43": "assets/6b391c5de0749374-043.png",
+        "49": "assets/6b391c5de0749374-049.png",
+        "54": "assets/6b391c5de0749374-054.png",
+        "60": "assets/6b391c5de0749374-060.png",
+        "64": "assets/6b391c5de0749374-064.png",
+        "66": "assets/6b391c5de0749374-066.png",
+        "72": "assets/6b391c5de0749374-072.png",
+        "78": "assets/6b391c5de0749374-078.png",
+        "80": "assets/6b391c5de0749374-080.png",
+        "84": "assets/6b391c5de0749374-084.png",
+        "86": "assets/6b391c5de0749374-086.png",
+        "90": "assets/6b391c5de0749374-090.png"
+      }
+    },
+    {
+      "clip_id": "s010000-distractor-label_corruption-12",
+      "source_id": 10000,
+      "fps": 24,
+      "n_frames": 96,
+      "width": 128,
+      "height": 72,
+      "annotation": {
+        "violated": true,
+        "violation_type": "label_corruption",
+        "start_frame": 51,
+        "end_frame": 63,
+        "duration_frames": 12,
+        "duration_seconds": 0.5,
+        "motion": "distractor",
+        "severity": "clear",
+        "provenance": "synthetic",
+        "generator_version": "template-ad-v1",
+        "human_audit": "pending"
+      },
+      "brief": {
+        "schema_version": "brief-v1",
+        "workload": "fixed-template-synthetic-ad",
+        "fps": 24.0,
+        "frame_size": [
+          128,
+          72
+        ],
+        "requirements": [
+          "The product remains present in its specified region throughout the clip.",
+          "The package retains the specified RGB target, allowing the documented benign lighting jitter.",
+          "The NOVA bitmap remains unchanged; changing even one bitmap cell is a violation.",
+          "No pixels of the forbidden red element may appear in its specified inspection region."
+        ],
+        "product_roi": [
+          0.4296875,
+          0.2361111111111111,
+          0.71875,
+          0.8472222222222222
+        ],
+        "color_roi": [
+          0.453125,
+          0.6944444444444444,
+          0.6953125,
+          0.8055555555555556
+        ],
+        "label_roi": [
+          0.515625,
+          0.4305555555555556,
+          0.6328125,
+          0.5
+        ],
+        "forbidden_roi": [
+          0.8515625,
+          0.06944444444444445,
+          0.9453125,
+          0.18055555555555555
+        ],
+        "target_rgb": [
+          187,
+          108,
+          52
+        ],
+        "label_rgb": [
+          240,
+          242,
+          235
+        ],
+        "forbidden_rgb": [
+          235,
+          40,
+          70
+        ],
+        "label_bitmap": [
+          [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ]
+        ],
+        "benign_channel_jitter_max": 3
+      },
+      "reason": "Brief-critical label change",
+      "methods": {
+        "adaptive": {
+          "annotation": {
+            "duration_frames": 12,
+            "duration_seconds": 0.5,
+            "end_frame": 63,
+            "generator_version": "template-ad-v1",
+            "human_audit": "pending",
+            "motion": "distractor",
+            "provenance": "synthetic",
+            "severity": "clear",
+            "start_frame": 51,
+            "violated": true,
+            "violation_type": "label_corruption"
+          },
+          "brief": {
+            "benign_channel_jitter_max": 3,
+            "color_roi": [
+              0.453125,
+              0.6944444444444444,
+              0.6953125,
+              0.8055555555555556
+            ],
+            "forbidden_rgb": [
+              235,
+              40,
+              70
+            ],
+            "forbidden_roi": [
+              0.8515625,
+              0.06944444444444445,
+              0.9453125,
+              0.18055555555555555
+            ],
+            "fps": 24.0,
+            "frame_size": [
+              128,
+              72
+            ],
+            "label_bitmap": [
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                1
+              ]
+            ],
+            "label_rgb": [
+              240,
+              242,
+              235
+            ],
+            "label_roi": [
+              0.515625,
+              0.4305555555555556,
+              0.6328125,
+              0.5
+            ],
+            "product_roi": [
+              0.4296875,
+              0.2361111111111111,
+              0.71875,
+              0.8472222222222222
+            ],
+            "requirements": [
+              "The product remains present in its specified region throughout the clip.",
+              "The package retains the specified RGB target, allowing the documented benign lighting jitter.",
+              "The NOVA bitmap remains unchanged; changing even one bitmap cell is a violation.",
+              "No pixels of the forbidden red element may appear in its specified inspection region."
+            ],
+            "schema_version": "brief-v1",
+            "target_rgb": [
+              187,
+              108,
+              52
+            ],
+            "workload": "fixed-template-synthetic-ad"
+          },
+          "budget": 8,
+          "clip_id": "s010000-distractor-label_corruption-12",
+          "method": "adaptive",
+          "pixels_sha256": "95fae430c21f6ce591355b41c38728467d2ca02cde2f4b22e687ac29c23e7002",
+          "prediction": {
+            "api_cost_usd": 0.0,
+            "calls": 1,
+            "evidence": [
+              {
+                "frame_index": 60,
+                "requirement": "label_unchanged",
+                "score": 0.16
+              }
+            ],
+            "frames_verified": 8,
+            "model_version": "pixel-template-v1",
+            "per_frame": [
+              {
+                "failed_requirements": [],
+                "frame_index": 1
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 12
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 24
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 36
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 49
+              },
+              {
+                "failed_requirements": [
+                  "label_unchanged"
+                ],
+                "frame_index": 60
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 72
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 84
+              }
+            ],
+            "status": "fail",
+            "violated": true
+          },
+          "resources": {
+            "api_calls": 0,
+            "api_cost_usd": 0.0,
+            "checked_frames": 8,
+            "checked_pixels": 73728,
+            "feature_reuse_across_budgets": true,
+            "full_prepass_charged": true,
+            "prepass_frames": 96,
+            "prepass_low_res_pixels": 55296,
+            "prepass_source_pixels": 884736,
+            "verifier_calls": 1
+          },
+          "run_id": "72b02803d9e0b835",
+          "sampling_hit": true,
+          "selected_indices": [
+            1,
+            12,
+            24,
+            36,
+            49,
+            60,
+            72,
+            84
+          ],
+          "source_id": 10000,
+          "split": "test",
+          "timing": {
+            "generation_s": 0.00452195800608024,
+            "prepass_s": 0.01860070799011737,
+            "selection_s": 7.870804984122515e-05,
+            "verification_s": 0.0006331250187940896
+          },
+          "unit_id": "f65ac3e95c975afbd10fbd3c0d318c44ff7cba8b8d4029afac1746afee436385"
+        },
+        "change": {
+          "annotation": {
+            "duration_frames": 12,
+            "duration_seconds": 0.5,
+            "end_frame": 63,
+            "generator_version": "template-ad-v1",
+            "human_audit": "pending",
+            "motion": "distractor",
+            "provenance": "synthetic",
+            "severity": "clear",
+            "start_frame": 51,
+            "violated": true,
+            "violation_type": "label_corruption"
+          },
+          "brief": {
+            "benign_channel_jitter_max": 3,
+            "color_roi": [
+              0.453125,
+              0.6944444444444444,
+              0.6953125,
+              0.8055555555555556
+            ],
+            "forbidden_rgb": [
+              235,
+              40,
+              70
+            ],
+            "forbidden_roi": [
+              0.8515625,
+              0.06944444444444445,
+              0.9453125,
+              0.18055555555555555
+            ],
+            "fps": 24.0,
+            "frame_size": [
+              128,
+              72
+            ],
+            "label_bitmap": [
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                1
+              ]
+            ],
+            "label_rgb": [
+              240,
+              242,
+              235
+            ],
+            "label_roi": [
+              0.515625,
+              0.4305555555555556,
+              0.6328125,
+              0.5
+            ],
+            "product_roi": [
+              0.4296875,
+              0.2361111111111111,
+              0.71875,
+              0.8472222222222222
+            ],
+            "requirements": [
+              "The product remains present in its specified region throughout the clip.",
+              "The package retains the specified RGB target, allowing the documented benign lighting jitter.",
+              "The NOVA bitmap remains unchanged; changing even one bitmap cell is a violation.",
+              "No pixels of the forbidden red element may appear in its specified inspection region."
+            ],
+            "schema_version": "brief-v1",
+            "target_rgb": [
+              187,
+              108,
+              52
+            ],
+            "workload": "fixed-template-synthetic-ad"
+          },
+          "budget": 8,
+          "clip_id": "s010000-distractor-label_corruption-12",
+          "method": "change",
+          "pixels_sha256": "95fae430c21f6ce591355b41c38728467d2ca02cde2f4b22e687ac29c23e7002",
+          "prediction": {
+            "api_cost_usd": 0.0,
+            "calls": 1,
+            "evidence": [
+              {
+                "frame_index": 54,
+                "requirement": "label_unchanged",
+                "score": 0.16
+              }
+            ],
+            "frames_verified": 8,
+            "model_version": "pixel-template-v1",
+            "per_frame": [
+              {
+                "failed_requirements": [],
+                "frame_index": 16
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 22
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 32
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 43
+              },
+              {
+                "failed_requirements": [
+                  "label_unchanged"
+                ],
+                "frame_index": 54
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 64
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 80
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 86
+              }
+            ],
+            "status": "fail",
+            "violated": true
+          },
+          "resources": {
+            "api_calls": 0,
+            "api_cost_usd": 0.0,
+            "checked_frames": 8,
+            "checked_pixels": 73728,
+            "feature_reuse_across_budgets": true,
+            "full_prepass_charged": true,
+            "prepass_frames": 96,
+            "prepass_low_res_pixels": 55296,
+            "prepass_source_pixels": 884736,
+            "verifier_calls": 1
+          },
+          "run_id": "72b02803d9e0b835",
+          "sampling_hit": true,
+          "selected_indices": [
+            16,
+            22,
+            32,
+            43,
+            54,
+            64,
+            80,
+            86
+          ],
+          "source_id": 10000,
+          "split": "test",
+          "timing": {
+            "generation_s": 0.00452195800608024,
+            "prepass_s": 0.012564084026962519,
+            "selection_s": 3.0125025659799576e-05,
+            "verification_s": 0.0005905409925617278
+          },
+          "unit_id": "bc122c5047b4feab546dee5f59126d520c771f1a3d5faee4496ca15eb0ba0f1e"
+        },
+        "uniform": {
+          "annotation": {
+            "duration_frames": 12,
+            "duration_seconds": 0.5,
+            "end_frame": 63,
+            "generator_version": "template-ad-v1",
+            "human_audit": "pending",
+            "motion": "distractor",
+            "provenance": "synthetic",
+            "severity": "clear",
+            "start_frame": 51,
+            "violated": true,
+            "violation_type": "label_corruption"
+          },
+          "brief": {
+            "benign_channel_jitter_max": 3,
+            "color_roi": [
+              0.453125,
+              0.6944444444444444,
+              0.6953125,
+              0.8055555555555556
+            ],
+            "forbidden_rgb": [
+              235,
+              40,
+              70
+            ],
+            "forbidden_roi": [
+              0.8515625,
+              0.06944444444444445,
+              0.9453125,
+              0.18055555555555555
+            ],
+            "fps": 24.0,
+            "frame_size": [
+              128,
+              72
+            ],
+            "label_bitmap": [
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                1
+              ]
+            ],
+            "label_rgb": [
+              240,
+              242,
+              235
+            ],
+            "label_roi": [
+              0.515625,
+              0.4305555555555556,
+              0.6328125,
+              0.5
+            ],
+            "product_roi": [
+              0.4296875,
+              0.2361111111111111,
+              0.71875,
+              0.8472222222222222
+            ],
+            "requirements": [
+              "The product remains present in its specified region throughout the clip.",
+              "The package retains the specified RGB target, allowing the documented benign lighting jitter.",
+              "The NOVA bitmap remains unchanged; changing even one bitmap cell is a violation.",
+              "No pixels of the forbidden red element may appear in its specified inspection region."
+            ],
+            "schema_version": "brief-v1",
+            "target_rgb": [
+              187,
+              108,
+              52
+            ],
+            "workload": "fixed-template-synthetic-ad"
+          },
+          "budget": 8,
+          "clip_id": "s010000-distractor-label_corruption-12",
+          "method": "uniform",
+          "pixels_sha256": "95fae430c21f6ce591355b41c38728467d2ca02cde2f4b22e687ac29c23e7002",
+          "prediction": {
+            "api_cost_usd": 0.0,
+            "calls": 1,
+            "evidence": [
+              {
+                "frame_index": 54,
+                "requirement": "label_unchanged",
+                "score": 0.16
+              }
+            ],
+            "frames_verified": 8,
+            "model_version": "pixel-template-v1",
+            "per_frame": [
+              {
+                "failed_requirements": [],
+                "frame_index": 6
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 18
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 30
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 42
+              },
+              {
+                "failed_requirements": [
+                  "label_unchanged"
+                ],
+                "frame_index": 54
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 66
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 78
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 90
+              }
+            ],
+            "status": "fail",
+            "violated": true
+          },
+          "resources": {
+            "api_calls": 0,
+            "api_cost_usd": 0.0,
+            "checked_frames": 8,
+            "checked_pixels": 73728,
+            "feature_reuse_across_budgets": true,
+            "full_prepass_charged": true,
+            "prepass_frames": 0,
+            "prepass_low_res_pixels": 0,
+            "prepass_source_pixels": 0,
+            "verifier_calls": 1
+          },
+          "run_id": "72b02803d9e0b835",
+          "sampling_hit": true,
+          "selected_indices": [
+            6,
+            18,
+            30,
+            42,
+            54,
+            66,
+            78,
+            90
+          ],
+          "source_id": 10000,
+          "split": "test",
+          "timing": {
+            "generation_s": 0.00452195800608024,
+            "prepass_s": 0.0,
+            "selection_s": 5.999987479299307e-06,
+            "verification_s": 0.0005824579857289791
+          },
+          "unit_id": "6e394e449c4895802787a8523280352af89b623f585e866012402f476ee07847"
+        }
+      },
+      "sprite_url": "assets/e7c8859cc4fd7204-frames.png",
+      "sprite_columns": 12,
+      "frames_sha256": "95fae430c21f6ce591355b41c38728467d2ca02cde2f4b22e687ac29c23e7002",
+      "frame_urls": {
+        "0": "assets/e7c8859cc4fd7204-000.png",
+        "1": "assets/e7c8859cc4fd7204-001.png",
+        "6": "assets/e7c8859cc4fd7204-006.png",
+        "12": "assets/e7c8859cc4fd7204-012.png",
+        "16": "assets/e7c8859cc4fd7204-016.png",
+        "18": "assets/e7c8859cc4fd7204-018.png",
+        "22": "assets/e7c8859cc4fd7204-022.png",
+        "24": "assets/e7c8859cc4fd7204-024.png",
+        "30": "assets/e7c8859cc4fd7204-030.png",
+        "32": "assets/e7c8859cc4fd7204-032.png",
+        "36": "assets/e7c8859cc4fd7204-036.png",
+        "42": "assets/e7c8859cc4fd7204-042.png",
+        "43": "assets/e7c8859cc4fd7204-043.png",
+        "49": "assets/e7c8859cc4fd7204-049.png",
+        "51": "assets/e7c8859cc4fd7204-051.png",
+        "54": "assets/e7c8859cc4fd7204-054.png",
+        "60": "assets/e7c8859cc4fd7204-060.png",
+        "64": "assets/e7c8859cc4fd7204-064.png",
+        "66": "assets/e7c8859cc4fd7204-066.png",
+        "72": "assets/e7c8859cc4fd7204-072.png",
+        "78": "assets/e7c8859cc4fd7204-078.png",
+        "80": "assets/e7c8859cc4fd7204-080.png",
+        "84": "assets/e7c8859cc4fd7204-084.png",
+        "86": "assets/e7c8859cc4fd7204-086.png",
+        "90": "assets/e7c8859cc4fd7204-090.png"
+      }
+    },
+    {
+      "clip_id": "s010000-distractor-wrong_color-12",
+      "source_id": 10000,
+      "fps": 24,
+      "n_frames": 96,
+      "width": 128,
+      "height": 72,
+      "annotation": {
+        "violated": true,
+        "violation_type": "wrong_color",
+        "start_frame": 30,
+        "end_frame": 42,
+        "duration_frames": 12,
+        "duration_seconds": 0.5,
+        "motion": "distractor",
+        "severity": "subtle",
+        "provenance": "synthetic",
+        "generator_version": "template-ad-v1",
+        "human_audit": "pending"
+      },
+      "brief": {
+        "schema_version": "brief-v1",
+        "workload": "fixed-template-synthetic-ad",
+        "fps": 24.0,
+        "frame_size": [
+          128,
+          72
+        ],
+        "requirements": [
+          "The product remains present in its specified region throughout the clip.",
+          "The package retains the specified RGB target, allowing the documented benign lighting jitter.",
+          "The NOVA bitmap remains unchanged; changing even one bitmap cell is a violation.",
+          "No pixels of the forbidden red element may appear in its specified inspection region."
+        ],
+        "product_roi": [
+          0.4296875,
+          0.2361111111111111,
+          0.71875,
+          0.8472222222222222
+        ],
+        "color_roi": [
+          0.453125,
+          0.6944444444444444,
+          0.6953125,
+          0.8055555555555556
+        ],
+        "label_roi": [
+          0.515625,
+          0.4305555555555556,
+          0.6328125,
+          0.5
+        ],
+        "forbidden_roi": [
+          0.8515625,
+          0.06944444444444445,
+          0.9453125,
+          0.18055555555555555
+        ],
+        "target_rgb": [
+          187,
+          108,
+          52
+        ],
+        "label_rgb": [
+          240,
+          242,
+          235
+        ],
+        "forbidden_rgb": [
+          235,
+          40,
+          70
+        ],
+        "label_bitmap": [
+          [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ]
+        ],
+        "benign_channel_jitter_max": 3
+      },
+      "reason": "Packaging color change",
+      "methods": {
+        "adaptive": {
+          "annotation": {
+            "duration_frames": 12,
+            "duration_seconds": 0.5,
+            "end_frame": 42,
+            "generator_version": "template-ad-v1",
+            "human_audit": "pending",
+            "motion": "distractor",
+            "provenance": "synthetic",
+            "severity": "subtle",
+            "start_frame": 30,
+            "violated": true,
+            "violation_type": "wrong_color"
+          },
+          "brief": {
+            "benign_channel_jitter_max": 3,
+            "color_roi": [
+              0.453125,
+              0.6944444444444444,
+              0.6953125,
+              0.8055555555555556
+            ],
+            "forbidden_rgb": [
+              235,
+              40,
+              70
+            ],
+            "forbidden_roi": [
+              0.8515625,
+              0.06944444444444445,
+              0.9453125,
+              0.18055555555555555
+            ],
+            "fps": 24.0,
+            "frame_size": [
+              128,
+              72
+            ],
+            "label_bitmap": [
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                1
+              ]
+            ],
+            "label_rgb": [
+              240,
+              242,
+              235
+            ],
+            "label_roi": [
+              0.515625,
+              0.4305555555555556,
+              0.6328125,
+              0.5
+            ],
+            "product_roi": [
+              0.4296875,
+              0.2361111111111111,
+              0.71875,
+              0.8472222222222222
+            ],
+            "requirements": [
+              "The product remains present in its specified region throughout the clip.",
+              "The package retains the specified RGB target, allowing the documented benign lighting jitter.",
+              "The NOVA bitmap remains unchanged; changing even one bitmap cell is a violation.",
+              "No pixels of the forbidden red element may appear in its specified inspection region."
+            ],
+            "schema_version": "brief-v1",
+            "target_rgb": [
+              187,
+              108,
+              52
+            ],
+            "workload": "fixed-template-synthetic-ad"
+          },
+          "budget": 8,
+          "clip_id": "s010000-distractor-wrong_color-12",
+          "method": "adaptive",
+          "pixels_sha256": "128de294db2c36f3e3c385b2e0d3c56693d685e4706ee26a13f653d09fcf2878",
+          "prediction": {
+            "api_cost_usd": 0.0,
+            "calls": 1,
+            "evidence": [],
+            "frames_verified": 8,
+            "model_version": "pixel-template-v1",
+            "per_frame": [
+              {
+                "failed_requirements": [],
+                "frame_index": 1
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 12
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 24
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 36
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 49
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 60
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 72
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 84
+              }
+            ],
+            "status": "pass",
+            "violated": false
+          },
+          "resources": {
+            "api_calls": 0,
+            "api_cost_usd": 0.0,
+            "checked_frames": 8,
+            "checked_pixels": 73728,
+            "feature_reuse_across_budgets": true,
+            "full_prepass_charged": true,
+            "prepass_frames": 96,
+            "prepass_low_res_pixels": 55296,
+            "prepass_source_pixels": 884736,
+            "verifier_calls": 1
+          },
+          "run_id": "72b02803d9e0b835",
+          "sampling_hit": true,
+          "selected_indices": [
+            1,
+            12,
+            24,
+            36,
+            49,
+            60,
+            72,
+            84
+          ],
+          "source_id": 10000,
+          "split": "test",
+          "timing": {
+            "generation_s": 0.004960749996826053,
+            "prepass_s": 0.018537291034590453,
+            "selection_s": 6.849999772384763e-05,
+            "verification_s": 0.0005967500037513673
+          },
+          "unit_id": "ea8ab9900c452d569483daf612ae17b2dfc95b66811b7aa08cdf57bd3fbd145c"
+        },
+        "change": {
+          "annotation": {
+            "duration_frames": 12,
+            "duration_seconds": 0.5,
+            "end_frame": 42,
+            "generator_version": "template-ad-v1",
+            "human_audit": "pending",
+            "motion": "distractor",
+            "provenance": "synthetic",
+            "severity": "subtle",
+            "start_frame": 30,
+            "violated": true,
+            "violation_type": "wrong_color"
+          },
+          "brief": {
+            "benign_channel_jitter_max": 3,
+            "color_roi": [
+              0.453125,
+              0.6944444444444444,
+              0.6953125,
+              0.8055555555555556
+            ],
+            "forbidden_rgb": [
+              235,
+              40,
+              70
+            ],
+            "forbidden_roi": [
+              0.8515625,
+              0.06944444444444445,
+              0.9453125,
+              0.18055555555555555
+            ],
+            "fps": 24.0,
+            "frame_size": [
+              128,
+              72
+            ],
+            "label_bitmap": [
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                1
+              ]
+            ],
+            "label_rgb": [
+              240,
+              242,
+              235
+            ],
+            "label_roi": [
+              0.515625,
+              0.4305555555555556,
+              0.6328125,
+              0.5
+            ],
+            "product_roi": [
+              0.4296875,
+              0.2361111111111111,
+              0.71875,
+              0.8472222222222222
+            ],
+            "requirements": [
+              "The product remains present in its specified region throughout the clip.",
+              "The package retains the specified RGB target, allowing the documented benign lighting jitter.",
+              "The NOVA bitmap remains unchanged; changing even one bitmap cell is a violation.",
+              "No pixels of the forbidden red element may appear in its specified inspection region."
+            ],
+            "schema_version": "brief-v1",
+            "target_rgb": [
+              187,
+              108,
+              52
+            ],
+            "workload": "fixed-template-synthetic-ad"
+          },
+          "budget": 8,
+          "clip_id": "s010000-distractor-wrong_color-12",
+          "method": "change",
+          "pixels_sha256": "128de294db2c36f3e3c385b2e0d3c56693d685e4706ee26a13f653d09fcf2878",
+          "prediction": {
+            "api_cost_usd": 0.0,
+            "calls": 1,
+            "evidence": [],
+            "frames_verified": 8,
+            "model_version": "pixel-template-v1",
+            "per_frame": [
+              {
+                "failed_requirements": [],
+                "frame_index": 16
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 22
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 32
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 43
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 54
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 64
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 80
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 86
+              }
+            ],
+            "status": "pass",
+            "violated": false
+          },
+          "resources": {
+            "api_calls": 0,
+            "api_cost_usd": 0.0,
+            "checked_frames": 8,
+            "checked_pixels": 73728,
+            "feature_reuse_across_budgets": true,
+            "full_prepass_charged": true,
+            "prepass_frames": 96,
+            "prepass_low_res_pixels": 55296,
+            "prepass_source_pixels": 884736,
+            "verifier_calls": 1
+          },
+          "run_id": "72b02803d9e0b835",
+          "sampling_hit": true,
+          "selected_indices": [
+            16,
+            22,
+            32,
+            43,
+            54,
+            64,
+            80,
+            86
+          ],
+          "source_id": 10000,
+          "split": "test",
+          "timing": {
+            "generation_s": 0.004960749996826053,
+            "prepass_s": 0.012580332986544818,
+            "selection_s": 3.3750024158507586e-05,
+            "verification_s": 0.0006065000197850168
+          },
+          "unit_id": "57b80cc783cc45bf75bd259c5c5066e4f70f08b4a2c7e2f104bd70bf5bbe6740"
+        },
+        "uniform": {
+          "annotation": {
+            "duration_frames": 12,
+            "duration_seconds": 0.5,
+            "end_frame": 42,
+            "generator_version": "template-ad-v1",
+            "human_audit": "pending",
+            "motion": "distractor",
+            "provenance": "synthetic",
+            "severity": "subtle",
+            "start_frame": 30,
+            "violated": true,
+            "violation_type": "wrong_color"
+          },
+          "brief": {
+            "benign_channel_jitter_max": 3,
+            "color_roi": [
+              0.453125,
+              0.6944444444444444,
+              0.6953125,
+              0.8055555555555556
+            ],
+            "forbidden_rgb": [
+              235,
+              40,
+              70
+            ],
+            "forbidden_roi": [
+              0.8515625,
+              0.06944444444444445,
+              0.9453125,
+              0.18055555555555555
+            ],
+            "fps": 24.0,
+            "frame_size": [
+              128,
+              72
+            ],
+            "label_bitmap": [
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                1
+              ]
+            ],
+            "label_rgb": [
+              240,
+              242,
+              235
+            ],
+            "label_roi": [
+              0.515625,
+              0.4305555555555556,
+              0.6328125,
+              0.5
+            ],
+            "product_roi": [
+              0.4296875,
+              0.2361111111111111,
+              0.71875,
+              0.8472222222222222
+            ],
+            "requirements": [
+              "The product remains present in its specified region throughout the clip.",
+              "The package retains the specified RGB target, allowing the documented benign lighting jitter.",
+              "The NOVA bitmap remains unchanged; changing even one bitmap cell is a violation.",
+              "No pixels of the forbidden red element may appear in its specified inspection region."
+            ],
+            "schema_version": "brief-v1",
+            "target_rgb": [
+              187,
+              108,
+              52
+            ],
+            "workload": "fixed-template-synthetic-ad"
+          },
+          "budget": 8,
+          "clip_id": "s010000-distractor-wrong_color-12",
+          "method": "uniform",
+          "pixels_sha256": "128de294db2c36f3e3c385b2e0d3c56693d685e4706ee26a13f653d09fcf2878",
+          "prediction": {
+            "api_cost_usd": 0.0,
+            "calls": 1,
+            "evidence": [],
+            "frames_verified": 8,
+            "model_version": "pixel-template-v1",
+            "per_frame": [
+              {
+                "failed_requirements": [],
+                "frame_index": 6
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 18
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 30
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 42
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 54
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 66
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 78
+              },
+              {
+                "failed_requirements": [],
+                "frame_index": 90
+              }
+            ],
+            "status": "pass",
+            "violated": false
+          },
+          "resources": {
+            "api_calls": 0,
+            "api_cost_usd": 0.0,
+            "checked_frames": 8,
+            "checked_pixels": 73728,
+            "feature_reuse_across_budgets": true,
+            "full_prepass_charged": true,
+            "prepass_frames": 0,
+            "prepass_low_res_pixels": 0,
+            "prepass_source_pixels": 0,
+            "verifier_calls": 1
+          },
+          "run_id": "72b02803d9e0b835",
+          "sampling_hit": true,
+          "selected_indices": [
+            6,
+            18,
+            30,
+            42,
+            54,
+            66,
+            78,
+            90
+          ],
+          "source_id": 10000,
+          "split": "test",
+          "timing": {
+            "generation_s": 0.004960749996826053,
+            "prepass_s": 0.0,
+            "selection_s": 5.749985575675964e-06,
+            "verification_s": 0.0005820419755764306
+          },
+          "unit_id": "b5111ebdbaa2126968e93ca99355aae475f6edcde5150de1577db38b44632146"
+        }
+      },
+      "sprite_url": "assets/f9ea744cda06210f-frames.png",
+      "sprite_columns": 12,
+      "frames_sha256": "128de294db2c36f3e3c385b2e0d3c56693d685e4706ee26a13f653d09fcf2878",
+      "frame_urls": {
+        "0": "assets/f9ea744cda06210f-000.png",
+        "1": "assets/f9ea744cda06210f-001.png",
+        "6": "assets/f9ea744cda06210f-006.png",
+        "12": "assets/f9ea744cda06210f-012.png",
+        "16": "assets/f9ea744cda06210f-016.png",
+        "18": "assets/f9ea744cda06210f-018.png",
+        "22": "assets/f9ea744cda06210f-022.png",
+        "24": "assets/f9ea744cda06210f-024.png",
+        "30": "assets/f9ea744cda06210f-030.png",
+        "32": "assets/f9ea744cda06210f-032.png",
+        "36": "assets/f9ea744cda06210f-036.png",
+        "42": "assets/f9ea744cda06210f-042.png",
+        "43": "assets/f9ea744cda06210f-043.png",
+        "49": "assets/f9ea744cda06210f-049.png",
+        "54": "assets/f9ea744cda06210f-054.png",
+        "60": "assets/f9ea744cda06210f-060.png",
+        "64": "assets/f9ea744cda06210f-064.png",
+        "66": "assets/f9ea744cda06210f-066.png",
+        "72": "assets/f9ea744cda06210f-072.png",
+        "78": "assets/f9ea744cda06210f-078.png",
+        "80": "assets/f9ea744cda06210f-080.png",
+        "84": "assets/f9ea744cda06210f-084.png",
+        "86": "assets/f9ea744cda06210f-086.png",
+        "90": "assets/f9ea744cda06210f-090.png"
+      }
+    }
+  ]
+}

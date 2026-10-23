@@ -1,0 +1,65 @@
+{
+  "checked_commit": "bcb67d3fb4283ea0884efb91a25c2a695e99accf",
+  "date_almaty": "2026-10-23",
+  "scope": "Clean committed-source automated acceptance; later edits are documentation only. Browser QA recorded separately.",
+  "clean_source": {
+    "tracked_blobs_checked": 305,
+    "all_match_commit": true
+  },
+  "fresh_dependency_install": "passed; downloaded NumPy 2.3.5 and Pillow 12.3.0",
+  "pip_check": "passed",
+  "tests": {
+    "passed": 102,
+    "seconds": 24.301,
+    "failed": 0
+  },
+  "deterministic_reproduction": {
+    "matching_rows": 7488,
+    "exact_evidence_match": true,
+    "timing_compared": false
+  },
+  "frozen_core_hash_checks": {
+    "briefguard/data.py": true,
+    "briefguard/verifier.py": true,
+    "briefguard/sampling.py": true,
+    "briefguard/runner.py": true,
+    "briefguard/metrics.py": true,
+    "docs/protocol.md": true
+  },
+  "static_demo": {
+    "status": "passed",
+    "kind": "static_evidence_and_pixel_check",
+    "cases": 6,
+    "method_cases": 18,
+    "image_assets": 153,
+    "sprite_frames": 576,
+    "browser_visual_qa": "not_performed_by_this_script"
+  },
+  "workbench_static_exit_code": 0,
+  "live_pilot_saved_evidence": "18 outcomes verified offline; no new inference",
+  "new_api_requests": 0,
+  "new_api_spend_usd": 0,
+  "docker_current": "Client available; daemon socket access denied by execution sandbox. No current build/test claim.",
+  "docker_historical": "Owner-host build and 73 tests at26d2118; results/verification_host/review.json",
+  "human_status": {
+    "six_case_pilot": "owner labels completed before inference",
+    "sixteen_case_cpu_audit": "pending",
+    "personal_code_walkthrough": "pending"
+  },
+  "formal_security": "incomplete; unchanged scope described in docs/security_review.md",
+  "logs_sha256": {
+    "dependencies.log": "41ae710824dc6c83225b64e6ffd8637ba620ce9ec595b7b454b9b3dc33a865a3",
+    "live_pilot_recheck.json": "cb2d89451d087da633b32b4d7feef48b405da4e2cc2e7b82f4d8d61b81b1c0c4",
+    "environment.log": "07a0c38b083d637ece508952e84b9d732343dc2d76204a9afa805eb4b734c4ed",
+    "compare.log": "6389772ac9f255c3f7cef4639ddde50456561c5b00d79dc30820e69a03b75077",
+    "acceptance.json": "16d0bc23ccff192823ed6b7e7fe60cb0786e41d44a042d94c9662d731e20369b",
+    "workbench.json": "443b705ca539e21301fa6509eaa97979418d704c4c7b62f6c32f4b4c9306f13e",
+    "workbench.log": "443b705ca539e21301fa6509eaa97979418d704c4c7b62f6c32f4b4c9306f13e",
+    "reproduction_metadata.json": "71275d5df0c35ea0a024b4d149c9c81225ad9b80b467c5f2a7b1214de311c90e",
+    "demo.log": "3a5c23ef37313fa39a355b1cb45911480602205c04c8327e0fcdf6cf000c5fd0",
+    "status.tsv": "c6ab7aeca89f8d7dfc48e53f0bac88311d0e20897a6ba23595d685f846fd7858",
+    "tests.log": "7c7a1f80c1847e5e0c4076d619adf29af427dbd593855018ad5434e85b97ca5a",
+    "venv.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "install.log": "ecbbc93a4047f6932bbef80c42979c2d62d67f419ec846fcdf613806c0aa3975"
+  }
+}

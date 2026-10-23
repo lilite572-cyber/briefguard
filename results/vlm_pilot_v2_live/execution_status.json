@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "reasons": [],
+  "network_calls": 18,
+  "check_only": false,
+  "api_accounting": {
+    "attempts": 18,
+    "reserved_usd": 0.18,
+    "known_usage_cost_estimate_usd": 0.006478,
+    "attempts_without_known_cost": 0,
+    "provider_billing_guarantee": false
+  }
+}

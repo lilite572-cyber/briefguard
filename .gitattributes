@@ -1,0 +1,2 @@
+# Preserve the exact reviewed CSV bytes used by the completed run's SHA-256.
+results/vlm_pilot_v2_live/human_review.csv -text whitespace=cr-at-eol

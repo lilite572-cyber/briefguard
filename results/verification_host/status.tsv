@@ -1,0 +1,12 @@
+step	status
+venv	passed
+install	passed
+dependencies	passed
+environment	passed
+tests	passed
+reproduce	passed
+compare	passed
+demo	passed
+docker-info	passed
+docker-build	passed
+docker-tests	passed
