@@ -1,7 +1,17 @@
 # Development notes
 
 These notes record implementation decisions, corrections and verification on
-2026-10-22.
+2026-10-22 and 2026-10-23.
+
+## Completed live follow-up
+
+On 23 October, Amir's six-case observations and source confirmation were frozen
+before the owner executed 18 real OpenAI checks. One uncertain label remains
+indeterminate. The saved responses demonstrate both misses despite selected event
+frames and evidence citations outside human event intervals. See the
+[live report](live_pilot_results.md). This owner review does not complete the
+separate 16-case CPU audit or the personal code walkthrough below. No new paid
+inference is required to reproduce the published calculations.
 
 ## Continuation from the published branch
 
@@ -14,8 +24,8 @@ artifacts remain the historical experiment, not a development set for tuning.
 
 The follow-up added methodology and input/output checks, a VLM-pilot workflow
 and a blinded human-review package. Human labels, paid-API approval and a record
-of personal code review are still pending; automated checks do not complete
-those steps.
+of personal code review were pending at that stage. The live pilot later received
+actual authorization and owner labels; the other personal checks remain open.
 
 Fresh-source reproduction again matched all 7,488 deterministic rows. The
 comparison script's use of Python `assert` was identified as a verification
@@ -86,6 +96,7 @@ you have done them; automated execution does not complete a personal review.
 - [ ] Explain why source clusters, rather than clips, are bootstrapped.
 - [ ] Inspect the two failure examples above and record what you see.
 - [ ] Run the documented reproduction commands yourself and record the outcome.
-- [ ] Complete the human-review CSV, or keep human validation marked pending.
+- [x] Review the six separate VLM pilot cases before model outputs (saved owner labels).
+- [ ] Complete the separate 16-case CPU human-review CSV, or retain its pending status.
 
 Record completed personal checks with the command, result and your observations.

@@ -1,5 +1,36 @@
 # Verification record
 
+Latest browser supplement (2026-10-23): all 18 case/method selections passed at
+1280 px; thumbnail seeking, playback, truth toggle and asset loading passed,
+without console errors or horizontal overflow. Workbench requirements entry,
+invalid-budget blocking, command copying and JSON download passed.
+Exact scope and remaining gaps: [browser.json](../results/verification_final/browser.json).
+Earlier viewport limitations below describe the earlier session.
+
+## Final automated acceptance, 23 October 2026
+
+Checked exact implementation commit `bcb67d3fb4283ea0884efb91a25c2a695e99accf`
+from a fresh committed-source archive; all 305 archived blobs matched Git.
+`scripts/acceptance.sh` downloaded the pinned dependencies into a new environment,
+passed `pip check` and **102 tests**, executed **7,488 new CPU checks** with zero
+cache reuse, and reproduced every deterministic evidence row exactly. Timings
+were excluded from comparison. This invocation took 42.20 seconds for the study;
+it is not a replacement for the original timing observations in README.
+
+Static replay verification passed for six cases, eighteen method/case mappings,
+153 image assets and 576 sprite frames. The workbench JavaScript/command checks
+also passed. The saved live-pilot verifier recomputed all eighteen outcomes,
+token costs and evidence-interval consistency without an API key or new inference.
+Logs, source integrity, hashes and the exact scope are saved in
+[verification_final](../results/verification_final/status.json).
+
+The current Docker attempt could not access the daemon socket because the
+execution sandbox denied it. No current container build or test result is claimed.
+The earlier successful Docker acceptance below remains scoped to its exact commit.
+Browser interaction is a separate check, not implied by this command-line result.
+The frozen analytical sources, protocol, result files and human labels were not
+changed. Current follow-up edits correct documentation and add verification logs.
+
 ## 23 October 2026: live pilot completed
 
 The separate six-case v2 pilot executed 18/18 OpenAI requests on the owner's host
@@ -16,10 +47,11 @@ Offline rechecking matches all status metrics and token costs and identifies two
 cited frames outside human event intervals. This is not a repeat of the CPU study,
 Docker acceptance, live inference or independent human evaluation.
 
-Checked on 2026-10-22. This record distinguishes automated source/artifact review
-from human annotation validation, which remains **pending**.
+The sections below preserve earlier verification stages. The six-case owner
+review above is completed; the separate 16-case CPU audit and independent human
+validation remain pending.
 
-## Current acceptance update
+## Historical owner-host acceptance (commit 26d2118)
 
 The owner-host acceptance for commit `26d2118d6b65f92e65d02f57a63615cb7f9604f7`
 completed successfully after the earlier restricted-environment attempts below.
@@ -32,7 +64,8 @@ Docker, and they do not cover later code changes.
 
 The same commit is now published in the working branch and draft PR. Earlier
 publication/install/Docker blockers below describe historical attempts, not the
-latest owner-host outcome. Human labels and live VLM results remain outstanding.
+latest owner-host outcome at that time. The six-case human labels and live VLM
+results were subsequently completed as recorded above.
 Browser interaction checks now have a separate [record](../results/verification_browser/status.json):
 18 case/method combinations, playback, scrubbing, event boundaries and no console
 errors at 639 px. Other viewport sizes and missing-resource injection remain unverified. New workbench verification is recorded in
@@ -85,10 +118,10 @@ every budget. Generation is recorded separately, and codec decoding is outside
 this raw-frame study. Cached replay preserves original component observations
 and does not constitute a new latency measurement.
 
-## Historical checks not completed
+## Earlier uncompleted checks (historical status, subsequently partly superseded)
 
 - Human review of generated ground truth and representative errors remains pending.
-- Real generated-video and VLM evaluations have not been executed.
+- Real generated-video and VLM evaluations had not yet been executed at this stage.
 - A fresh network dependency installation and Docker build were not run because
   package-download network access was restricted. The clean-source replay used
   preinstalled pinned dependencies.
@@ -100,7 +133,7 @@ absence of human-reviewed natural errors limit the conclusions. The primary
 hypothesis remains unsupported: adaptive sampling did not demonstrate an
 improvement over both prespecified baselines.
 
-## Continuation verification
+## Historical continuation verification
 
 The continuation started from published commit
 `991edc8268bc8b57b7c33092af9f67ab3ece0b0b`. The original task was read in full.

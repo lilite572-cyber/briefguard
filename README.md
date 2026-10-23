@@ -142,7 +142,8 @@ flowchart TD
 - `runner.py` / `metrics.py`: immutable run identity, atomic cache/resume, raw responses,
   explicit denominators and paired source-cluster bootstrap intervals.
 - `demo_export.py`: regenerates exact example clips and checks their pixel hashes.
-- `vlm.py`: optional, separately gated Responses API adapter; **not used in reported results**.
+- `vlm.py`: separately gated Responses API adapter; used in the six-case live pilot,
+  **not in the frozen CPU results**.
 
 ## Evidence and limitations
 
@@ -157,7 +158,7 @@ flowchart TD
 | [Error analysis](docs/error_analysis.md) | Concrete misses and duration/type/severity slices |
 | [Interview guide, Russian](docs/interview_ru.md) | Explain and defend the work without overstating it |
 | [Development notes](docs/development_notes.md) | Decisions, fixes and pending personal review |
-| [VLM follow-up](docs/vlm_pilot.md) | Explicit budget/model requirements for future real inference |
+| [Live VLM pilot](docs/live_pilot_results.md) | Eighteen recorded requests, owner labels, costs and evidence errors |
 | [Verification record](docs/verification.md) | Independent artifact review, exact reproduction and remaining checks |
 | [Security review status](docs/security_review.md) | Scoped source review and the incomplete formal scan |
 
@@ -172,7 +173,8 @@ Real ad compliance remains unvalidated.
 ## Completion and follow-up
 
 The [verification record](docs/verification.md) separates passed checks from checks
-blocked by the execution environment. The original run and historical verification
+blocked by the execution environment or still requiring personal participation.
+The original run and historical verification
 record are retained; new evidence is recorded separately. The original task document
 was available and checked against this continuation.
 
@@ -180,6 +182,11 @@ For a fresh machine, `PYTHON_BIN=python3.12 bash scripts/acceptance.sh` performs
 install, tests, reproduction and artifact checks and records the outcome. See the
 [browser checklist](docs/browser_checklist.md) for the interactive checks that a
 command-line success cannot establish.
+
+The final clean-source check of `bcb67d3` downloaded pinned dependencies, passed
+102 tests and reproduced all 7,488 deterministic rows with zero cache reuse.
+[Saved logs and exact scope](results/verification_final/status.json) also include
+static replay/workbench checks and offline verification of all 18 live outcomes.
 
 The separate [VLM pilot protocol](docs/vlm_pilot.md) and
 [natural-video protocol](docs/natural_video_pilot.md) are exploratory follow-ups.
@@ -192,12 +199,11 @@ from the frozen CPU study. The combined authorization is $8 across this project
 and Creative Experiments, with $0.50 allocated here for OpenAI
 `gpt-4.1-mini-2025-04-14`. Personal code review still requires actual participation.
 
-Use `python scripts/run_pilot_guarded.py --check-only` to check the prepared v2
-packet without reading a key or sending requests. The separate guarded runner
-stops subsequent HTTP attempts when earlier outcomes or usage costs are unknown;
-it leaves the frozen v1/v2 runtime and packet unchanged. Execution uses the same
-packet and ledger with `--approve-openai-gpt41mini-usd050` and the key in the
-process environment. Never reset the ledger to repeat a failed run.
+The pilot has already run. Recheck its published evidence without a key or
+network using `python scripts/report_live_pilot.py --verify results/vlm_pilot_v2_live`.
+There is no need to execute paid inference again for this deliverable. The guarded
+runner and original ledger are retained for provenance; never reset that ledger
+to repeat a failed run or treat a repeated request as a new independent experiment.
 
 ## Separate host
 

@@ -41,6 +41,15 @@ for running the workbench in parallel. The executed six-case exploratory pilot i
 
 ## Verification
 
+Final clean-source acceptance at `bcb67d3fb4283ea0884efb91a25c2a695e99accf`
+downloaded the pinned dependencies into a new environment, passed `pip check`
+and 102 tests, ran all 7,488 CPU units with zero cache reuse and matched every
+deterministic evidence row. All 305 archived tracked blobs match that commit.
+Static replay checks verified six cases, eighteen method/case mappings, 153
+images and 576 sprite frames; workbench JavaScript/command checks passed.
+Saved live-pilot outcomes and cost arithmetic were verified without new inference.
+Evidence: `results/verification_final/status.json` and adjacent logs.
+
 Owner-host acceptance for commit `26d2118` passed fresh installation, 73 tests,
 all 7,488 deterministic reproduction rows, static demo checks, Docker build and
 73 Docker tests. All 259 archived source blobs match that commit.
@@ -48,7 +57,9 @@ all 7,488 deterministic reproduction rows, static demo checks, Docker build and
 Current workbench test counts, exact file hashes and evidence are in
 `results/verification_workflow/`. Static JavaScript/DOM-stub checks are separate
 from real browser QA. The earlier Docker result does not automatically cover
-later implementation changes. See `docs/verification.md` for revision scopes.
+later implementation changes. A new Docker attempt was denied access to the
+daemon socket by the execution sandbox; no current build result is claimed.
+See `docs/verification.md` for revision scopes.
 
 The current pilot amendment passed all 95 local tests. All six CPU frozen hashes
 and the v1 pilot runtime/config/protocol match their prior versions. Evidence:
@@ -64,8 +75,11 @@ human event intervals. Status agreement is not evidence-grounding accuracy.
 
 ## Remaining acceptance
 
-Replay browser checks passed for 18 case/method selections at 639 px;
-390/1280 px, missing-resource injection and workbench browser QA remain pending.
+Replay browser checks passed for all 18 case/method selections at 1280 px on
+2026-10-23, with loaded evidence images and no console errors or overflow.
+Workbench requirement entry, invalid-budget guard, command copying and JSON
+download passed. See `results/verification_final/browser.json`. The 390 px layout,
+missing-resource injection and workbench GIF preview remain unverified.
 The separate 16-case CPU human audit and personal code walkthrough remain pending.
 The six-case live VLM pilot now has actual owner labels and saved model responses;
 one natural source and its artificial corruptions cannot validate advertising-video

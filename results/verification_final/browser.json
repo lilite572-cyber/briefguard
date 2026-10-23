@@ -1,0 +1,33 @@
+{
+  "date_almaty": "2026-10-23",
+  "checked_commit": "bcb67d3fb4283ea0884efb91a25c2a695e99accf",
+  "browser": "ChatGPT in-app browser",
+  "viewport_width": 1280,
+  "case_method_combinations": 18,
+  "evidence_buttons_each": 8,
+  "thumbnail_seek_seconds": 1.5,
+  "playback_advanced_to_seconds": 1.71,
+  "truth_toggle": "passed",
+  "visible_images_loaded": 8,
+  "horizontal_overflow": false,
+  "console_errors": [],
+  "console_warnings": [],
+  "workbench": {
+    "requirements_entry": "passed",
+    "invalid_zero_budget_disabled_command": true,
+    "method_change_command": "passed",
+    "clipboard": "success status observed",
+    "requirements_download": "completed; browser saved requirements.json",
+    "console_errors": []
+  },
+  "not_checked": [
+    "390px layout",
+    "missing-resource injection",
+    "workbench local GIF preview",
+    "workbench imported model response in browser"
+  ],
+  "sha256": {
+    "demo/index.html": "39a0acb73087d15b7a9f48f0acde9f17004a9da8c9df9e086d8a9f2ad1f60bdc",
+    "web/workbench.html": "5403a2185b5d9707fed2e3a98dd77c0dab2e25e6c7345f72c251f660fbd7c6be"
+  }
+}

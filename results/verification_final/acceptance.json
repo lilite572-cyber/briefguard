@@ -1,0 +1,11 @@
+{
+  "checked_commit": "bcb67d3fb4283ea0884efb91a25c2a695e99accf",
+  "finished_at_utc": "2026-10-23T01:00:04.731920+00:00",
+  "exit_code": 0,
+  "status": "passed",
+  "last_step": "demo",
+  "docker_requested": false,
+  "browser_visual_qa": "pending_manual_check",
+  "human_annotation": "pending",
+  "paid_api_calls": 0
+}

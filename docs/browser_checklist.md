@@ -1,5 +1,12 @@
 # Browser acceptance — interaction checks completed, remaining limits recorded
 
+Latest browser supplement (2026-10-23): all 18 case/method selections passed at
+1280 px; thumbnail seeking, playback, truth toggle and asset loading passed,
+without console errors or horizontal overflow. Workbench requirements entry,
+invalid-budget blocking, command copying and JSON download passed.
+Exact scope and remaining gaps: [browser.json](../results/verification_final/browser.json).
+Earlier viewport limitations below describe the earlier session.
+
 This checklist is for an actual browser session. `scripts/check_demo.py` checks
 saved data and image pixels; it does not execute or visually inspect the UI.
 A real in-app browser session on 2026-10-22 exercised the live owner-started
