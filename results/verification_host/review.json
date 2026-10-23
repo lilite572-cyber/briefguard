@@ -61,5 +61,5 @@
     "install.log": "895d23bfcc1d3b34f44597adeee03b263f008826c39cab499b67be8c082cb492",
     "docker-info.log": "44aa036f525345d00247760ef7e21d220614762d9c7295c30e254ad94f951ae8"
   },
-  "note": "Historical verification_followup/status.json is retained unchanged; publication and owner-host installation/Docker status have advanced since that record."
+  "note": "Historical verification_followup/status.json retains its measurements and acceptance status; reviewer descriptions were later normalized; publication and owner-host installation/Docker status have advanced since that record."
 }

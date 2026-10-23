@@ -1,6 +1,6 @@
 # Security review status
 
-Checked on 2026-10-22. **The formal Codex Security workflow is incomplete.**
+Checked on 2026-10-22. **The formal security workflow is incomplete.**
 The separate bounded static review described below found no confirmed exploitable
 security vulnerability in the inspected local, single-user research workflow.
 This is not a security certification or a completed formal clean scan.

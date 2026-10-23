@@ -17,7 +17,7 @@ results, not natural-video or VLM accuracy measurements.
 - Restyle replay using Tabler as a visual reference, with self-contained CSS.
 - Explain sampling misses versus checker misses directly in the comparison.
 - Verify all 18 case/method selections in a real browser; record viewport limits.
-- Remove repetitive authorship narration from UI and routine documentation.
+- Keep UI and documentation focused on behavior, evidence and limitations.
 
 - Validate complete evidence inventories and reject stale summaries; comparison
   remains effective under optimized Python.
